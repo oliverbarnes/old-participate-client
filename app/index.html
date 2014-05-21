@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ParticipateFrontend</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/participate-frontend.css">
+  </head>
+  <body>
+    <script>
+      window.ENV = {{ENV}};
+    </script>
+    <script src="assets/participate-frontend.js"></script>
+    <script>
+      window.ParticipateFrontend = require('participate-frontend/app')['default'].create(ENV.APP);
+    </script>
+  </body>
+</html>
