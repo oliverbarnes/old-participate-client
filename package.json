@@ -25,6 +25,8 @@
     "express": "^4.1.1",
     "body-parser": "^1.2.0",
     "glob": "^3.2.9",
-    "broccoli-emblem-compiler": "^0.3.16"
+    "broccoli-emblem-compiler": "^0.3.16",
+    "broccoli-merge-trees": "^0.1.4",
+    "broccoli-static-compiler": "^0.1.4"
   }
 }

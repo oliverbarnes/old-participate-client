@@ -10,7 +10,7 @@
     {{BASE_TAG}}
 
     <link rel="stylesheet" href="assets/participate-frontend.css">
-    <link rel="stylesheet" href="assets/qunit.css">
+    <link rel="stylesheet" href="assets/mocha.css">
     <style>
       #ember-testing-container {
         position: absolute;
@@ -35,8 +35,11 @@
     <script>
       window.ENV = {{ENV}};
     </script>
-    <script src="assets/qunit.js"></script>
+    <script src="assets/mocha.js"></script>
     <script src="assets/participate-frontend.js"></script>
+    <script src="assets/adapter-qunit.js"></script>
+    <script src="assets/should.js"></script>
+    <script src="assets/sinon.js"></script>
     <script src="testem.js"></script>
     <script>
       require('participate-frontend/tests/test-helper');
