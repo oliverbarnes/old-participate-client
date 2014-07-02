@@ -13,7 +13,7 @@
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.1",
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
     "mocha": "~1.17.0",
-    "should": "~3.1.2",
+    "chai": "~1.9.1",
     "sinonjs-built": "~1.7.3",
     "ember-mocha-adapter": "https://github.com/WMeldon/ember-mocha-adapter.git#qunit"
   }
