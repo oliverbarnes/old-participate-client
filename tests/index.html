@@ -9,6 +9,7 @@
 
     {{BASE_TAG}}
 
+    <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/participate-frontend.css">
     <link rel="stylesheet" href="assets/mocha.css">
     <style>
@@ -33,17 +34,22 @@
     <div id="qunit-fixture"></div>
 
     <script>
-      window.ENV = {{ENV}};
+      window.ParticipateFrontendENV = {{ENV}};
+      window.EmberENV = window.ParticipateFrontendENV.EmberENV;
     </script>
     <script src="assets/mocha.js"></script>
+    <!-- <script src="assets/qunit-notifications.js"></script> -->
+    <script src="assets/vendor.js"></script>
     <script src="assets/participate-frontend.js"></script>
     <script src="assets/adapter-qunit.js"></script>
     <script src="assets/chai.js"></script>
     <script src="assets/sinon.js"></script>
+    <script src="assets/sinon-chai.js"></script>
     <script src="testem.js"></script>
     <script>
       require('participate-frontend/tests/test-helper');
       require('participate-frontend/tests/test-loader');
     </script>
+    <!-- <script src="assets/test-loader.js"></script> -->
   </body>
 </html>

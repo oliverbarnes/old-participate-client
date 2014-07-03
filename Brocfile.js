@@ -47,10 +47,10 @@ var mochaFiles = pickFiles('vendor', {
     destDir: '/assets/'
   });
 
-var shouldFiles = pickFiles('vendor', {
-    srcDir: '/should',
+var chaiFiles = pickFiles('vendor', {
+    srcDir: '/chai',
     files: [
-      'should.js'
+      'chai.js'
     ],
     destDir: '/assets/'
   });
@@ -71,7 +71,7 @@ var mochaAdapter = pickFiles('vendor', {
     destDir: '/assets/'
   });
 
-var testTrees = mergeTrees([mochaFiles, mochaAdapter, shouldFiles, sinonFiles], {
+var testTrees = mergeTrees([mochaFiles, mochaAdapter, chaiFiles, sinonFiles], {
      overwrite: true
 });
 

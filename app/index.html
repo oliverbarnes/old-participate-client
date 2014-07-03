@@ -9,15 +9,18 @@
 
     {{BASE_TAG}}
 
+    <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/participate-frontend.css">
   </head>
   <body>
     <script>
-      window.ENV = {{ENV}};
+      window.ParticipateFrontendENV = {{ENV}};
+      window.EmberENV = window.ParticipateFrontendENV.EmberENV;
     </script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/participate-frontend.js"></script>
     <script>
-      window.ParticipateFrontend = require('participate-frontend/app')['default'].create(ENV.APP);
+      window.ParticipateFrontend = require('participate-frontend/app')['default'].create(ParticipateFrontendENV.APP);
     </script>
   </body>
 </html>

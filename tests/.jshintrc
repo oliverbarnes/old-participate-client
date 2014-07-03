@@ -8,13 +8,8 @@
     "Em",
     "$",
     "QUnit",
-    "Mocha",
-    "mocha",
-    "sinon",
     "define",
     "console",
-    "require",
-    "requirejs",
     "equal",
     "notEqual",
     "notStrictEqual",
@@ -30,6 +25,9 @@
     "ok",
     "strictEqual",
     "module",
+    "moduleFor",
+    "moduleForComponent",
+    "moduleForModel",
     "process",
     "expect",
     "visit",
@@ -42,7 +40,11 @@
     "DS",
     "keyEvent",
     "isolatedContainer",
-    "startApp"
+    "startApp",
+    "andThen",
+    "currentURL",
+    "currentPath",
+    "currentRouteName"
   ],
   "node" : false,
   "browser" : false,
@@ -68,6 +70,5 @@
   "strict": false,
   "white": false,
   "eqnull": true,
-  "esnext": true,
-  "expr": true
+  "esnext": true
 }
