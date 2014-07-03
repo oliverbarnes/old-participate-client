@@ -63,6 +63,14 @@ var sinonFiles = pickFiles('vendor', {
     destDir: '/assets/'
   });
 
+var sinonChaiFiles = pickFiles('vendor', {
+    srcDir: '/sinon-chai/lib',
+    files: [
+      'sinon-chai.js'
+    ],
+    destDir: '/assets/'
+  });
+
 var mochaAdapter = pickFiles('vendor', {
     srcDir: '/ember-mocha-adapter',
     files: [
@@ -71,7 +79,7 @@ var mochaAdapter = pickFiles('vendor', {
     destDir: '/assets/'
   });
 
-var testTrees = mergeTrees([mochaFiles, mochaAdapter, chaiFiles, sinonFiles], {
+var testTrees = mergeTrees([mochaFiles, mochaAdapter, chaiFiles, sinonFiles, sinonChaiFiles], {
      overwrite: true
 });
 
