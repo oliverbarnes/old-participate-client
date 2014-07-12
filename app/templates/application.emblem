@@ -1,3 +1,6 @@
-h2 Welcome to Ember!
+h2 Participate App
+
+#menu
+  = link-to '' | Start a new initiative
 
 =outlet
