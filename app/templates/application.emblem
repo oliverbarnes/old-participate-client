@@ -1,6 +1,6 @@
 h2 Participate App
 
 #menu
-  = link-to '' | Start a new initiative
+  = link-to 'initiatives.new' | Start a new initiative
 
 =outlet

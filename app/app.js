@@ -9,6 +9,8 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+App.ApplicationAdapter = DS.FixtureAdapter;
+
 loadInitializers(App, 'participate-frontend');
 
 export default App;

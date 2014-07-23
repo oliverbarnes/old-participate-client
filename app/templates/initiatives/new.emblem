@@ -1,0 +1,4 @@
+form-for model
+  = input title
+  = input description as="text"
+  = submit 

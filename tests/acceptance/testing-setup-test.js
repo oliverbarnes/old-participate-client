@@ -14,10 +14,10 @@ suite('Testing setup', {
 });
 
 test('Mocha, Chai and page interaction', function(){
-  visit('/');
-
   chai.expect(1+1).to.equal(2);
 
-  var page = $(App.rootElement)
-  chai.expect(page.find('.ember-application')).to.exist;
+  visit('/').then(function() {
+    var page = $(App.rootElement)
+    chai.expect(page.find('.ember-application')).to.exist;
+  });
 });
