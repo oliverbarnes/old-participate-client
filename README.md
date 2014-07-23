@@ -1,5 +1,5 @@
-Front-end for [Participate](https://github.com/oliverbarnes/participate), a democratic participation platform based on LiquidFeedback. 
+Front-end for [Participate](https://github.com/oliverbarnes/participate), a democratic participation platform based on LiquidFeedback, in early stages of development. 
 
-So far just an [Ember.js](http://emberjs.com) app, generated with [ember-cli](http://iamstef.net/ember-cli/), with support for the [Emblem](http://emblemjs.com) template engine and [Mocha](http://visionmedia.github.io/mocha/), the BDD testing framework for js that feels a lot like Rspec.
+Stack: [Ember CLI](http://iamstef.net/ember-cli/) app, using the [Emblem](http://emblemjs.com) template engine, [EasyForm](https://github.com/dockyard/ember-easyForm), and [Mocha](http://visionmedia.github.io/mocha/) for testing.
 
 See the guide for [CONTRIBUTING](CONTRIBUTING.md), and the [CHANGELOG](CHANGELOG.md).
