@@ -33,3 +33,16 @@ test('Successfully', function(){
     });
   });
 });
+
+test('With the title missing', function(){
+  visit('/').then(function() {
+    click( $("a:contains('Start a new initiative')") ).then(function() {
+      expect($(':submit').attr('disabled')).to.equal('disabled');
+      expect($("input :contains('Start a new initiative')"));
+      fillIn('div.title input', '');
+      fillIn('div.description textarea', 'Allocate compensation money to create a local public health clinic').then(function() {
+        expect(find('.title .error').text()).to.equal("can't be blank");
+      });  
+    });
+  });
+});
