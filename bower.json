@@ -14,6 +14,7 @@
     "ember-resolver": "~0.1.1",
     "ic-ajax": "~1.x",
     "ember-easyForm": "http://builds.dockyard.com.s3.amazonaws.com/ember-easyForm/canary/ember-easyForm.min.js",
+    "ember-validations": "http://builds.dockyard.com.s3.amazonaws.com/ember-validations/ember-validations-latest.js",
 
     "qunit": "~1.12.0",
     "ember-qunit": "https://github.com/WMeldon/ember-qunit.git#mocha",
