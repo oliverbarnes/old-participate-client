@@ -35,7 +35,7 @@ ember test
 
 #### Write Tests
 
-Try to write a test that reproduces the problem you're trying to fix or describes a feature that you want to build. Add to [test/](test/).
+Try to write a test that reproduces the problem you're trying to fix or describes a feature that you want to build. Add to [tests/](tests/).
 
 I also appreciate pull requests that highlight or reproduce a problem, even without a fix.
 
