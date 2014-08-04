@@ -1,3 +1,7 @@
+07/28/2014
+==========
+* Installed ember-validations
+
 07/23/2014
 ==========
 * [#10](https://github.com/oliverbarnes/participate-frontend/pull/10): Added small initiative creation form, got the test flow down

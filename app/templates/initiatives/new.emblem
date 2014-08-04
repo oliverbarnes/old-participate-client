@@ -1,4 +1,10 @@
 form-for model
   = input title
+  if view.showError
+    error-field title
+
   = input description as="text"
-  = submit 
+  if view.showError
+    error-field description
+
+  = submit disabled=model.isInvalid

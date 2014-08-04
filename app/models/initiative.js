@@ -1,6 +1,17 @@
-var Initiative = DS.Model.extend({
+import 'vendor/ember-validations/index';
+
+var Initiative = DS.Model.extend(Ember.Validations.Mixin, {
   title: DS.attr('string'),
-  description: DS.attr('string')
+  description: DS.attr('string'),
+
+  validations: {
+    title: {
+      presence: true
+    },
+    description: {
+      presence: true
+    }
+  }
 });
 
 Initiative.reopenClass({
