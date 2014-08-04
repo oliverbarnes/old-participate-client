@@ -3,6 +3,7 @@ import 'vendor/ember-validations/index';
 var Initiative = DS.Model.extend(Ember.Validations.Mixin, {
   title: DS.attr('string'),
   description: DS.attr('string'),
+  isSupported: DS.attr('boolean'),
 
   validations: {
     title: {

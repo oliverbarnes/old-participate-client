@@ -5,3 +5,10 @@
 .description
   p
     = description
+
+.support
+  if isSupported
+    a click="removeSupport" href="#" Remove support for this initiative
+  else
+    a click="supportIt" href="#" Support this initiative
+
