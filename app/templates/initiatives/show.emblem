@@ -21,7 +21,7 @@ if isSupported
 	p I already support this. Change?
 else
   	p 
-  	button click="support-initiative" Support this initiative
+  	button click="support-initiative" action="updateSupport" Support this initiative
   	/ define this button click action somehow to change text to "I support this"
 
 
