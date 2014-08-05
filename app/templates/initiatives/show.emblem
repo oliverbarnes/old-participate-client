@@ -5,3 +5,30 @@
 .description
   p
     model.description
+
+/ link-to 'initiatives.show' | Support this initiative    
+
+
+/ a click="toggleHeader" x
+br
+/ a{bind-attr class="isActive"}{action 'toggleHeader'} x
+br
+/ button click="support-initiative" Support this initiative
+
+br
+
+if isSupported
+	p I already support this. Change?
+else
+  	p 
+  	button click="support-initiative" Support this initiative
+  	/ define this button click action somehow to change text to "I support this"
+
+
+
+
+/ http://stackoverflow.com/questions/5580616/jquery-change-button-text
+
+  	
+  	
+
