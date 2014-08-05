@@ -1,7 +1,7 @@
 .title
   h2
-    model.title
+    = title
 
 .description
   p
-    model.description
+    = description
