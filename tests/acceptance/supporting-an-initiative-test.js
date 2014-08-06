@@ -18,7 +18,8 @@ test('Successfullyyy', function(){
   visit('/initiatives/fixture-0').then(function() {
    	click( $("a:contains('Support this initiative')") ).then(function() {
       expect(currentURL()).to.equal('/initiatives/fixture-0');
-      expect( $("a:contains('I support this')") ).to.equal( $("a:contains('I support this')") );
+      expect(find('.support').text()).to.equal('Remove Support for this initiative');
+      //expect( $("a:contains('I support this')") ).to.equal( $("a:contains('I support this')") );
       //expect( $("I support this").to.equal('I support this');
    		
    		});

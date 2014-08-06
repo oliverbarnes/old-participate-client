@@ -17,18 +17,11 @@ br
 
 br
 
-if isSupported
-	p I already support this. Change?
-else
-  	p 
-  	button click="support-initiative" action="updateSupport" Support this initiative
-  	/ define this button click action somehow to change text to "I support this"
 
-
-
-
-/ http://stackoverflow.com/questions/5580616/jquery-change-button-text
-
-  	
+.support
+  if isSupported
+    a click="removeSupport" href="#" Remove Support for this initiative
+  else
+    a click="supportIt" href="#" Support this initiative
   	
 
