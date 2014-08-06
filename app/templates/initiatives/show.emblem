@@ -1,26 +1,14 @@
 .title
   h2
-    model.title
+    = title
 
 .description
   p
-    model.description
-
-/ link-to 'initiatives.show' | Support this initiative    
-
-
-/ a click="toggleHeader" x
-br
-/ a{bind-attr class="isActive"}{action 'toggleHeader'} x
-br
-/ button click="support-initiative" Support this initiative
-
-br
-
+    = description
 
 .support
   if isSupported
-    a click="removeSupport" href="#" Remove Support for this initiative
+    a click="removeSupport" href="#" Remove support for this initiative
   else
     a click="supportIt" href="#" Support this initiative
   	

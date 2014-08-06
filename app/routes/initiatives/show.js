@@ -7,18 +7,15 @@ var InitiativesShowRoute = Ember.Route.extend({
 
   actions: {
     supportIt: function() {
-      console.log('supported!');
-	  var initiative = this.get('controller.model');
-	  initiative.set('isSupported', true)
-	},
+      var initiative = this.get('controller.model');
+      initiative.set('isSupported', true)
+    },
 
-	removeSupport: function() {
-	  console.log('NOT supported!');
-	  var initiative = this.get('controller.model');
-	  initiative.set('isSupported', false)
-	}
+    removeSupport: function() {
+      var initiative = this.get('controller.model');
+      initiative.set('isSupported', false)
+    }
   }
-
 });
 
 export default InitiativesShowRoute;

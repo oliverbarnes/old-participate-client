@@ -4,8 +4,3 @@ h2 Participate App
   = link-to 'initiatives.new' | Start a new initiative
 
 =outlet
-
-
- 
-
-
