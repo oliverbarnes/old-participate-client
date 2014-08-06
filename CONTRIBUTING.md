@@ -1,7 +1,7 @@
 Contributing
 ============
 
-So far this is a one-man project, and new contributions will be greatly appreciated. You're welcome to submit [pull requests](https://github.com/oliverbarnes/participate-frontend/pulls), [propose features and discuss issues](https://github.com/oliverbarnes/participate-frontend/issues). When in doubt, ask a question in the [Participate App Google Group](https://groups.google.com/forum/#!forum/participate-app).
+So far this is a one-man (and-two-[Rails-Girls](http://railsgirlssummerofcode.org/)) project, and new contributions will be greatly appreciated. You're welcome to submit [pull requests](https://github.com/oliverbarnes/participate-frontend/pulls), [propose features and discuss issues](https://github.com/oliverbarnes/participate-frontend/issues). When in doubt, ask a question in the [Participate App Google Group](https://groups.google.com/forum/#!forum/participate-app).
 
 #### Fork the Project
 
@@ -106,7 +106,7 @@ git push origin my-feature-branch -f
 
 #### Be Patient
 
-It's likely that your change will not be merged and that I will ask you to do more, or fix seemingly benign problems. Hang on there!
+It's likely that your change will not be merged and that I will ask you to do more, or fix seemingly benign problems. Hang in there!
 
 #### Thank You
 
