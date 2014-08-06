@@ -1,3 +1,7 @@
+08/06/2014
+==========
+* Added small support initiative feature (issue #13)
+
 07/28/2014
 ==========
 * Installed ember-validations
