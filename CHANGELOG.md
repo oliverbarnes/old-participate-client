@@ -1,3 +1,8 @@
+08/06/2014
+==========
+* [#23](https://github.com/oliverbarnes/participate-frontend/pull/23)Working build for Travis CI
+* [#18](https://github.com/oliverbarnes/participate-frontend/pull/18)Added small support initiative feature (Closes issue [#13](https://github.com/oliverbarnes/participate-frontend/issues/13))
+
 07/28/2014
 ==========
 * Installed ember-validations
