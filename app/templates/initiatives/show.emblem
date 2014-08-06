@@ -17,14 +17,8 @@
     model.description
 
 
-
-
-
 .suggest
   if isSupported
     a click="makeSuggestion" href="#" Make a suggestion
   else
     p To make a suggestion, you must first support this initiative.
-    
-
-
