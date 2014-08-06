@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/oliverbarnes/participate-frontend.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate-frontend) 
+
 Front-end for [Participate](https://github.com/oliverbarnes/participate), a democratic participation platform based on LiquidFeedback, in early stages of development. 
 
 Stack: [Ember CLI](http://iamstef.net/ember-cli/) app, using the [Emblem](http://emblemjs.com) template engine, [EasyForm](https://github.com/dockyard/ember-easyForm), and [Mocha](http://visionmedia.github.io/mocha/) for testing.
