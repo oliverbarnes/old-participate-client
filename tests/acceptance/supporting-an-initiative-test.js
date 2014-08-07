@@ -28,7 +28,6 @@ test('Successfully', function(){
       expect(find('.suggest').text()).to.equal('To make a suggestion, you must first support this initiative.');
       click( $("a:contains('Support this initiative')") ).then(function() {
         expect(find('.suggest').text()).to.equal('Make a suggestion');
-
       });
     });
   });

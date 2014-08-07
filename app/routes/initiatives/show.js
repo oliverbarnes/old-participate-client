@@ -14,6 +14,11 @@ var InitiativesShowRoute = Ember.Route.extend({
     removeSupport: function() {
       var initiative = this.get('controller.model');
       initiative.set('isSupported', false)
+    },
+
+    makeSuggestion: function() {
+      var initiative = this.get('controller.model');
+      initiative.set('isSuggested', true)
     }
   }
 });
