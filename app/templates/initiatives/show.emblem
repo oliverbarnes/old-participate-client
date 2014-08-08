@@ -20,9 +20,13 @@
 .suggest
   if isSupported 
     if isSuggested
-      textarea.ember-text-area
+      //textarea.ember-text-area
       form-for model
+        =input details as="text"
         = submit disabled=isInvalid
+      ul 
+        each suggestion in suggestions
+          li = suggestion.details
     else
       a click="makeSuggestion" href="#" Make a suggestion
     

@@ -24,12 +24,12 @@ var InitiativesShowRoute = Ember.Route.extend({
 
     submit: function() {
       console.log('aaaaaa');
-      var _this = this;
-      var initiative = this.get('controller.model');
-      initiative.save().then(function(model) {
-        // model.save();
-        _this.transitionTo('initiatives.show', model.get('id'));
-      });
+      // var initiative = this.get('controller.model');
+      // initiative.save().then(function(){
+      // //   this.transitionTo('initiatives.show');
+      //   console.log('hhhhhhh');
+      //  });
+
     }
   }
 });

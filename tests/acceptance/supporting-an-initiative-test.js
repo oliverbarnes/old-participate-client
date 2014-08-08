@@ -31,9 +31,11 @@ test('Successfully', function(){
         click( $("a:contains('Make a suggestion')") ).then(function() {
           expect(currentURL()).to.equal('/initiatives/fixture-0');
           fillIn('div.suggest textarea'); 
+          //fillIn('div.suggestions', 'Create a kickstarter campaign to get the funds.');
           click('form input[type=submit]').then(function() {
             expect(currentURL()).to.equal('/initiatives/fixture-0');
-            expect(find('.suggest').text());
+            //expect(find('.suggest').text()); // how to test textarea
+            //expect(find('.suggest.suggestions').text()).to.equal('Create a kickstarter campaign to get the funds.');
           });
         });
       });
