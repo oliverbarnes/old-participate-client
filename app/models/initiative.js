@@ -28,4 +28,5 @@ Initiative.reopenClass({
   ]
 });
 
+
 export default Initiative;

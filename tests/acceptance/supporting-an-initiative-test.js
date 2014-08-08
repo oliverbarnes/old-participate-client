@@ -28,6 +28,14 @@ test('Successfully', function(){
       expect(find('.suggest').text()).to.equal('To make a suggestion, you must first support this initiative.');
       click( $("a:contains('Support this initiative')") ).then(function() {
         expect(find('.suggest').text()).to.equal('Make a suggestion');
+        click( $("a:contains('Make a suggestion')") ).then(function() {
+          expect(currentURL()).to.equal('/initiatives/fixture-0');
+          fillIn('div.suggest textarea'); 
+          click('form input[type=submit]').then(function() {
+            expect(currentURL()).to.equal('/initiatives/fixture-0');
+            expect(find('.suggest').text());
+          });
+        });
       });
     });
   });
