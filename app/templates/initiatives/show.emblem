@@ -24,7 +24,9 @@
       form-for model
         =input details as="text"
         = submit disabled=isInvalid
-        .details
+        // .details
+        //   model.details
+          hr
           p
             = details
         ul 

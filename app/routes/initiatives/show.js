@@ -1,9 +1,15 @@
 import Ember from 'ember';
 
 var InitiativesShowRoute = Ember.Route.extend({
+  needs: "initiative",
+  initiative: Ember.computed.alias("controllers.initiative.model"),
+  details: '',
+
   model: function(params) {
     return this.store.find('initiative', params.initiative_id);
-    return this.store.createRecord('suggestion');
+    return this.store.find('suggestion');
+    
+    //return this.store.createRecord('suggestion');
   },
 
   actions: {
@@ -22,16 +28,29 @@ var InitiativesShowRoute = Ember.Route.extend({
       initiative.set('isSuggested', true);
     },
 
+    
     submit: function() {
-      console.log('aaaaaa');
-      var initiative = this.get('controller.model');
-      initiative.save();
-      //initiative.save().then(function(){
-      //  this.transitionTo('initiatives.show', model.get('id'));
-      //  console.log('hhhhhhh');
-      //  });
+            //var initiative = this.get('controller.model');
 
-    }
+            var message = this.get('controller.model');
+
+            console.log('msg',message.details);
+            var suggestion = this.store.createRecord('suggestion', {
+                details : message.details
+            });
+
+            //this.set('details', '');
+            console.log('suggestion',suggestion);
+            var initiative = this.get('controllers.initiative');
+
+            console.log('initiative',initiative);
+            var suggestions = this.get('suggestions');
+
+            console.log('suggestions',suggestions);
+            suggestions.pushObject(suggestion);
+            suggestion.save();
+            this.save();
+        }
   }
 });
 
