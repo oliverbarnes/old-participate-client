@@ -3,7 +3,7 @@ import Ember from 'ember';
 var InitiativesShowRoute = Ember.Route.extend({
   model: function(params) {
     return this.store.find('initiative', params.initiative_id);
-    return this.store.createRecord('initiative');
+    return this.store.createRecord('suggestion');
   },
 
   actions: {
@@ -24,10 +24,11 @@ var InitiativesShowRoute = Ember.Route.extend({
 
     submit: function() {
       console.log('aaaaaa');
-      // var initiative = this.get('controller.model');
-      // initiative.save().then(function(){
-      // //   this.transitionTo('initiatives.show');
-      //   console.log('hhhhhhh');
+      var initiative = this.get('controller.model');
+      initiative.save();
+      //initiative.save().then(function(){
+      //  this.transitionTo('initiatives.show', model.get('id'));
+      //  console.log('hhhhhhh');
       //  });
 
     }
