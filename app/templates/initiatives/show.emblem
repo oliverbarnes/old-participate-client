@@ -2,6 +2,9 @@
   h2
     = title
 
+.issue_title
+  p Issue: #{issue.title}
+
 .description
   p
     = description
