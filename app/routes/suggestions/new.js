@@ -13,7 +13,7 @@ var SuggestionsNewRoute = Ember.Route.extend({
       suggestion.save().then(function(model) {
         // model.save();
         _this.transitionTo('suggestions.show', model.get('id'));
-        console.log('model:', suggestion.get(id));
+        console.log('model:', model);
         console.log('id:', model.get('id'));
       });
     }
