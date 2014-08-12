@@ -24,21 +24,5 @@ test('Successfully', function(){
         expect(find('.support').text()).to.equal('Support this initiative');
       });
     });
-    click( $("a:contains('Remove support for this initiative')") ).then(function() {
-      expect(find('.suggest').text()).to.equal('To make a suggestion, you must first support this initiative.');
-      click( $("a:contains('Support this initiative')") ).then(function() {
-        expect(find('.suggest').text()).to.equal('Make a suggestion');
-        click( $("a:contains('Make a suggestion')") ).then(function() {
-          expect(currentURL()).to.equal('/initiatives/fixture-0');
-          fillIn('div.suggest textarea'); 
-          //fillIn('div.suggestions', 'Create a kickstarter campaign to get the funds.');
-          click('form input[type=submit]').then(function() {
-            expect(currentURL()).to.equal('/initiatives/fixture-0');
-            //expect(find('.suggest').text()); // how to test textarea
-            //expect(find('.suggest.suggestions').text()).to.equal('Create a kickstarter campaign to get the funds.');
-          });
-        });
-      });
-    });
   });
 });

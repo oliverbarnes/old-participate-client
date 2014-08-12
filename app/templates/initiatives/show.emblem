@@ -14,35 +14,7 @@
     a click="removeSupport" href="#" Remove support for this initiative
   else
     a click="supportIt" href="#" Support this initiative
-    model.description
 
-
-.suggest
-  if isSupported 
-    if isSuggested
-      h3 Suggestions
-      ul 
-        each suggestion in suggestions
-          li = suggestion.details
-      p
-        = details
-      textarea.ember-text-area valueBinding="details"
-      a click="createSuggestion" href="#" Post suggestion.
-      
-      //form-for model
-        //=input details as="text"
-        //= submit disabled=isInvalid
-        //a click="createSuggestion" href="#" Create suggestion.
-        // .details
-        //   model.details
-          // hr
-          // p
-          //   = details
-        // ul 
-        //   each suggestion in suggestions
-        //     li = suggestion.details
-    else
-      a click="makeSuggestion" href="#" Make a suggestion
-    
-  else
-    p To make a suggestion, you must first support this initiative.
+     
+#menu
+  = link-to 'suggestions.new' | Make a suggestion
