@@ -16,13 +16,16 @@ suite('Supporting an initiative', {
 
 test('Successfully', function(){
   visit('/initiatives/1').then(function() {
+    expect(find('.new_suggestion').text()).to.equal('Note: To make suggestions for an initiative, you must first support it');
     click( $("a:contains('Support this initiative')") ).then(function() {
       expect(currentURL()).to.equal('/initiatives/1');
       expect(find('.support').text()).to.equal('Remove support for this initiative');
+      expect(find('.new_suggestion').text()).to.equal('Make a suggestion');
       click( $("a:contains('Remove support for this initiative')") ).then(function() {
         expect(currentURL()).to.equal('/initiatives/1');
-        expect(find('.support').text()).to.equal('Support this initiative');
-      });
+          expect(find('.support').text()).to.equal('Support this initiative');
+          expect(find('.new_suggestion').text()).to.equal('Note: To make suggestions for an initiative, you must first support it');
+      });      
     });
   });
 });
