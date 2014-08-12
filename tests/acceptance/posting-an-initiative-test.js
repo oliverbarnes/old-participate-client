@@ -17,6 +17,7 @@ suite('Posting an initiative', {
 test('Successfully', function(){
   visit('/').then(function() {
     click( $("a:contains('Start a new initiative')") ).then(function() {
+      expect($(':submit').attr('disabled')).to.equal('disabled');
       expect(currentURL()).to.equal('/initiatives/new');
       fillIn('div.title input', 'Public health clinic');
       fillIn('div.description textarea', 'Allocate compensation money to create a local public health clinic');
@@ -37,17 +38,24 @@ test('Successfully', function(){
   });
 });
 
-// TODO: pending finding a way to detect validation message
-// works when testing manually. 
-// test('With the title missing', function(){
-//   visit('/').then(function() {
-//     click( $("a:contains('Start a new initiative')") ).then(function() {
-//       expect($(':submit').attr('disabled')).to.equal('disabled');
-//       expect($("input :contains('Start a new initiative')"));
-//       fillIn('div.title input', '');
-//       fillIn('div.description textarea', 'Allocate compensation money to create a local public health clinic').then(function() {
-//         expect(find('.title .error').text()).to.equal("can't be blank");
-//       });  
-//     });
-//   });
-// });
+test('With the title missing', function(){
+  visit('/').then(function() {
+    click( $("a:contains('Start a new initiative')") ).then(function() {
+      expect(find('div.fieldWithErrors .error').text()).to.equal('');
+      triggerEvent('div.title input', 'blur').then(function() {
+        expect(find('div.fieldWithErrors .error').text()).to.equal("can't be blank");
+      });
+    });
+  });
+});
+
+test('With the description missing', function(){
+  visit('/').then(function() {
+    click( $("a:contains('Start a new initiative')") ).then(function() {
+      expect(find('div.fieldWithErrors .error').text()).to.equal('');
+      triggerEvent('div.description textarea', 'blur').then(function() {
+        expect(find('div.fieldWithErrors .error').text()).to.equal("can't be blank");
+      });
+    });
+  });
+});
