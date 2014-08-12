@@ -1,7 +1,12 @@
+08/12/2014
+==========
+* [#31](https://github.com/oliverbarnes/participate-frontend/pull/31): Test validation for initiative title and description (Closes issue [#12](https://github.com/oliverbarnes/participate-frontend/issues/12))
+* [#28](https://github.com/oliverbarnes/participate-frontend/pull/28): Initiative issue (Closes issue [#2](https://github.com/oliverbarnes/participate-frontend/issues/2))
+
 08/06/2014
 ==========
-* [#23](https://github.com/oliverbarnes/participate-frontend/pull/23)Working build for Travis CI
-* [#18](https://github.com/oliverbarnes/participate-frontend/pull/18)Added small support initiative feature (Closes issue [#13](https://github.com/oliverbarnes/participate-frontend/issues/13))
+* [#23](https://github.com/oliverbarnes/participate-frontend/pull/23): Working build for Travis CI
+* [#18](https://github.com/oliverbarnes/participate-frontend/pull/18): Added small support initiative feature (Closes issue [#13](https://github.com/oliverbarnes/participate-frontend/issues/13))
 
 07/28/2014
 ==========
