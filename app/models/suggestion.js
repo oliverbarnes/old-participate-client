@@ -15,7 +15,7 @@ Suggestion.reopenClass({
   FIXTURES: [
      {
        id: 100,
-       initiative: 'fixture-0',
+       initiative: '1',
        details: "Create a kickstarter campaign to get the funds."
      }
    ]

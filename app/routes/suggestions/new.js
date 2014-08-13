@@ -11,11 +11,9 @@ var SuggestionsNewRoute = Ember.Route.extend({
       var _this = this;
       var suggestion = this.get('controller.model');
       suggestion.save().then(function(model) {
-        // model.save();
         _this.transitionTo('suggestions.show', model.get('id'));
         console.log('model:', model);
         console.log('id:', model.get('id'));
-        //debugger;
       });
     }
   }
