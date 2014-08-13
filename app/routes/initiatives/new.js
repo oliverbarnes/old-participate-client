@@ -17,7 +17,9 @@ var InitiativesNewRoute = Ember.Route.extend({
                   });
       initiative.set('issue', issue);
       initiative.save().then(function(model) {
-        _this.transitionTo('initiatives.show', model.get('id'));
+        // model.save();
+        console.log('initiatives model:', model);
+        _this.transitionTo('initiative.suggestions', model.get('id'));
       });
     }
   }

@@ -1,0 +1,6 @@
+form-for controller
+  = input details as="text"
+  if view.showError
+    error-field details
+
+  = submit disabled=isInvalid
