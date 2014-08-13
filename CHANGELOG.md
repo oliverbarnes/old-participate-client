@@ -1,6 +1,7 @@
 08/20/2014
 ==========
 * [#38](https://github.com/oliverbarnes/participate-frontend/pull/38): First stab at styling with Bourbon and Bitters (Closes issue [#8](https://github.com/oliverbarnes/participate-frontend/issues/8))
+* [#36](https://github.com/oliverbarnes/participate-frontend/pull/36): Lists initiatives (Closes issue [#26](https://github.com/oliverbarnes/participate-frontend/issues/26))
 
 08/19/2014
 ==========
@@ -9,8 +10,8 @@
 
 08/12/2014
 ==========
-* [#31](https://github.com/oliverbarnes/participate-frontend/pull/31): Test validation for initiative title and description (Closes issue [#12](https://github.com/oliverbarnes/participate-frontend/issues/12))
 * [#28](https://github.com/oliverbarnes/participate-frontend/pull/28): Initiative issue (Closes issue [#2](https://github.com/oliverbarnes/participate-frontend/issues/2))
+* [#31](https://github.com/oliverbarnes/participate-frontend/pull/31): Test validation for initiative title and description (Closes issue [#12](https://github.com/oliverbarnes/participate-frontend/issues/12))
 
 08/06/2014
 ==========

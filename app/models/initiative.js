@@ -26,6 +26,20 @@ Initiative.reopenClass({
       description: "Allocate compensation money to create a local public health clinic",
       isSupported: false,
       suggestions: [1]
+    },
+    {
+      id: 2,
+      issue: 1,
+      title: "Plastic recyling program",
+      description: "Allocate compensation money to create a recycling program for plastic bottles.",
+      isSupported: false
+    },
+    {
+      id: 3,
+      issue: 1,
+      title: "Public library upgrade",
+      description: "Allocate compensation money to buy more computers for the library and other modern services.",
+      isSupported: false
     }
   ]
 });
