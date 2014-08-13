@@ -16,23 +16,5 @@
     a click="supportIt" href="#" Support this initiative
 
      
-//#menu
-  // = link-to model 'suggestions.new' | Make a suggestion
-
-  // each controller
-  //   suggestion.details
-
-// ul
-//   each suggestion in suggestions
-//     li = suggestion.details
-
-//How to list suggestions under initiative (visually, on the page)?
-
-//Use setupControler on initiativeShowRoute?
-
-//Use a separate SuggestionsController extending ArrayController? Then,
-// how to access that from within the initiative show template
-
-//Is it possible to include/partial render another template?
-
-//REadup on routes / controller.... again :)
+#menu
+  = link-to 'suggestions.new' | Make a suggestion
