@@ -15,3 +15,7 @@
   else
     a click="supportIt" href="#" Support this initiative
 
+/ .new_suggestion
+/   = link-to 'suggestions.new' | Make a suggestion
+
+/ =outlet
