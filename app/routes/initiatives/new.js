@@ -10,6 +10,7 @@ var InitiativesNewRoute = Ember.Route.extend({
       var _this = this,
           content = this.controller.content,
           initiative = this.get('controller.model');
+      debugger;
 
       var issue = this.store.createRecord('issue', {
                     title: content.issue_title,
