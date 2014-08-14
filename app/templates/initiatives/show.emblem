@@ -18,3 +18,5 @@
      
 #menu
   = link-to 'suggestions.new' | Make a suggestion
+
+  =outlet
