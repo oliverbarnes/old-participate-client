@@ -1,0 +1,4 @@
+.body
+  = details
+
+p = initiative.title
