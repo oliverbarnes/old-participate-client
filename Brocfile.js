@@ -5,6 +5,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var pickFiles = require('broccoli-static-compiler');
 var mergeTrees = require('broccoli-merge-trees');
 //
+var sass = require('broccoli-sass');
 
 var app = new EmberApp({
   name: require('./package.json').name,
@@ -12,6 +13,10 @@ var app = new EmberApp({
   minifyCSS: {
     enabled: true,
     options: {}
+  },
+
+  sassOptions: {
+    includePaths: require('node-neat').includePaths
   },
 
   getEnvJSON: require('./config/environment')

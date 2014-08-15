@@ -1,3 +1,12 @@
+08/20/2014
+==========
+* [#38](https://github.com/oliverbarnes/participate-frontend/pull/38): First stab at styling with Bourbon and Bitters (Closes issue [#8](https://github.com/oliverbarnes/participate-frontend/issues/8))
+
+08/19/2014
+==========
+* Fix tests teardown conflict bug. Closes [#34](https://github.com/oliverbarnes/participate-frontend/issues/34)
+* [#33](https://github.com/oliverbarnes/participate-frontend/pull/33): Making suggestions
+
 08/12/2014
 ==========
 * [#31](https://github.com/oliverbarnes/participate-frontend/pull/31): Test validation for initiative title and description (Closes issue [#12](https://github.com/oliverbarnes/participate-frontend/issues/12))
@@ -18,8 +27,7 @@
 * Installed EasyForm
 
 06/30/2014
-==========
-
+=========
 * Added support for [Mocha](http://visionmedia.github.io/mocha/) following [steps described on this ember-cli issue](https://github.com/stefanpenner/ember-cli/issues/769) and [this changeset on the demo app the issue refers to](https://github.com/WMeldon/ember-cli-todos/compare/mocha-compat)
 
 Previously
