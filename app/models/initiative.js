@@ -4,6 +4,7 @@ var Initiative = DS.Model.extend(Ember.Validations.Mixin, {
   title: DS.attr('string'),
   description: DS.attr('string'),
   isSupported: DS.attr('boolean'),
+  issue: DS.belongsTo('issue'),
 
   validations: {
     title: {
@@ -18,7 +19,8 @@ var Initiative = DS.Model.extend(Ember.Validations.Mixin, {
 Initiative.reopenClass({
   FIXTURES: [
     {
-      id: 'fixture-0',
+      id: 1,
+      issue: 1,
       title: "Public health clinic",
       description: "Allocate compensation money to create a local public health clinic"
     }

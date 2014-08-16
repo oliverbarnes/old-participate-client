@@ -7,10 +7,16 @@ var InitiativesNewRoute = Ember.Route.extend({
 
   actions: {
     submit: function() {
-      var _this = this;
-      var initiative = this.get('controller.model');
+      var _this = this,
+          content = this.controller.content,
+          initiative = this.get('controller.model');
+
+      var issue = this.store.createRecord('issue', {
+                    title: content.issue_title,
+                    description: content.issue_description
+                  });
+      initiative.set('issue', issue);
       initiative.save().then(function(model) {
-        // model.save();
         _this.transitionTo('initiatives.show', model.get('id'));
       });
     }
