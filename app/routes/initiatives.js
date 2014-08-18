@@ -6,6 +6,7 @@ var InitiativesRoute = Ember.Route.extend({
     //return this.store.find('initiative', params.initiative_id);
     return this.store.find('initiative');
   }
+
 });
 
 

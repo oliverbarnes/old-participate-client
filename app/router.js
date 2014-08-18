@@ -13,7 +13,6 @@ Router.map(function() {
       this.route('show', {path: '/:suggestion_id'});
     });
   });
-  this.resource('initiatives');
 });
 
 export default Router;
