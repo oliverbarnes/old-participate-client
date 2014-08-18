@@ -15,8 +15,20 @@
   else
     a click="supportIt" href="#" Support this initiative
 
-     
+
+h3 Proposed Suggestions
+ul
+  each suggestion in suggestions
+    li = suggestion.details
+
+
+
 #menu
   = link-to 'suggestions.new' | Make a suggestion
 
   =outlet
+
+= app-profile
+
+// .details
+//   = input valueBinding="details"

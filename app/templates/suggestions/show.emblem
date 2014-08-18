@@ -1,4 +1,24 @@
-.body
+.details
   = details
 
-p = initiative.title
+//p = initiative.title //DOESN'T WORK
+
+// ul
+//   each suggestion in suggestions
+//     li = suggestion.details
+
+// ul
+//   each in model
+//     details
+
+// ul
+//   each controller
+//     details
+
+// ul
+//   each content.details
+//     this.details
+
+// ul
+//   each
+//     initiative.suggestions
