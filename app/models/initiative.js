@@ -1,4 +1,6 @@
 import 'vendor/ember-validations/index';
+import Ember from 'ember';
+import DS from 'ember-data';
 
 var Initiative = DS.Model.extend(Ember.Validations.Mixin, {
   title: DS.attr('string'),
