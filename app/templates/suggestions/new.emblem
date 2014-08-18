@@ -1,0 +1,6 @@
+form-for model
+  = input description as="text"
+  if view.showError
+    error-field description
+
+  = submit disabled=isInvalid

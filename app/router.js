@@ -8,6 +8,9 @@ Router.map(function() {
   this.resource('initiatives', function() {
     this.route('new');
     this.route('show', {path: '/:initiative_id'});
+    this.resource('suggestions', {path:'/:initiative_id/suggestions'}, function(){
+      this.route('new');
+    });
   });
 });
 
