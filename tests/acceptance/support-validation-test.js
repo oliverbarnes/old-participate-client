@@ -15,7 +15,6 @@ suite('Support validation', {
 });
 
 test('Successfully', function(){
-  // visit('/initiatives/1').then(function() {
-    
-  // });
+  visit('/initiatives'); // works 
+  //visit('/initiatives/1'); // not works
 });

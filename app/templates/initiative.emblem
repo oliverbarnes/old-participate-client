@@ -16,6 +16,9 @@
     a click="supportIt" href="#" Support this initiative
 
 .new_suggestion
-  = link-to 'suggestions.new' | Make a suggestion
+  if isSupported
+    = link-to 'suggestions.new' | Make a suggestion
+  else 
+    p Note: To make suggestions for an initiative, you must first support it
 
 =outlet
