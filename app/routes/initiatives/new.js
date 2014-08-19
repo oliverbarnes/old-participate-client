@@ -12,15 +12,14 @@ var InitiativesNewRoute = Ember.Route.extend({
           initiative = this.get('controller.model');
 
       var issue = this.store.createRecord('issue', {
+                    //dirty hack, while figuring out why EasyForm isn't 
+                    // passing params to submit()
                     title: content.issue_title,
                     description: content.issue_description
                   });
       initiative.set('issue', issue);
       initiative.save().then(function(model) {
-        // model.save();
-        console.log('initiatives model:', model);
-        console.log('initiative id:', model.get('id'));
-        _this.transitionTo('initiatives.show', model.get('id'));
+        _this.transitionTo('initiative', model.get('id'));
       });
     }
   }

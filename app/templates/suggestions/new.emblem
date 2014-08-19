@@ -1,4 +1,4 @@
-form-for model
+form-for controller
   = input details as="text"
   if view.showError
     error-field details
