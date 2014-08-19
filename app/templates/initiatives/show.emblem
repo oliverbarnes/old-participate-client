@@ -12,23 +12,5 @@
 .support
   if isSupported
     a click="removeSupport" href="#" Remove support for this initiative
-    // br
-    // p You can remove support or propose a suggestion now
-    // = link-to 'suggestions.new' | Make a suggestion
-    // = outlet
-    // ul
-    //   each suggestion in suggestions
-    //     li = suggestion.description
   else
-    //p Note: To make suggestions for a initiative, you must first support this initiative
     a click="supportIt" href="#" Support this initiative
-
-.supportValidation
-  if isSupported
-    = link-to 'suggestions.new' | Make a suggestion
-    = outlet
-    ul
-      each suggestion in suggestions
-        li = suggestion.description
-  else
-    p Note: To make suggestions for a initiative, you must first support this initiative
