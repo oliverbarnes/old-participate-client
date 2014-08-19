@@ -1,3 +1,4 @@
-ul
+p Suggestions:
+ul.suggestions
   each
-    li = details
+    li.suggestion = details

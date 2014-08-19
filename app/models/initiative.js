@@ -25,7 +25,8 @@ Initiative.reopenClass({
       title: "Public health clinic",
       description: "Allocate compensation money to create a local public health clinic",
       isSupported: false,
-      suggestions: [100]
+      // suggestions: [{id: 1, details: "Make sure they have a doctor who'll make house calls"}]
+      suggestions: [1]
     }
   ]
 });
