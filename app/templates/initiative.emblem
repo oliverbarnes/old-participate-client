@@ -14,3 +14,11 @@
     a click="removeSupport" href="#" Remove support for this initiative
   else
     a click="supportIt" href="#" Support this initiative
+<<<<<<< HEAD:app/templates/initiatives/show.emblem
+=======
+
+.new_suggestion
+  = link-to 'suggestions.new' | Make a suggestion
+
+=outlet
+>>>>>>> f445bb1bc034d1832eb1c07a6dd8e9883979c3c5:app/templates/initiative.emblem

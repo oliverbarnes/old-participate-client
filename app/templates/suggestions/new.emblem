@@ -1,6 +1,6 @@
-form-for model
-  = input description as="text"
+form-for controller
+  = input details as="text"
   if view.showError
-    error-field description
+    error-field details
 
   = submit disabled=isInvalid

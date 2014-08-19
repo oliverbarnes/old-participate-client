@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
-var InitiativesShowRoute = Ember.Route.extend({
+var InitiativeRoute = Ember.Route.extend({
+
   model: function(params) {
     return this.store.find('initiative', params.initiative_id);
   },
@@ -18,4 +19,4 @@ var InitiativesShowRoute = Ember.Route.extend({
   }
 });
 
-export default InitiativesShowRoute;
+export default InitiativeRoute;

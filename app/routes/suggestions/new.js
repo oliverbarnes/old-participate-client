@@ -8,12 +8,17 @@ var SuggestionsNewRoute = Ember.Route.extend({
   actions: {
     submit: function() {
       var _this = this;
-      var suggestion = this.get('controller.model');
+      var initiative = this.modelFor('initiative');
+      var suggestion = this.store.createRecord('suggestion', {
+            //dirty hack, while figuring out why EasyForm isn't 
+            // passing the params to submit()
+            details: this.controller.content._attributes.details
+      });
       suggestion.save().then(function(model) {
-        //_this.transitionTo('initiatives.show'); //transition works but not show typed suggestions
-        _this.transitionTo('suggestions.show' , model.get('id'));
-        console.log('model:', model);
-        console.log('id:', model.get('id'));
+        initiative.get('suggestions').then(function(suggestions) {
+          suggestions.pushObject(suggestion);
+        });
+        _this.transitionTo('suggestions');
       });
     }
   }

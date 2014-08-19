@@ -1,0 +1,21 @@
+.title
+  h2
+    = title
+
+.issue_title
+  p Issue: #{issue.title}
+
+.description
+  p
+    = description
+
+.support
+  if isSupported
+    a click="removeSupport" href="#" Remove support for this initiative
+  else
+    a click="supportIt" href="#" Support this initiative
+
+/ .new_suggestion
+/   = link-to 'suggestions.new' | Make a suggestion
+
+/ =outlet
