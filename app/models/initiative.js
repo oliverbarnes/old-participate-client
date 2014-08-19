@@ -5,6 +5,7 @@ var Initiative = DS.Model.extend(Ember.Validations.Mixin, {
   description: DS.attr('string'),
   isSupported: DS.attr('boolean'),
   issue: DS.belongsTo('issue'),
+  suggestions: DS.hasMany('suggestion', {async: true}),
 
   validations: {
     title: {
@@ -22,9 +23,13 @@ Initiative.reopenClass({
       id: 1,
       issue: 1,
       title: "Public health clinic",
-      description: "Allocate compensation money to create a local public health clinic"
+      description: "Allocate compensation money to create a local public health clinic",
+      isSupported: false,
+      // suggestions: [{id: 1, details: "Make sure they have a doctor who'll make house calls"}]
+      suggestions: [1]
     }
   ]
 });
+
 
 export default Initiative;
