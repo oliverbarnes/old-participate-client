@@ -22,15 +22,7 @@ app.hinting = false;
 //
 
 // Use this to add additional libraries to the generated output files.
-//app.import('vendor/ember-data/ember-data.js');
-app.import({
-  development: 'vendor/ember-data/ember-data.js',
-  production:  'vendor/ember-data/ember-data.prod.js'
-}, {
-   'ember-data': [
-     'default'
-   ]
-});
+app.import('vendor/ember-data/ember-data.js');
 
 app.import('vendor/ember-validations/index.js');
 
