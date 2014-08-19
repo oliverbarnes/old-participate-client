@@ -18,7 +18,7 @@ test('Successfully', function(){
   visit('/').then(function() {
     click( $("a:contains('here')") ).then(function() {
       expect(currentURL()).to.equal('/initiatives');
-      expect(find('.title').text()).to.equal('Public health clinic');
+      expect(find('.info').text()).to.equal('Public health clinic: Allocate compensation money to create a local public health clinic');
     });
   });
 });
