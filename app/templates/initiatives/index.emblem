@@ -1,0 +1,7 @@
+h2 List of initiatives
+
+
+.info
+  ul
+    each model
+      li #{title}: #{description}
