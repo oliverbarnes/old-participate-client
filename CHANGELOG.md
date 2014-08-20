@@ -1,5 +1,9 @@
 08/20/2014
 ==========
+* [#36](https://github.com/oliverbarnes/participate-frontend/pull/36): Listing initiative titles (Closes issue [#26](https://github.com/oliverbarnes/participate-frontend/issues/26))
+
+* 08/20/2014
+==========
 * [#38](https://github.com/oliverbarnes/participate-frontend/pull/38): First stab at styling with Bourbon and Bitters (Closes issue [#8](https://github.com/oliverbarnes/participate-frontend/issues/8))
 
 08/19/2014
