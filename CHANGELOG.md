@@ -1,3 +1,7 @@
+08/21/2014
+==========
+* [#41](https://github.com/oliverbarnes/participate-frontend/pull/41): Lists issues (Closes issue [#27](https://github.com/oliverbarnes/participate-frontend/issues/27))
+
 08/20/2014
 ==========
 * [#38](https://github.com/oliverbarnes/participate-frontend/pull/38): First stab at styling with Bourbon and Bitters (Closes issue [#8](https://github.com/oliverbarnes/participate-frontend/issues/8))
