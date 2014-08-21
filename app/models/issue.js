@@ -21,7 +21,7 @@ Issue.reopenClass({
       id: 1,
       initiative: 1,
       title: "What to do with the compensation money from the dam's impact?",
-      description: "The contruction company in charge of the dam will pay 10 million in compensation to the local affected population. What to do with it?"
+      description: "The construction company in charge of the dam will pay 10 million in compensation to the local affected population. What to do with it?"
     }
   ]
 });

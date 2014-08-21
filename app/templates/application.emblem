@@ -3,4 +3,7 @@ h2 Participate App
 #menu
   = link-to 'initiatives.new' | Start a new initiative
 
+p
+  | Click #{link-to 'initiatives' | here} for a list of initiatives
+
 =outlet
