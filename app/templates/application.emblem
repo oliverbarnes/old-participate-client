@@ -6,4 +6,7 @@ h2 Participate App
 p
   | Click #{link-to 'initiatives' | here} for a list of initiatives
 
+p
+  | Click #{link-to 'issues' | here} for a list of issues
+
 =outlet
