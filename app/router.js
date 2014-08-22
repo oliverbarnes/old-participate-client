@@ -13,7 +13,9 @@ Router.map(function() {
       });
     }); 
   });
-  this.resource('issues');
+  this.resource('issues', { path: '/issues' }, function() {
+    this.route('issue', { path: '/:issue_id' });
+  });
 });
 
 export default Router;
