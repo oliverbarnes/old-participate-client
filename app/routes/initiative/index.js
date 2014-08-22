@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
-var InitiativeRoute = Ember.Route.extend({
-
-  model: function(params) {
-    return this.store.find('initiative', params.initiative_id);
-  },
+var InitiativeIndexRoute = Ember.Route.extend({
 
   actions: {
     supportIt: function() {
@@ -17,6 +13,7 @@ var InitiativeRoute = Ember.Route.extend({
       initiative.set('isSupported', false)
     }
   }
+  
 });
 
-export default InitiativeRoute;
+export default InitiativeIndexRoute;
