@@ -16,13 +16,18 @@ suite('Making a suggestion to an initiative', {
 
 test('Successfully', function(){
   visit('/initiatives/1').then(function() {
-    click( $("a:contains('Make a suggestion')") ).then(function() {
-      expect(currentURL()).to.equal('/initiatives/1/suggestions/new');
-      fillIn('div.details textarea', "Make sure there's a doctor available for house calls");
-      click('form input[type=submit]').then(function() {
-        expect(currentURL()).to.equal('/initiatives/1/suggestions');
-        expect(find('.suggestion').first().text()).to.equal("Make sure there's a doctor available for house calls");
+    expect( $("a:contains('Make a suggestion')").length ).to.equal(0);
+    expect(find('.new_suggestion').text()).to.equal('Note: To make suggestions for an initiative, you must first support it');
+    click( $("a:contains('Support this initiative')") ).then(function() {
+      click( $("a:contains('Make a suggestion')") ).then(function() {
+        expect($(':submit').attr('disabled')).to.equal('disabled');
+        expect(currentURL()).to.equal('/initiatives/1/suggestions/new');
+        fillIn('div.details textarea', "Make sure there's a doctor available for house calls");
+        click('form input[type=submit]').then(function() {
+          expect(currentURL()).to.equal('/initiatives/1/suggestions');
+          expect(find('.suggestion').first().text()).to.equal("Make sure there's a doctor available for house calls");
+        });
       });
-    });
+    });     
   });
 });

@@ -1,3 +1,8 @@
+08/26/2014
+==========
+* Make a support and fix submit button 
+* [#45](https://github.com/oliverbarnes/participate-frontend/pull/45)
+
 08/21/2014
 ==========
 * [#41](https://github.com/oliverbarnes/participate-frontend/pull/41): Lists issues (Closes issue [#27](https://github.com/oliverbarnes/participate-frontend/issues/27))
