@@ -1,3 +1,8 @@
+09/01/2014
+==========
+* Dsiplay initiative info after clicking initiative title in the list. Closes [#46](https://github.com/oliverbarnes/participate-frontend/issues/46)
+* [#48](https://github.com/oliverbarnes/participate-frontend/pull/48): Viewing an initiative
+
 08/29/2014
 ==========
 * [#43](https://github.com/oliverbarnes/participate-frontend/pull/43): Displays issues in a clickable list. Issue description is shown when a list item is toggled. (Closes issue [#25](https://github.com/oliverbarnes/participate-frontend/issues/25))
