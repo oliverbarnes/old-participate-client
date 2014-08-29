@@ -1,0 +1,9 @@
+
+h2 List of issues
+
+ul.issues
+  each model itemController="issues/issue"
+    li.issue
+      a click="toggleExpand" #{title}
+      if isExpanded
+        p.description #{description}

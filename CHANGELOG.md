@@ -1,3 +1,7 @@
+08/29/2014
+==========
+* [#43](https://github.com/oliverbarnes/participate-frontend/pull/43): Displays issues in a clickable list. Issue description is shown when a list item is toggled. (Closes issue [#25](https://github.com/oliverbarnes/participate-frontend/issues/25))
+
 08/26/2014
 ==========
 * Make a support and fix submit button 
