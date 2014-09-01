@@ -24,7 +24,7 @@ test('Successfully', function(){
         expect(currentURL()).to.equal('/initiatives/1/suggestions/new');
         fillIn('div.details textarea', "Make sure there's a doctor available for house calls");
         click('form input[type=submit]').then(function() {
-          expect(currentURL()).to.equal('/initiatives/1/suggestions');
+          expect(currentURL()).to.equal('/initiatives/1');
           expect(find('.suggestion').first().text()).to.equal("Make sure there's a doctor available for house calls");
         });
       });

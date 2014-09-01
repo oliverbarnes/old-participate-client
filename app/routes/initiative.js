@@ -6,6 +6,11 @@ var InitiativeRoute = Ember.Route.extend({
     return this.store.find('initiative', params.initiative_id);
   },
 
+  setupController: function(controller, model) { 
+    controller.set('isVisible', false); 
+    controller.set('model', model);
+  },
+
   actions: {
     supportIt: function() {
       var initiative = this.get('controller.model');
@@ -17,6 +22,7 @@ var InitiativeRoute = Ember.Route.extend({
       initiative.set('isSupported', false)
     }
   }
+
 });
 
 export default InitiativeRoute;

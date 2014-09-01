@@ -18,7 +18,7 @@ var SuggestionsNewRoute = Ember.Route.extend({
         initiative.get('suggestions').then(function(suggestions) {
           suggestions.pushObject(suggestion);
         });
-        _this.transitionTo('suggestions');
+        _this.transitionTo('initiative.index');
       });
     }
   }

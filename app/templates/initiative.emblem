@@ -21,4 +21,12 @@
   else 
     p Note: To make suggestions for an initiative, you must first support it
 
+h2 List of suggestions
+
+ul.suggestions
+  each suggestion in suggestions
+    li.suggestion = suggestion.details
+  else
+     p.nosuggestion No suggestions. Be the first to write one!
+
 =outlet

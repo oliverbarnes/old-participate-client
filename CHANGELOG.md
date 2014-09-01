@@ -1,3 +1,7 @@
+09/08/2014
+==========
+* [#54](https://github.com/oliverbarnes/participate-frontend/pull/54): Displays list of suggestions associated with a given initiative. (Closes issue [#30](https://github.com/oliverbarnes/participate-frontend/issues/30))
+
 09/01/2014
 ==========
 * [#48](https://github.com/oliverbarnes/participate-frontend/pull/48): Viewing an initiative. Closes [#46](https://github.com/oliverbarnes/participate-frontend/issues/46)
