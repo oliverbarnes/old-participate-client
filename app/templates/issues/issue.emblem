@@ -1,9 +1,0 @@
-h1 Issue
-
-.title
-  h2
-    = title
-
-.description
-  p
-    = description
