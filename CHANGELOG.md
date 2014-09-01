@@ -1,3 +1,7 @@
+09/19/2014
+==========
+* [#61](https://github.com/oliverbarnes/participate-frontend/pull/61): Allows user to open an issue's description by specifying issue id in the url. (Closes issue [#47](https://github.com/oliverbarnes/participate-frontend/issues/47))
+
 09/17/2014
 ==========
 * [#59](https://github.com/oliverbarnes/participate-frontend/pull/59): Hide suggestion box when visiting new suggestion url on an initiative that's not supported (Closes issue [#58](https://github.com/oliverbarnes/participate-frontend/issues/58))

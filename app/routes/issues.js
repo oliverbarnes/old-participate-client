@@ -1,10 +1,9 @@
 import Ember from 'ember';
 
-var IssuesIndexRoute = Ember.Route.extend({
+var IssuesRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('issue');
   }
-
 });
 
-export default IssuesIndexRoute;
+export default IssuesRoute;

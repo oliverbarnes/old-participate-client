@@ -2,13 +2,12 @@ import Ember from 'ember';
 
 var IssueController = Ember.ObjectController.extend({
 
-  actions: {
-    toggleExpand: function() {
-      this.toggleProperty('isExpanded');
-    }
-  },
+  needs: ['issues'],
+  expandedIssueId: Ember.computed.alias('controllers.issues.expandedIssueId'),
 
-  isExpanded: false
+  isExpanded: function() {
+    return this.get('id') === this.get('expandedIssueId');
+  }.property('id', 'expandedIssueId'),
 
 });
 
