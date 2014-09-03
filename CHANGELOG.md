@@ -1,6 +1,7 @@
 09/08/2014
 ==========
 * [#54](https://github.com/oliverbarnes/participate-frontend/pull/54): Displays list of suggestions associated with a given initiative. (Closes issue [#30](https://github.com/oliverbarnes/participate-frontend/issues/30))
+* [#50](https://github.com/oliverbarnes/participate-frontend/pull/50): Hide suggestion box when support for initiative is removed. Closes [#49](https://github.com/oliverbarnes/participate-frontend/issues/49)
 
 09/01/2014
 ==========
@@ -56,4 +57,3 @@ Previously
 
 * Added support for [Emblem](http://emblemjs.com)
 * Generated ember-cli app
-
