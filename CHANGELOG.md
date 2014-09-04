@@ -1,7 +1,6 @@
 09/01/2014
 ==========
-* Dsiplay initiative info after clicking initiative title in the list. Closes [#46](https://github.com/oliverbarnes/participate-frontend/issues/46)
-* [#48](https://github.com/oliverbarnes/participate-frontend/pull/48): Viewing an initiative
+* [#48](https://github.com/oliverbarnes/participate-frontend/pull/48): Viewing an initiative. Closes [#46](https://github.com/oliverbarnes/participate-frontend/issues/46)
 
 08/29/2014
 ==========
@@ -9,8 +8,7 @@
 
 08/26/2014
 ==========
-* Make a support and fix submit button 
-* [#45](https://github.com/oliverbarnes/participate-frontend/pull/45)
+* [#45](https://github.com/oliverbarnes/participate-frontend/pull/45): Make a support and fix submit button
 
 08/21/2014
 ==========
