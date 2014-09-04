@@ -4,8 +4,6 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 // Mocha support
 var pickFiles = require('broccoli-static-compiler');
 var mergeTrees = require('broccoli-merge-trees');
-//
-var sass = require('broccoli-sass');
 
 var app = new EmberApp({
   name: require('./package.json').name,
@@ -16,7 +14,7 @@ var app = new EmberApp({
   },
 
   sassOptions: {
-    includePaths: require('node-neat').includePaths
+    includePaths: require('node-neat').with('app/styles/bitters')
   },
 
   getEnvJSON: require('./config/environment')
