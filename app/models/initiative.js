@@ -25,14 +25,15 @@ Initiative.reopenClass({
       title: "Public health clinic",
       description: "Allocate compensation money to create a local public health clinic",
       isSupported: false,
-      suggestions: [1]
+      suggestions: [1,2,3]
     },
     {
       id: 2,
       issue: 1,
       title: "Plastic recyling program",
       description: "Allocate compensation money to create a recycling program for plastic bottles.",
-      isSupported: false
+      isSupported: false,
+      suggestions: [4]
     },
     {
       id: 3,

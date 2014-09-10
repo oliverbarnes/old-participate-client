@@ -3,4 +3,3 @@ h2 List of initiatives
 ul.initiatives
   each model  
     li.initiative = link-to "initiative" id | #{title}
-      
