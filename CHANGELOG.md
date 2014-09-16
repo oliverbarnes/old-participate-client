@@ -1,3 +1,7 @@
+09/16/2014
+==========
+* [#59](https://github.com/oliverbarnes/participate-frontend/pull/59): Bug on making suggestion via manual URL(Closes issue [#58](https://github.com/oliverbarnes/participate-frontend/issues/58))
+
 09/08/2014
 ==========
 * [#54](https://github.com/oliverbarnes/participate-frontend/pull/54): Displays list of suggestions associated with a given initiative. (Closes issue [#30](https://github.com/oliverbarnes/participate-frontend/issues/30))
