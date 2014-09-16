@@ -14,12 +14,18 @@ var InitiativeRoute = Ember.Route.extend({
   actions: {
     supportIt: function() {
       var initiative = this.get('controller.model');
-      initiative.set('isSupported', true)
+      initiative.set('isSupported', true);
     },
 
     removeSupport: function() {
       var initiative = this.get('controller.model');
-      initiative.set('isSupported', false)
+      initiative.set('isSupported', false);
+    },
+
+    clickIt: function() {
+      var initiative = this.get('controller.model');
+      initiative.set('isClicked', true);
+      this.transitionTo('suggestions.new');
     }
   }
 

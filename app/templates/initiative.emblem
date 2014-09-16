@@ -17,7 +17,9 @@
 
 .new_suggestion
   if isSupported
-    = link-to 'suggestions.new' | Make a suggestion
+    a click="clickIt" href="/suggestions/new" Make a suggestion
+    if isClicked
+      = outlet
   else 
     p Note: To make suggestions for an initiative, you must first support it
 
@@ -28,5 +30,3 @@ ul.suggestions
     li.suggestion = suggestion.details
   else
      p.nosuggestion No suggestions. Be the first to write one!
-
-=outlet
