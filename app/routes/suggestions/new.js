@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
 var SuggestionsNewRoute = Ember.Route.extend({
+  beforeModel: function(transition) {
+    if (!this.controllerFor('initiative').get('isSupported')) {
+      this.transitionTo('initiative');
+    }
+  },
+
   model: function(params) {
     return this.store.createRecord('suggestion', params);
   },

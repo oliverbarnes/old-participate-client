@@ -5,7 +5,7 @@ var App;
 
 var expect = chai.expect
 
-suite('Making a suggestion to an initiative', {
+suite('Making a suggestion', {
   setup: function(){
     App = startApp();
   },
@@ -14,10 +14,8 @@ suite('Making a suggestion to an initiative', {
   }
 });
 
-test('Successfully', function(){
+test('To a supported initiative, successfully', function(){
   visit('/initiatives/1').then(function() {
-    expect( $("a:contains('Make a suggestion')").length ).to.equal(0);
-    expect(find('.new_suggestion').text()).to.equal('Note: To make suggestions for an initiative, you must first support it');
     click( $("a:contains('Support this initiative')") ).then(function() {
       click( $("a:contains('Make a suggestion')") ).then(function() {
         expect($(':submit').attr('disabled')).to.equal('disabled');
@@ -29,5 +27,18 @@ test('Successfully', function(){
         });
       });
     });     
+  });
+});
+
+test('To a unsupported initiative', function(){
+  visit('/initiatives/1').then(function() {
+    expect( $("a:contains('Make a suggestion')").length ).to.equal(0);
+    expect(find('.new_suggestion').text()).to.equal('Note: To make suggestions for an initiative, you must first support it');
+  });
+  visit('/initiatives/1/suggestions/new').then(function() {
+    expect(currentURL()).to.equal('/initiatives/1');
+    expect( $("a:contains('Make a suggestion')").length ).to.equal(0);
+    expect(find('.new_suggestion').text()).to.equal('Note: To make suggestions for an initiative, you must first support it');
+    expect($("textarea").length).to.equal(0);
   });
 });

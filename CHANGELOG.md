@@ -1,7 +1,11 @@
+09/17/2014
+==========
+* [#59](https://github.com/oliverbarnes/participate-frontend/pull/59): Hide suggestion box when visiting new suggestion url on an initiative that's not supported (Closes issue [#58](https://github.com/oliverbarnes/participate-frontend/issues/58))
+* [#50](https://github.com/oliverbarnes/participate-frontend/pull/50): Hide suggestion box when support for initiative is removed. Closes [#49](https://github.com/oliverbarnes/participate-frontend/issues/49)
+
 09/08/2014
 ==========
 * [#54](https://github.com/oliverbarnes/participate-frontend/pull/54): Displays list of suggestions associated with a given initiative. (Closes issue [#30](https://github.com/oliverbarnes/participate-frontend/issues/30))
-* [#50](https://github.com/oliverbarnes/participate-frontend/pull/50): Hide suggestion box when support for initiative is removed. Closes [#49](https://github.com/oliverbarnes/participate-frontend/issues/49)
 
 09/01/2014
 ==========
