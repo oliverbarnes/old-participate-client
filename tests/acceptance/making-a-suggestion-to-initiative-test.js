@@ -26,7 +26,7 @@ test('To a supported initiative, successfully', function(){
           expect(find('.suggestion').first().text()).to.equal("Make sure there's a doctor available for house calls");
         });
       });
-    });     
+    });
   });
 });
 

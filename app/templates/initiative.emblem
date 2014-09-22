@@ -11,14 +11,15 @@
 
 .support
   if isSupported
-    a click="removeSupport" href="#" Remove support for this initiative
+    a click="openModal 'alert' model" Remove support for this initiative
+    =outlet alert
   else
     a click="supportIt" href="#" Support this initiative
 
 .new_suggestion
   if isSupported
     = link-to 'suggestions.new' | Make a suggestion
-  else 
+  else
     p Note: To make suggestions for an initiative, you must first support it
 
 h2 List of suggestions
