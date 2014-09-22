@@ -13,6 +13,8 @@ var IssueRoute = Ember.Route.extend({
 
   deactivate: function() {
     this.controllerFor('issues').set('expandedIssueId', null);
+    this.controllerFor('issues').set('issueExists', true);
+    this.controllerFor('issues').set('savedIssueTitle', this.controller.content._data.title);
   }
 
 });

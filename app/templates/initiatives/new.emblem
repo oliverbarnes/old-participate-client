@@ -1,11 +1,16 @@
 form-for controller
-  = input issue_title
-  if view.showError
-    error-field issue_title
 
-  = input issue_description as="text"
-  if view.showError
-    error-field issue_description
+  if issueExists
+    p.issue_title Issue title: #{savedIssueTitle}
+
+  else  
+      = input issue_title
+      if view.showError
+        error-field issue_title
+
+      = input issue_description as="text"
+      if view.showError
+        error-field issue_description
 
   = input title
   if view.showError
