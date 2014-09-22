@@ -1,5 +1,6 @@
 09/19/2014
 ==========
+* [#64](https://github.com/oliverbarnes/participate-frontend/pull/64): Add alert message, yes and cancel buttons when removing support (Closes issue [#57](https://github.com/oliverbarnes/participate-frontend/issues/57))
 * [#61](https://github.com/oliverbarnes/participate-frontend/pull/61): Allows user to open an issue's description by specifying issue id in the url. (Closes issue [#47](https://github.com/oliverbarnes/participate-frontend/issues/47))
 
 09/17/2014
