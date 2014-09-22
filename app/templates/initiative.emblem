@@ -3,7 +3,8 @@
     = title
 
 .issue_title
-  p Issue: #{issue.title}
+  p Issue: #{issue.title}#{issue_title}
+   
 
 .description
   p
