@@ -1,3 +1,5 @@
 ul.suggestions
   each
     li.suggestion = details
+    //button.destroy x
+    // when go initiatives/1/suggestions  have problem on show duplication of suggestions
