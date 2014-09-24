@@ -27,8 +27,10 @@ h2 List of suggestions
 ul.suggestions
   each suggestion in suggestions
     li.suggestion = suggestion.details 
-    //<button {{action "deleteSuggestion"}} class="destroy">XXXonInitiative/:id</button>
+    <button {{action "deleteSuggestion"}} class="destroy">XXXonInitiative/:id</button>
   else
      p.nosuggestion No suggestions. Be the first to write one!
-
-=outlet
+// above code to show list of suggestions under /initiatives/1
+=outlet // content from suggestions/index.emblem
+// disable outlet, go to initiatives/1/suggestions can see conent same as list of suggestions under /initiatives/1
+// but cannot make suggestions as suggestions/new template is disabled

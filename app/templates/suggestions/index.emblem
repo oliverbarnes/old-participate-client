@@ -1,6 +1,6 @@
 ul.suggestions
-  each
+  each itemController="suggestion"
     li.suggestion = details
     //button.destroy x
-    //<button {{action "deleteSuggestion"}} class="destroy">DeleteonSuggestionIndex</button>
+    <button {{action "deleteSuggestion"}} class="destroy">DeleteonSuggestionIndex</button>
     // when go initiatives/1/suggestions  have problem on show duplication of suggestions
