@@ -18,7 +18,9 @@ test('To a supported initiative, successfully', function(){
   visit('/initiatives/1').then(function() {
     click( $("a:contains('Support this initiative')") ).then(function() {
       click( $("a:contains('Make a suggestion')") ).then(function() {
-        expect($(':submit').attr('disabled')).to.equal('disabled');
+        //expect($(':submit').attr('disabled')).to.equal('disabled');
+        //there are delete buttons before the submit button, i add last
+        expect($(':submit').last().attr('disabled')).to.equal('disabled');
         expect(currentURL()).to.equal('/initiatives/1/suggestions/new');
         fillIn('div.details textarea', "Make sure there's a doctor available for house calls");
         click('form input[type=submit]').then(function() {
