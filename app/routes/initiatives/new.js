@@ -19,7 +19,6 @@ var InitiativesNewRoute = Ember.Route.extend({
                   });
 
       initiative.set('issue', issue);
-      //debugger;
       initiative.save().then(function(model) {
         _this.transitionTo('initiative', model.get('id'));
       });
