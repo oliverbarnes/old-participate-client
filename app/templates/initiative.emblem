@@ -30,3 +30,6 @@ ul.suggestions
      p.nosuggestion No suggestions. Be the first to write one!
 
 =outlet
+
+// p
+//   | Click #{link-to 'suggestions.index' | here} for a list of suggestions

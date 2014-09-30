@@ -2,19 +2,25 @@ import Ember from 'ember';
 
 var InitiativeIndexController = Ember.ObjectController.extend({
 
-  isVisible: false,
-  actions: {
-    toggleShow: function() {
+  // isVisible: false,
+  // actions: {
+  //   toggleShow: function() {
       
-      this.toggleProperty('isVisible');
+  //     this.toggleProperty('isVisible');
 
-      if(this.isVisible) {
-        this.transitionToRoute('suggestions.index');
+  //     if(this.isVisible) {
+  //       this.transitionToRoute('suggestions.index');
 
-      } else {
-        this.transitionToRoute('initiative.index');
-      }
-    }
+  //     } else {
+  //       this.transitionToRoute('initiative.index');
+  //     }
+  //   }
+  // }
+
+  duplicate: function() {
+    console.log('in duplicate');
+    debugger;
+    //this.controllerFor('initiatives').set('suggestionTitle', this.controllerFor('suggestion').content._data.title);
   }
 
 });
