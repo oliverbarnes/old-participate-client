@@ -13,30 +13,13 @@ var SuggestionsNewRoute = Ember.Route.extend({
 
   actions: {
     submit: function() {
-
-      //my code
-      // var _this = this;
-      // var suggestion = this.get('controller.model'),
-      //     initiative = this.modelFor('initiative');
-   
-      // suggestion.save().then(function(model) {
-      //   initiative.get('suggestions').pushObject(model)
-      //     _this.transitionTo('initiative.index');
-      // });
-
-      //original:
       var _this = this;
-      var initiative = this.modelFor('initiative');
-      var suggestion = this.store.createRecord('suggestion', {
-            //dirty hack, while figuring out why EasyForm isn't 
-            // passing the params to submit()
-            details: this.controller.content._attributes.details
-      });
+      var suggestion = this.get('controller.model'),
+          initiative = this.modelFor('initiative');
+   
       suggestion.save().then(function(model) {
-        initiative.get('suggestions').then(function(suggestions) {
-          suggestions.pushObject(suggestion);
-        });
-        _this.transitionTo('initiative.index');
+        initiative.get('suggestions').pushObject(model)
+          _this.transitionTo('initiative.index');
       });
     }
   }

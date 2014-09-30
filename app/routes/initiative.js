@@ -40,6 +40,7 @@ var InitiativeRoute = Ember.Route.extend({
 
     deleteSuggestion: function (suggestion_id) {
       var suggestion_array = this.currentModel._data.suggestions;
+      var initiative = this.currentModel;
 
       for (var i = 0; i < suggestion_array.length; i++) {
         if (suggestion_array[i].id === suggestion_id) {
@@ -47,6 +48,7 @@ var InitiativeRoute = Ember.Route.extend({
          }
       }
 
+      initiative.get('suggestions').removeObject(suggestion);
       suggestion.deleteRecord();
       suggestion.save();
     }

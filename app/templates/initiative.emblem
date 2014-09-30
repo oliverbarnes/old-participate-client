@@ -25,7 +25,7 @@
 h2 List of suggestions
 
 ul.suggestions
-  each suggestion in suggestions //itemController="suggestion"
+  each suggestion in suggestions
     li.suggestion = suggestion.details
     <button {{action "deleteSuggestion" suggestion.id}} class="destroy">Delete</button>
   else
