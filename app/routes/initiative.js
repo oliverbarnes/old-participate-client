@@ -37,6 +37,20 @@ var InitiativeRoute = Ember.Route.extend({
         parentView: 'initiative'
       });
     }
+
+    deleteSuggestion: function (suggestion_id) {
+      var suggestion_array = this.currentModel._data.suggestions;
+
+      for (var i = 0; i < suggestion_array.length; i++) {
+        if (suggestion_array[i].id === suggestion_id) {
+          var suggestion = suggestion_array[i];
+         }
+      }
+
+      suggestion.deleteRecord();
+      suggestion.save();
+    }
+
   }
 });
 
