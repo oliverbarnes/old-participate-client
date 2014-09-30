@@ -17,6 +17,7 @@ var InitiativesNewRoute = Ember.Route.extend({
                     title: content.issue_title,
                     description: content.issue_description
                   });
+
       initiative.set('issue', issue);
       initiative.save().then(function(model) {
         _this.transitionTo('initiative', model.get('id'));
