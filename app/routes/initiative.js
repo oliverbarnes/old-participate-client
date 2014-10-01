@@ -39,14 +39,19 @@ var InitiativeRoute = Ember.Route.extend({
     }
 
     deleteSuggestion: function (suggestion_id) {
-      var suggestion_array = this.currentModel._data.suggestions;
+      var suggestion_array = this.controller.content._data.suggestions;
       var initiative = this.currentModel;
+   
+      //get the ids of each Class in suggestion_array
+      var id_array = this.controller.content._data.suggestions.getEach('id');
 
-      for (var i = 0; i < suggestion_array.length; i++) {
-        if (suggestion_array[i].id === suggestion_id) {
-          var suggestion = suggestion_array[i];
-         }
-      }
+      //find the element in id_array that matches suggestion_id 
+      var find_suggestion = id_array.find(function(item, index, self) {
+        if (item == suggestion_id) { return true; }
+      });
+
+      //use index of find_suggestion in id_array to get the right suggestion in suggestion_array
+      var suggestion = suggestion_array[id_array.indexOf(find_suggestion)];
 
       initiative.get('suggestions').removeObject(suggestion);
       suggestion.deleteRecord();
