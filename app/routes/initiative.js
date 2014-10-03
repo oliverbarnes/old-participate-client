@@ -36,9 +36,9 @@ var InitiativeRoute = Ember.Route.extend({
         outlet: 'alert',
         parentView: 'initiative'
       });
-    }
+    },
 
-    deleteSuggestion: function (suggestion_id) {
+    delete: function (suggestion_id) {
       var suggestion_array = this.controller.content._data.suggestions;
       var initiative = this.currentModel;
    

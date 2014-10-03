@@ -27,7 +27,7 @@ h2 List of suggestions
 ul.suggestions
   each suggestion in suggestions
     li.suggestion = suggestion.details
-    <button {{action "deleteSuggestion" suggestion.id}} class="destroy">Delete</button>
+    <button {{action "delete" suggestion.id}} class="destroy">Delete</button>
   else
      p.nosuggestion No suggestions. Be the first to write one!
-=outlet 
+=outlet  
