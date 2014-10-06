@@ -7,7 +7,7 @@ var IssueController = Ember.ObjectController.extend({
 
   isExpanded: function() {
     return this.get('id') === this.get('expandedIssueId');
-  }.property('id', 'expandedIssueId'),
+  }.property('id', 'expandedIssueId')
 
 });
 

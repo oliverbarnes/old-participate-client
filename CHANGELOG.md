@@ -1,3 +1,7 @@
+09/24/2014
+==========
+* [#72](https://github.com/oliverbarnes/participate-frontend/pull/72): Allows user to post an initiative to an existing issue. (Closes issue [#24](https://github.com/oliverbarnes/participate-frontend/issues/24))
+
 09/19/2014
 ==========
 * [#64](https://github.com/oliverbarnes/participate-frontend/pull/64): Add alert message, yes and cancel buttons when removing support (Closes issue [#57](https://github.com/oliverbarnes/participate-frontend/issues/57))

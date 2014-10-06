@@ -7,6 +7,8 @@ ul.issues
         = link-to "issues"
           = title
         p.description #{description}
+        = link-to "initiatives.new" | Start a new initiative for this issue
+        
       else
         = link-to "issues.issue" this
           = title
