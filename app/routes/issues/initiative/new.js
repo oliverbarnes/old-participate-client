@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 var InitiativeNewRoute = Ember.Route.extend({
   model: function(params) {
-    return this.store.createRecord('initiative', params);
+    return this.store.createRecord('initiative', params.initiative_id);
   },
 
   actions: {
