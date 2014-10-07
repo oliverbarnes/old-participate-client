@@ -6,8 +6,10 @@ var IssueController = Ember.ObjectController.extend({
   expandedIssueId: Ember.computed.alias('controllers.issues.expandedIssueId'),
 
   isExpanded: function() {
+  	console.log('expandedIssueId', this.get('expandedIssueId'));
+  	console.log('id:', this.get('id'));
     return this.get('id') === this.get('expandedIssueId');
-  }.property('id', 'expandedIssueId'),
+  }.property('id', 'expandedIssueId')
 
 });
 
