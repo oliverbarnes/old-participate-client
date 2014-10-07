@@ -1,14 +1,14 @@
 h2 List of issues
 
 ul.issues
-  each model itemController="issues/issue"
+  each model itemController="issue"
     li.issue
       if isExpanded
         = link-to "issues"
           = title
         p.description #{description}
-        = link-to "initiatives.new" | Start a new initiative for this issue
+        = link-to "initiative.new" | Start a new initiative for this issue
         
       else
-        = link-to "issues.issue" this
+        = link-to "issue" this
           = title
