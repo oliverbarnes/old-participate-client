@@ -32,7 +32,7 @@ test('Successfully', function(){
         expect(currentPath()).to.equal('initiatives.initiative.index');
         expect(find('.title').text()).to.equal('Public health clinic');
         expect(find('.description').text()).to.equal('Allocate compensation money to create a local public health clinic');       
-        expect(find('.issue_title').text()).to.equal("Issue: What to do with the compensation money from the dam's impact?");
+        expect(find('.issue_title').text()).to.equal("For issue: What to do with the compensation money from the dam's impact?");
      });
     });
   });

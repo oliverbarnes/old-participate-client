@@ -23,6 +23,6 @@ test('Successfully', function(){
     expect(find('.suggestion').text()).to.equal("Pay to ship the plastic to Sweden--it\'s cheaper than recycling it ourselves.");
   });
   visit('/initiatives/3').then(function() {
-    expect(find('.nosuggestion').first().text()).to.equal("No suggestions. Be the first to write one!");
+    expect(find('.nosuggestion').first().text()).to.equal("No suggestions made yet. Be the first to write one!");
   });
 });

@@ -4,3 +4,11 @@
 @import "bitters";
 @import "navigation";
 @import "content";
+@import "articles";
+@import "suggestions";
+
+.line-behind-text {
+  border-bottom: 1px solid #CACACA;
+  text-align: center;
+  margin-bottom: 4.5em; 
+}

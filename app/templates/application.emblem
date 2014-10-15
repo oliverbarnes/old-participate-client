@@ -1,22 +1,13 @@
 header.navigation
  .navigation-wrapper
     .nav
-      .logo
-        | Participate App
+      .logo Participate App
       ul#navigation-menu
-        li.nav-link
-          = link-to 'initiatives.new' | Start a new initiative
-        li.nav-link
-          = link-to 'initiatives' | Initiatives
-        li.nav-link
-          = link-to 'issues' | Issues
-
+        li.nav-link = link-to 'initiatives.new' | Start a new initiative
+        li.nav-link = link-to 'initiatives' | Initiatives
+        li.nav-link = link-to 'issues' | Issues
 
 section.content
   =outlet
-/   p
-/     | Click #{link-to 'initiatives' | here} for a list of initiatives
 
-/   p
-/     | Click #{link-to 'issues' | here} for a list of issues
 

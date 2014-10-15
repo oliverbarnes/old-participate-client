@@ -1,33 +1,40 @@
-.title
-  h2
-    = title
+article.type-system-traditional
 
-.issue_title
-  p Issue: #{issue.title}
+  p.type Initiative
 
-.description
-  p
-    = description
+  .title
+    h1 = title
 
-.support
-  if isSupported
-    a click="openModal 'alert' model" Remove support for this initiative
-    =outlet alert
-  else
-    a click="supportIt" href="#" Support this initiative
+  .issue_title
+    h2 For issue: #{link-to issue.title "issues.issue" issue}
 
-.new_suggestion
-  if isSupported
-    = link-to 'suggestions.new' | Make a suggestion
-  else
-    p Note: To make suggestions for an initiative, you must first support it
+  .description
+    p
+      = description
 
-h2 List of suggestions
+  p.support
+    if isSupported
+      a click="openModal 'alert' model" Remove support
+      =outlet alert
+    else
+      a click="supportIt" href="#" Support it!
 
-ul.suggestions
+.suggestions
+  h3 Suggestions
+
+  span.new_suggestion
+    if isSupported
+      p = link-to 'suggestions.new' | Make a suggestion
+    else
+      p (by supporters)
+  
   each suggestion in suggestions
-    li.suggestion = suggestion.details
+    .suggestion 
+      .suggestion-content
+        p = suggestion.details
   else
-     p.nosuggestion No suggestions. Be the first to write one!
+    .suggestion
+      .suggestion-content
+        p.nosuggestion No suggestions made yet. Be the first to write one!
 
-=outlet
+  =outlet
