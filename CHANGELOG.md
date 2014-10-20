@@ -1,3 +1,7 @@
+11/14/2014
+==========
+* [#79](https://github.com/oliverbarnes/participate-frontend/pull/79): Upgrade ember-cli from 0.0.40 to 0.1.2; upgrade add-ons; install ember-cli-mocha and remove mocha-adapter hack. (Closes issues [#7](https://github.com/oliverbarnes/participate-frontend/issues/7) and [#1](https://github.com/oliverbarnes/participate-frontend/issues/1))
+
 09/19/2014
 ==========
 * [#64](https://github.com/oliverbarnes/participate-frontend/pull/64): Add alert message, yes and cancel buttons when removing support (Closes issue [#57](https://github.com/oliverbarnes/participate-frontend/issues/57))

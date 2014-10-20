@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import 'vendor/ember-easyForm/index';
+import 'bower_components/ember-easyForm/index';
 
 export default {
 

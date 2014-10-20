@@ -1,27 +1,22 @@
 {
   "name": "participate-frontend",
   "dependencies": {
-    "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.2",
-    "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
-    "ember-qunit-notifications": "^0.0.1",
-    "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
-
     "handlebars": "~1.3.0",
     "jquery": "^1.11.1",
-    "ember": "1.6.1",
-    "ember-data": "1.0.0-beta.8",
-    "loader": "stefanpenner/loader.js#1.0.0",
-    "ember-resolver": "~0.1.5",
+    "ember": "1.7.0",
+    "ember-data": "1.0.0-beta.10",
+    "ember-resolver": "~0.1.7",
+    "loader.js": "stefanpenner/loader.js#1.0.1",
+    "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.3",
+    "ember-cli-test-loader": "dgeb/ember-cli-test-loader#test-agnostic",
+    "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
     "ic-ajax": "~1.x",
     "ember-easyForm": "http://builds.dockyard.com.s3.amazonaws.com/ember-easyForm/canary/ember-easyForm.min.js",
     "ember-validations": "http://builds.dockyard.com.s3.amazonaws.com/ember-validations/ember-validations-latest.js",
-
-    "qunit": "~1.12.0",
-    "ember-qunit": "https://github.com/WMeldon/ember-qunit.git#mocha",
+    "ember-cli-bourbon": "https://github.com/yapplabs/ember-cli-bourbon",
     "mocha": "~1.17.0",
     "chai": "~1.9.1",
-    "sinonjs-built": "~1.7.3",
-    "sinon-chai": "~2.5.0",
-    "ember-mocha-adapter": "https://github.com/WMeldon/ember-mocha-adapter.git#qunit"
+    "ember-mocha-adapter": "0.2.1",
+    "ember-mocha": "~0.1.0"
   }
 }

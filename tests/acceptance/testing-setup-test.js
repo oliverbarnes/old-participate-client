@@ -1,23 +1,23 @@
-import startApp from 'participate-frontend/tests/helpers/start-app';
-import Resolver from 'participate-frontend/tests/helpers/resolver';
+import Ember from 'ember';
+import startApp from '../helpers/start-app';
 
 var App;
 
-// only TDD-style tests working for now (ie no describe() nor it())
-suite('Testing setup', {
-  setup: function(){
+describe('Testing setup', function() {
+  beforeEach(function() {
     App = startApp();
-  },
-  teardown: function() {
+  });
+  
+  afterEach(function() {
     Ember.run(App, 'destroy');
-  }
-});
+  });
 
-test('Mocha, Chai and page interaction', function(){
-  chai.expect(1+1).to.equal(2);
+  it('Runs Mocha, Chai and page interaction', function(){
+    expect(1+1).to.equal(2);
 
-  visit('/').then(function() {
-    var page = $(App.rootElement)
-    chai.expect(page.find('.ember-application')).to.exist;
+    visit('/').then(function() {
+      var page = $(App.rootElement);
+      expect(page.find('.ember-application')).to.exist;
+    });
   });
 });

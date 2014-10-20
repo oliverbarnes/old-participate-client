@@ -7,20 +7,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{BASE_TAG}}
-  
-    <link href="assets/vendor.css" rel="stylesheet">
-    <link href="assets/participate-frontend.css" rel="stylesheet">
+    {{content-for 'head'}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/participate-frontend.css">
   </head>
   <body>
-    <script>
-      window.ParticipateFrontendENV = {{ENV}};
-      window.EmberENV = window.ParticipateFrontendENV.EmberENV;
-    </script>
+    {{content-for 'body'}}
+
     <script src="assets/vendor.js"></script>
     <script src="assets/participate-frontend.js"></script>
-    <script>
-      window.ParticipateFrontend = require('participate-frontend/app')['default'].create(ParticipateFrontendENV.APP);
-    </script>
   </body>
 </html>

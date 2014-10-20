@@ -1,9 +1,10 @@
-import 'vendor/ember-validations/index';
+import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-var Issue = DS.Model.extend(Ember.Validations.Mixin, {
+var Issue = DS.Model.extend(EmberValidations.Mixin, {
   title: DS.attr('string'),
   description: DS.attr('string'),
-  initiative: DS.belongsTo('initiative'),
+  initiatives: DS.hasMany('initiative', {async: true}),
 
   validations: {
     title: {
@@ -19,7 +20,7 @@ Issue.reopenClass({
   FIXTURES: [
     {
       id: 1,
-      initiative: 1,
+      initiatives: [1,2,3],
       title: "What to do with the compensation money from the dam's impact?",
       description: "The construction company in charge of the dam will pay 10 million in compensation to the local affected population. What to do with it?"
     },
