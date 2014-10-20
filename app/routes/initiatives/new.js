@@ -8,14 +8,11 @@ var InitiativesNewRoute = Ember.Route.extend({
   actions: {
     submit: function() {
       var _this = this,
-          content = this.controller.content,
           initiative = this.get('controller.model');
 
       var issue = this.store.createRecord('issue', {
-                    //dirty hack, while figuring out why EasyForm isn't 
-                    // passing params to submit()
-                    title: content.issue_title,
-                    description: content.issue_description
+                    title: this.controller.get('issue_title'),
+                    description: this.controller.get('issue_description')
                   });
       initiative.set('issue', issue);
       initiative.save().then(function(model) {

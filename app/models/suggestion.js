@@ -1,8 +1,9 @@
-import 'vendor/ember-validations/index';
+import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-var Suggestion = DS.Model.extend(Ember.Validations.Mixin, {
+var Suggestion = DS.Model.extend(EmberValidations.Mixin, {
   details: DS.attr('string'),
-  initiative: DS.belongsTo('initiative'),
+  initiative: DS.belongsTo('initiative', {async: true}),
 
   validations: {
     details: {
