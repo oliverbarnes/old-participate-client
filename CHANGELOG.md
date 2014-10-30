@@ -1,3 +1,7 @@
+10/07/2014
+==========
+* [#76](https://github.com/oliverbarnes/participate-frontend/pull/76): Edit initiative, in place editor for initiative title and description, cancel and update button are added (Closes issue [#69](https://github.com/oliverbarnes/participate-frontend/issues/69))
+
 09/19/2014
 ==========
 * [#64](https://github.com/oliverbarnes/participate-frontend/pull/64): Add alert message, yes and cancel buttons when removing support (Closes issue [#57](https://github.com/oliverbarnes/participate-frontend/issues/57))

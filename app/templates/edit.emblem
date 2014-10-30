@@ -1,0 +1,16 @@
+.title_name
+  h5 Initiative title
+  
+.title_value
+  p {{input value=title}}
+
+.description_name
+  h5 Initiative description
+.description_value
+  p {{textarea value=description}}
+
+.update
+  button click="update" Update
+
+.cancel
+  button click="cancel" Cancel
