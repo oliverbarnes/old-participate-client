@@ -12,6 +12,11 @@ article.type-system-traditional
     p
       = description
 
+  p.edit_button
+    a click="openEdit 'edit' model" Edit initiative
+    h5
+      =outlet edit
+
   p.support
     if isSupported
       a click="openModal 'alert' model" Remove support

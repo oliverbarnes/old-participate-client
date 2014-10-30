@@ -12,6 +12,21 @@ var InitiativeRoute = Ember.Route.extend({
       initiative.set('isSupported', true)
     },
 
+    openEdit: function(edit, model) {
+      this.controllerFor(edit).set('model', model);
+      return this.render(edit, {
+        into: 'initiative',
+        outlet: 'edit'
+      });
+    },
+
+    closeEdit: function() {
+      return this.disconnectOutlet({
+        outlet: 'edit',
+        parentView: 'initiative'
+      });
+    },
+
     doItModal: function() {
       return this.send('removeSupport');
     },
