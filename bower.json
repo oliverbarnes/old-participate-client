@@ -14,9 +14,6 @@
     "ember-easyForm": "http://builds.dockyard.com.s3.amazonaws.com/ember-easyForm/canary/ember-easyForm.min.js",
     "ember-validations": "http://builds.dockyard.com.s3.amazonaws.com/ember-validations/ember-validations-latest.js",
     "ember-cli-bourbon": "https://github.com/yapplabs/ember-cli-bourbon",
-    "mocha": "~1.17.0",
-    "chai": "~1.9.1",
-    "ember-mocha-adapter": "0.2.1",
-    "ember-mocha": "~0.1.0"
+    "ember-mocha": "~0.2.0"
   }
 }
