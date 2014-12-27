@@ -1,5 +1,6 @@
 12/27/2014
 ==========
+* Update to ember-cli 0.1.4 and ember 1.8.1
 * Renamed repos: participate-frontend is now simply participate, and the original participate repo is now participate-api. Closes [#60](https://github.com/oliverbarnes/participate/issues/60)
 * [#81](https://github.com/oliverbarnes/participate-frontend/pull/81): Migrate to ember-cli-mocha and convert tests to describe (Closes issues [#80](https://github.com/oliverbarnes/participate-frontend/issues/80)
 

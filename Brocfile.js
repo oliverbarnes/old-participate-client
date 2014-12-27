@@ -38,5 +38,4 @@ app.import('bower_components/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
-
 module.exports = app.toTree();

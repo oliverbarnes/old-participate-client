@@ -1,16 +1,16 @@
 Contributing
 ============
 
-So far this is a one-man (and-two-[Rails-Girls](http://railsgirlssummerofcode.org/)) project, and new contributions will be greatly appreciated. You're welcome to submit [pull requests](https://github.com/oliverbarnes/participate-frontend/pulls), [propose features and discuss issues](https://github.com/oliverbarnes/participate-frontend/issues). When in doubt, ask a question in the [Participate App Google Group](https://groups.google.com/forum/#!forum/participate-app).
+So far this is a one-man (and-two-[Rails-Girls](http://railsgirlssummerofcode.org/)) project, and new contributions will be greatly appreciated. You're welcome to submit [pull requests](https://github.com/oliverbarnes/participate/pulls), [propose features and discuss issues](https://github.com/oliverbarnes/participate/issues). When in doubt, ask a question in the [Participate App Google Group](https://groups.google.com/forum/#!forum/participate-app).
 
 #### Fork the Project
 
-Fork the [project on Github](https://github.com/oliverbarnes/participate-frontend) and check out your copy.
+Fork the [project on Github](https://github.com/oliverbarnes/participate) and check out your copy.
 
 ```
-git clone https://github.com/contributor/participate-frontend.git
-cd participate-frontend
-git remote add upstream https://github.com/oliverbarnes/participate-frontend.git
+git clone https://github.com/contributor/participate.git
+cd participate
+git remote add upstream https://github.com/oliverbarnes/participate.git
 ```
 
 #### Create a Topic Branch
@@ -75,7 +75,7 @@ git push origin my-feature-branch
 
 #### Make a Pull Request
 
-Go to https://github.com/contributor/participate-frontend and select your feature branch. Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed daily on weekdays.
+Go to https://github.com/contributor/participate and select your feature branch. Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed daily on weekdays.
 
 If you're new to Pull Requests, check out the [Github docs](https://help.github.com/articles/using-pull-requests)
 
@@ -94,7 +94,7 @@ git push origin my-feature-branch -f
 Update the [CHANGELOG](CHANGELOG.md) with the pull request number. A typical entry looks as follows (fake entry).
 
 ```
-* [#123](https://github.com/oliverbarnes/participate-frontend/pull/123): Add vote notifications - [@contributor](https://github.com/contributor).
+* [#123](https://github.com/oliverbarnes/participate/pull/123): Add vote notifications - [@contributor](https://github.com/contributor).
 ```
 
 Amend your previous commit and force push the changes.

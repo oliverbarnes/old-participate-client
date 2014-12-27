@@ -8,13 +8,6 @@ export default function startApp(attrs) {
 
   var attributes = Ember.merge({}, config.APP);
   attributes = Ember.merge(attributes, attrs); // use defaults, but you can override;
-  // attributes = Ember.merge({
-  //   // useful Test defaults
-  //   rootElement: '#ember-testing',
-  //   LOG_ACTIVE_GENERATION:false,
-  //   LOG_VIEW_LOOKUPS: false,
-  //   LOG_TRANSITIONS: true
-  // }, attrs); // but you can override;
 
   Router.reopen({
     location: 'none'

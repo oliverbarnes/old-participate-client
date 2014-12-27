@@ -1,10 +1,24 @@
-[![Build Status](https://travis-ci.org/oliverbarnes/participate-frontend.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate-frontend) 
+[![Build Status](https://travis-ci.org/oliverbarnes/participate.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate) 
 
-Front-end for [Participate](https://github.com/oliverbarnes/participate), a democratic participation platform based on LiquidFeedback, in early stages of development. 
+A democratic participation platform based on [LiquidFeedback](http://liquidfeedback.org), in early stages of development. It consists of a front-end [Ember](http://emberjs.com) app (this repo), and a separate [Grape](https://github.com/intridea/grape) API app you can find on [this companion repo](http://github.com/oliverbarnes/participate-api).
 
-Stack: [Ember CLI](http://iamstef.net/ember-cli/) app, using the [Emblem](http://emblemjs.com) template engine, [EasyForm](https://github.com/dockyard/ember-easyForm), and [Mocha](http://visionmedia.github.io/mocha/) for testing. 
+Installation:
+-------------
 
-Stack installation: see [this blog post](http://olibarnesdevstuff.tumblr.com/post/93398799975/getting-setup-with-ember-cli-emblem-easyform-mocha) for a step-by-step guide.
+```
+brew install watchman
+npm install
+bower install
+```
+
+Finally, run the test suite, if everything is ok the build should go smoothly and tests should pass:
+
+```
+ember test
+```
+
+Contributing:
+-------------
 
 See the guide for [CONTRIBUTING](CONTRIBUTING.md), and the [CHANGELOG](CHANGELOG.md). 
 
