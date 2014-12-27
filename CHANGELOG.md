@@ -1,3 +1,7 @@
+12/27/2014
+==========
+* [#81](https://github.com/oliverbarnes/participate-frontend/pull/81): Migrate to ember-cli-mocha and convert tests to describe (Closes issues [#80](https://github.com/oliverbarnes/participate-frontend/issues/80)
+
 11/14/2014
 ==========
 * [#79](https://github.com/oliverbarnes/participate-frontend/pull/79): Upgrade ember-cli from 0.0.40 to 0.1.2; upgrade add-ons; install ember-cli-mocha and remove mocha-adapter hack. (Closes issues [#7](https://github.com/oliverbarnes/participate-frontend/issues/7) and [#1](https://github.com/oliverbarnes/participate-frontend/issues/1))
