@@ -17,6 +17,14 @@ Finally, run the test suite, if everything is ok the build should go smoothly an
 ember test
 ```
 
+Running:
+-------
+
+```
+ember server
+```
+Visit your app at http://localhost:4200.
+
 Contributing:
 -------------
 
