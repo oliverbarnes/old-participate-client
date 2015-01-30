@@ -1,0 +1,10 @@
+article.type-system-traditional
+
+  p.type Issue
+
+  .title
+    h1 = title
+
+  .description
+    p
+      = description

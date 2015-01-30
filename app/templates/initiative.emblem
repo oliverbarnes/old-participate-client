@@ -6,7 +6,7 @@ article.type-system-traditional
     h1 = title
 
   .issue_title
-    h2 For issue: #{link-to issue.title "issues.issue" issue}
+    h2 For issue: #{link-to issue.title "issue" issue}
 
   .description
     p

@@ -1,0 +1,6 @@
+h2 List of issues
+
+ul.issues
+  each model
+    li.issue = link-to "issue" id | #{title}
+      

@@ -15,7 +15,7 @@ Router.map(function() {
     }); 
   });
   this.resource('issues', { path: '/issues' }, function() {
-    this.route('issue', { path: '/:issue_id' });
+    this.resource('issue', { path: '/:issue_id' });
   });
 });
 

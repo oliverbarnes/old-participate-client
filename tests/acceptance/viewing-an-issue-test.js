@@ -12,21 +12,43 @@ describe('Viewing an issue', function() {
     Ember.run(App, 'destroy');
   });
 
-  it('Successfully', function(){
-    visit('/issues').then(function() {    
-      //test toggle of first issue and check that another description doesn't open
-      click( $("a:contains('What to do with the compensation money from the dam')") ).then(function() {
-        expect(currentURL()).to.equal('/issues/1');
-        expect(find('.description').text()).to.equal("The construction company in charge of the dam will pay 10 million in compensation to the local affected population. What to do with it?");
-        expect( $("a:contains('How to solve rising youth unemployment?')").length ).to.equal(1);
-        expect( $("a:contains('Youth unemployment in our community is high and continues to rise. How do we address this issue?')").length ).to.equal(0);
-      });
-      //test that re-toggling first issue closes the description
-      click( $("a:contains('What to do with the compensation money from the dam')") ).then(function() {
-        expect(currentURL()).to.equal('/issues');
-        expect(find('.issue').first().text()).to.equal("What to do with the compensation money from the dam\'s impact?");
-        expect( $("a:contains('The construction company in charge of the dam will pay 10 million in compensation to the local affected population. What to do with it?')").length ).to.equal(0);
+  describe('from the issues list', function () {
+    beforeEach(function(){
+      visit('/issues').then(function() { 
+        click( $("a:contains('How to solve rising youth unemployment?')") );
       });
     });
-  });
+
+    it('transitions to /issues/:id', function(){
+      expect(currentURL()).to.equal('/issues/2'); 
+    });
+
+    it('the issue title gets displayed', function () {
+      expect(find('.title').text()).to.equal('How to solve rising youth unemployment?');    
+    });
+
+    it('the description gets displayed', function() {
+      expect(find('.description').text()).to.equal('Youth unemployment in our community is high and continues to rise. How do we address this issue?');            
+    });  
+
+    // it('initiatives associated to the issue get displayed')      
+  }); 
+
+  describe('by visiting the url', function() {
+    beforeEach(function(){
+      visit('/issues/1');
+    });
+
+    it('transitions to /issues/:id', function(){
+      expect(currentURL()).to.equal('/issues/1'); 
+    });
+
+    it('the issue title gets displayed', function () {
+      expect(find('.title').text()).to.equal("What to do with the compensation money from the dam's impact?");    
+    });
+
+    it('the description gets displayed', function() {
+      expect(find('.description').text()).to.equal('The construction company in charge of the dam will pay 10 million in compensation to the local affected population. What to do with it?');            
+    }); 
+  }); 
 });
