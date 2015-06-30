@@ -1,8 +1,0 @@
-.alert
-  h6 #{message}
-
-.yes
-  button click="yes" Yes
-
-.cancel
-  button click="cancel" Cancel
