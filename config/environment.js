@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'client',
+    modulePrefix: 'participate-client',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -16,6 +16,24 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    torii: {
+      providers: {
+        'facebook-oauth2': {
+          clientId: '1583083701926004'
+        }
+      }
+    },
+
+    'simple-auth': {
+      authenticationRoute: 'session',
+      authorizer: 'authorizer:application',
+      crossOriginWhitelist: ['http://localhost:3000']
+    },
+
+    'simple-auth-oauth2': {
+      serverTokenEndpoint: 'http://localhost:3000/tokens'
     }
   };
 
