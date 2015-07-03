@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'participate-client',
+    modulePrefix: 'client',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -28,7 +28,7 @@ module.exports = function(environment) {
 
     'simple-auth': {
       authenticationRoute: 'session',
-      authorizer: 'authorizer:application',
+      authorizer: 'simple-auth-authorizer:oauth2-bearer',
       crossOriginWhitelist: ['http://localhost:3000']
     },
 
@@ -37,7 +37,14 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.contentSecurityPolicy = {
+    'script-src':  "'self' 'unsafe-eval'",
+    'style-src':   "'self' 'unsafe-inline'"
+  }
+
   if (environment === 'development') {
+    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:4200";
+    ENV.contentSecurityPolicy['default-src'] = "'self' http://localhost:4200";
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
