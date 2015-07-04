@@ -29,7 +29,8 @@ module.exports = function(environment) {
     'simple-auth': {
       authenticationRoute: 'session',
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
-      crossOriginWhitelist: ['http://localhost:3000']
+      crossOriginWhitelist: ['http://localhost:3000'],
+      routeAfterAuthentication: 'dashboard'
     },
 
     'simple-auth-oauth2': {
@@ -43,7 +44,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'development') {
-    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:4200";
+    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:4200 http://localhost:3000";
     ENV.contentSecurityPolicy['default-src'] = "'self' http://localhost:4200";
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
