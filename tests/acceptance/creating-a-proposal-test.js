@@ -6,7 +6,7 @@ var App;
 var server;
 
 describe('Creating a proposal', function() {
-  beforeEach(function(done) {
+  beforeEach(function() {
     App = startApp();
     server = new Pretender(function() {
       this.post('/proposals', function(request) {
