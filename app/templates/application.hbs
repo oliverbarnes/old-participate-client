@@ -1,8 +1,20 @@
-<h2 id="title">Participate!</h2>
-{{#if session.isAuthenticated}}
-  <a {{ action 'invalidateSession' }}>Logout</a>
-{{else}}
-  {{#link-to 'login'}}Login{{/link-to}}
-{{/if}}
-<br/>
-{{outlet}}
+<div class="ui container very padded text">
+  <h1 class='ui header' id="title">Participate</h1>
+
+  <div class="ui secondary  menu">
+    {{#link-to 'dashboard' class='item'}}Dashboard{{/link-to}}
+    {{#link-to 'proposals.new' class='item'}}New proposal{{/link-to}}
+    <div class="right menu">
+      <div class="ui item">
+        {{#if session.isAuthenticated}}
+          <a {{ action 'invalidateSession' }}>Logout</a>
+        {{else}}
+          {{#link-to 'login'}}Login{{/link-to}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  {{outlet}}
+
+</div>
