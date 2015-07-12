@@ -10,12 +10,18 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
-      }
+      },
+      MODEL_FACTORY_INJECTIONS: true
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      API_HOST: '/'
+      // API_HOST_PROXY: 'http://api.pixelhandler.com/',
+    },
+
+    contentSecurityPolicy: {
+      'script-src':  "'self' 'unsafe-eval'",
+      'style-src':   "'self' 'unsafe-inline'"
     },
 
     torii: {
@@ -38,12 +44,8 @@ module.exports = function(environment) {
     }
   };
 
-  ENV.contentSecurityPolicy = {
-    'script-src':  "'self' 'unsafe-eval'",
-    'style-src':   "'self' 'unsafe-inline'"
-  }
-
   if (environment === 'development') {
+    ENV.APP.API_HOST = 'http://localhost:3000/'
     ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:4200 http://localhost:3000";
     ENV.contentSecurityPolicy['default-src'] = "'self' http://localhost:4200";
     // ENV.APP.LOG_RESOLVER = true;
