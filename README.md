@@ -20,10 +20,13 @@ ember test
 Running:
 -------
 
+You'll need to startup the API app first, so the Ember client can talk to it. [Follow the instructions](https://github.com/oliverbarnes/participate-api#bootstrapping-the-project) to install  and start it up, then come back here and run
+
 ```
 ember server
 ```
-Visit your app at http://localhost:4200.
+
+Visit your app at [http://localhost:4200](http://localhost:4200). 
 
 Contributing:
 -------------
