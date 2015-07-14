@@ -1,53 +1,39 @@
-# Client
+[![Build Status](https://travis-ci.org/oliverbarnes/participate.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate) 
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A democratic participation platform based on [LiquidFeedback](http://liquidfeedback.org), in early stages of development. It consists of a front-end [Ember](http://emberjs.com) app (this repo), and a backend API app, which you can find on [this separate repo](http://github.com/oliverbarnes/participate-api).
 
-## Prerequisites
+Installation:
+-------------
 
-You will need the following things properly installed on your computer.
+```
+brew install watchman
+npm install
+bower install
+```
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+Finally, run the test suite, if everything is ok the build should go smoothly and tests should pass:
 
-## Installation
+```
+ember test
+```
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+Running:
+-------
 
-## Running / Development
+```
+ember server
+```
+Visit your app at http://localhost:4200.
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Contributing:
+-------------
 
-### Code Generators
+See the complete guide on the [CONTRIBUTING](CONTRIBUTING.md) file.
 
-Make use of the many generators for code, try `ember help generate` for more details
+Contributors
+------------
+Present and past:
 
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+- [William Jeffreys](https://github.com/williamcodes)
+- [Qian Zhou](https://github.com/qianfinland)
+- [Cathy Nangini](https://github.com/KatiRG)
