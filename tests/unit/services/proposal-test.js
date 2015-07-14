@@ -6,7 +6,7 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'service:proposal',
+  'service:proposals',
   'ProposalService',
   {
     // Specify the other units that are required for this test.
