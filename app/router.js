@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('login');
   // this.route('activity');
   this.route('dashboard');
-  this.route('proposal', function() {
+  this.route('proposals', function() {
     this.route('new');
   });
 });
