@@ -21,7 +21,8 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'script-src':  "'self' 'unsafe-eval'",
-      'style-src':   "'self' 'unsafe-inline'"
+      'style-src':   "'self' 'unsafe-inline'",
+      'font-src': "'self' data: fonts.gstatic.com",
     },
 
     torii: {
@@ -46,8 +47,8 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV.APP.API_HOST = 'http://localhost:3000/'
-    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:4200 http://localhost:3000";
-    ENV.contentSecurityPolicy['default-src'] = "'self' http://localhost:4200";
+    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:3000";
+    ENV.contentSecurityPolicy['default-src'] = "'self'";
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -56,8 +57,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:4200 http://localhost:3000";
-    ENV.contentSecurityPolicy['default-src'] = "'self' http://localhost:4200";
+    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:3000";
+    ENV.contentSecurityPolicy['default-src'] = "'self'";
     ENV.contentSecurityPolicy['style-src'] = "'self' data:";
     // Testem prefers this...
     ENV.baseURL = '/';
