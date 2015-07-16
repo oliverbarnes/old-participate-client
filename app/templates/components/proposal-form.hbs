@@ -6,8 +6,6 @@
     {{textarea id="body" name="body" placeholder="Proposal" value=resource.body}}
   </div>
   {{#if resource.isNew}}
-    <button class="ui button" type="submit" {{action "save"}}>Save</button>
-  {{else}}
-    <button class="ui button" type="submit" {{action "edit"}}>Update</button>
+    <button class="ui button save_button" type="submit" {{action "save"}}>Save</button>
   {{/if}}
 </form>

@@ -60,4 +60,12 @@ describe('Creating a proposal', function() {
       expect(currentRouteName()).to.eql('proposals.edit');
     });
   });
+
+  it('hide the save button when user is in the proposal detail', function () {
+    visit('/proposals/1');
+    andThen(function() {
+      let saveButton = find('.save_button');
+      expect(saveButton.length, 0, 'hide save button');
+    });
+  });
 });
