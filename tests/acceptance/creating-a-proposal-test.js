@@ -18,13 +18,28 @@ describe('Creating a proposal', function() {
   beforeEach(function() {
     App = startApp();
     server = new Pretender(function() {
-      //TODO: Conflict with fetch https://github.com/trek/pretender/issues/60
       this.post('/proposals', function(request) {
-        return [201, { 'Content-Type': 'application/vnd.api+json' }, JSON.stringify({ data: {} })];
+        let body = JSON.parse(request.requestBody),
+            data = body.data.attributes;
+
+        if (!data.title || !data.body) {
+          return [422, { 'Content-Type': 'application/vnd.api+json' }, JSON.stringify({})];
+        }
+
+        let response = JSON.stringify({ data: {
+          id: 1,
+          type: 'proposals',
+          attributes: {
+            title: data.title,
+            body: data.body
+          }
+        }});
+
+        return [201, { 'Content-Type': 'application/vnd.api+json' }, response];
       });
     });
 
-    authenticateSession();
+    //authenticateSession();
     visit('/proposals/new');
   });
 
@@ -38,7 +53,7 @@ describe('Creating a proposal', function() {
   });
 
   it('create new proposal', function() {
-    fillIn('#title', 'bar');
+    fillIn('.title', 'bar');
     fillIn('#body', 'foo');
     click('button[type="submit"]');
     andThen(function() {

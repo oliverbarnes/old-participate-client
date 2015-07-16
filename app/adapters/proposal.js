@@ -1,10 +1,11 @@
 import ApplicationAdapter from 'ember-jsonapi-resources/adapters/application';
 import config from '../config/environment';
+import ef from 'fetch';
 
 export default ApplicationAdapter.extend({
   type: 'proposal',
 
-  url: config.APP.API_HOST +  '/proposals',
+  url: config.APP.API_HOST +  'proposals',
 
   // FIXME: This is a hack to make ember-jsonapi-resources work with ember-simple-auth.
   // It overrides fetch() options to include the bearer token in the session.
@@ -25,5 +26,14 @@ export default ApplicationAdapter.extend({
       delete options.update;
     }
     return isUpdate;
+  },
+
+  createResource(resource) {
+    let url = this.get('url');
+    const json = this.serializer.serialize(resource);
+    return ef(url, {
+      method: 'POST',
+      body: JSON.stringify(json)
+    });
   }
 });
