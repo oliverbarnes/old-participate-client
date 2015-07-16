@@ -40,7 +40,6 @@ describe('Creating a proposal', function() {
     });
 
     //authenticateSession();
-    visit('/proposals/new');
   });
 
   afterEach(function() {
@@ -49,23 +48,19 @@ describe('Creating a proposal', function() {
   });
 
   it('opens the new proposal page ', function() {
-    expect(currentRouteName()).to.eql('proposals.new');
+    visit('/proposals/new');
+    andThen(function() {
+      expect(currentRouteName()).to.eql('proposals.new');
+    });
   });
 
   it('create new proposal', function() {
+    visit('/proposals/new');
     fillIn('.title', 'bar');
     fillIn('#body', 'foo');
     click('button[type="submit"]');
     andThen(function() {
       expect(currentRouteName()).to.eql('proposals.edit');
-    });
-  });
-
-  it('hide the save button when user is in the proposal detail', function () {
-    visit('/proposals/1');
-    andThen(function() {
-      let saveButton = find('.save_button');
-      expect(saveButton.length, 0, 'hide save button');
     });
   });
 });
