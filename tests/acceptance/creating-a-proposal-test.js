@@ -18,7 +18,7 @@ describe('Creating a proposal', function() {
   beforeEach(function() {
     App = startApp();
     server = new Pretender(function() {
-      //TODO not working, im not sure if this is related to https://github.com/trek/pretender/issues/60
+      //TODO: Conflict with fetch https://github.com/trek/pretender/issues/60
       this.post('/proposals', function(request) {
         return [201, { 'Content-Type': 'application/vnd.api+json' }, JSON.stringify({ data: {} })];
       });
@@ -29,7 +29,6 @@ describe('Creating a proposal', function() {
   });
 
   afterEach(function() {
-    server.shutdown();
     Ember.run(App, 'destroy');
     Ember.tryInvoke(server, 'shutdown');
   });
@@ -43,7 +42,7 @@ describe('Creating a proposal', function() {
     fillIn('#body', 'foo');
     click('button[type="submit"]');
     andThen(function() {
-      expect(currentRouteName()).to.eql('proposals');
+      expect(currentRouteName()).to.eql('proposals.edit');
     });
   });
 });

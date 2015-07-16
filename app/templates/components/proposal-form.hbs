@@ -1,9 +1,13 @@
-<form class="ui form" {{action "submit" on="submit"}}>
+<form class="ui form">
   <div class="field">
-    {{input id="title" type="text" name="title" placeholder="Title" value=proposal.title}}
+    {{input id="title" type="text" name="title" placeholder="Title" value=resource.title}}
   </div>
   <div class="field">
-    {{textarea id="body" name="body" placeholder="Proposal" value=proposal.body}}
+    {{textarea id="body" name="body" placeholder="Proposal" value=resource.body}}
   </div>
-  <button class="ui button" type="submit">Save</button>
+  {{#if resource.isNew}}
+    <button class="ui button" type="submit" {{action "save"}}>Save</button>
+  {{else}}
+    <button class="ui button" type="submit" {{action "edit"}}>Update</button>
+  {{/if}}
 </form>

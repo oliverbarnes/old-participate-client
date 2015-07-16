@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('dashboard');
   this.route('proposals', function() {
     this.route('new');
+    this.route('edit', { path: '/:proposal_id' });
   });
 });
 

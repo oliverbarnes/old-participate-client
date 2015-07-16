@@ -15,7 +15,7 @@ module.exports = function(environment) {
     },
 
     APP: {
-      API_HOST: '/'
+      API_HOST: 'test' === environment ? 'http://localhost:7357' : '/'
       // API_HOST_PROXY: 'http://api.pixelhandler.com/',
     },
 

@@ -1,11 +1,19 @@
 import Ember from 'ember';
+import BufferedProxy from 'ember-buffered-proxy/proxy';
 
 export default Ember.Component.extend({
+  resource: Ember.computed('proposal', function() {
+    return BufferedProxy.create({ content: this.get('proposal') });
+  }).readOnly(),
+
   actions:{
-    submit() {
-      const proposal = this.get('proposal');
-      this.sendAction('submit', proposal);
+    save() {
+      this.get('resource').applyChanges();
+      this.sendAction('on-save', this.get('proposal'));
+    },
+
+    edit() {
+      this.get('resource').applyChanges();
     }
   }
 });
-
