@@ -39,7 +39,7 @@ describe('Creating a proposal', function() {
       });
     });
 
-    //authenticateSession();
+    authenticateSession();
   });
 
   afterEach(function() {
@@ -50,7 +50,7 @@ describe('Creating a proposal', function() {
   it('opens the new proposal page ', function() {
     visit('/proposals/new');
     andThen(function() {
-      expect(currentRouteName()).to.eql('proposals.new');
+      expect(currentRouteName()).to.eql('proposals.new', 'proposal new page is reached');
     });
   });
 
@@ -60,7 +60,7 @@ describe('Creating a proposal', function() {
     fillIn('#body', 'foo');
     click('button[type="submit"]');
     andThen(function() {
-      expect(currentRouteName()).to.eql('proposals.edit');
+      expect(currentRouteName()).to.eql('proposals.edit', 'transition to edit page');
     });
   });
 });
