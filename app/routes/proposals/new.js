@@ -3,9 +3,9 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   actions: {
-    save(proposal) {
-      this.store.createResource('proposals', proposal).then((resp) => {
-        this.transitionTo('proposals.detail', resp);
+    save(resource) {
+      this.store.createResource('proposals', resource).then((proposal) => {
+        this.transitionTo('proposals.detail', proposal);
       });
     }
   },
