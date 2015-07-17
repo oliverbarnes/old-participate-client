@@ -54,7 +54,7 @@ describe('Creating a proposal', function() {
     });
   });
 
-  it('create new proposal', function() {
+  it('create the new proposal', function() {
     visit('/proposals/new');
     fillIn('.title', 'bar');
     fillIn('#body', 'foo');

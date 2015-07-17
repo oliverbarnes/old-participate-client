@@ -10,10 +10,6 @@ export default Ember.Component.extend({
     save() {
       this.get('resource').applyChanges();
       this.sendAction('on-save', this.get('proposal'));
-    },
-
-    edit() {
-      this.get('resource').applyChanges();
     }
   }
 });
