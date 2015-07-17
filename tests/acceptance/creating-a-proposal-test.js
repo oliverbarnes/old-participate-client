@@ -60,7 +60,7 @@ describe('Creating a proposal', function() {
     fillIn('#body', 'foo');
     click('button[type="submit"]');
     andThen(function() {
-      expect(currentRouteName()).to.eql('proposals.edit', 'transition to edit page');
+      expect(currentRouteName()).to.eql('proposals.detail', 'transition to propsal detail page');
     });
   });
 });
