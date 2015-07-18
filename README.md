@@ -37,6 +37,7 @@ Contributors
 ------------
 Present and past:
 
+- [Bernardo Tolosa](https://github.com/BernardTolosajr)
 - [William Jeffreys](https://github.com/williamcodes)
 - [Qian Zhou](https://github.com/qianfinland)
 - [Cathy Nangini](https://github.com/KatiRG)

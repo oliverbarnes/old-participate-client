@@ -2,14 +2,16 @@
   <h1 class='ui header' id="title">Participate</h1>
 
   <div class="ui secondary  menu">
-    {{#link-to 'dashboard' class='item'}}Dashboard{{/link-to}}
-    {{#link-to 'proposals.new' class='item'}}New proposal{{/link-to}}
+    {{#if session.isAuthenticated}}
+      {{#link-to 'dashboard' class='item'}}Dashboard{{/link-to}}
+      {{#link-to 'proposals.new' class='item'}}New proposal{{/link-to}}
+    {{else}}
+      {{#link-to 'login'}}Login{{/link-to}}
+    {{/if}}
     <div class="right menu">
       <div class="ui item">
         {{#if session.isAuthenticated}}
           <a {{ action 'invalidateSession' }}>Logout</a>
-        {{else}}
-          {{#link-to 'login'}}Login{{/link-to}}
         {{/if}}
       </div>
     </div>
