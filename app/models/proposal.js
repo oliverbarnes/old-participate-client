@@ -8,5 +8,18 @@ export default Resource.extend({
 
 
   title: attr(),
-  body:  attr()
+  body:  attr(),
+
+  toggleSupport: function() {
+    // TODO: add unit test and implement
+    //
+    // if proposal doesn't have a associated support with current user associated,
+    //   create and associate a new support resource to itself
+    // else
+    //   remove associated support
+    //
+    // questions: is current user a service?
+  },
+
+  //supportCount: computed property
 });
