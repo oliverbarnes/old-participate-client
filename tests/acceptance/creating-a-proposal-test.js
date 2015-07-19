@@ -10,10 +10,9 @@ import { expect } from 'chai';
 import Ember from 'ember';
 import startApp from '../helpers/start-app';
 
-var App;
-var server;
-
 describe('Creating a proposal', function() {
+  var App;
+  var server;
 
   beforeEach(function() {
     App = startApp();
@@ -27,7 +26,7 @@ describe('Creating a proposal', function() {
         }
 
         let response = JSON.stringify({ data: {
-          id: 1,
+          id: '54d39ede62155f8a0301967b',
           type: 'proposals',
           attributes: {
             title: data.title,
@@ -38,6 +37,9 @@ describe('Creating a proposal', function() {
         return [201, { 'Content-Type': 'application/vnd.api+json' }, response];
       });
     });
+
+    authenticateSession();
+    visit('/proposals/new');
   });
 
   afterEach(function() {
@@ -45,9 +47,16 @@ describe('Creating a proposal', function() {
     Ember.tryInvoke(server, 'shutdown');
   });
 
+  it('create new proposal', function() {
+    fillIn('.title', 'bar');
+    fillIn('#body', 'foo');
+    click('button[type="submit"]');
+    andThen(function() {
+      expect(currentURL()).to.eql('/proposals/54d39ede62155f8a0301967b', 'creates a proposal and transition to details page');
+    });
+  });
+
   it('transition to proposal details', function() {
-    authenticateSession();
-    visit('/proposals/new');
     fillIn('.title', 'bar');
     fillIn('#body', 'foo');
     click('button[type="submit"]');
