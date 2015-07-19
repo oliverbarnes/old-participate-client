@@ -5,7 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   actions: {
     save(resource) {
       this.store.createResource('proposals', resource).then((proposal) => {
-        this.transitionTo('proposals.detail', proposal);
+        this.transitionTo('proposals.details', proposal);
       });
     }
   },

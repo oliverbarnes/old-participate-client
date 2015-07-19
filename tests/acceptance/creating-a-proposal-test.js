@@ -38,8 +38,6 @@ describe('Creating a proposal', function() {
         return [201, { 'Content-Type': 'application/vnd.api+json' }, response];
       });
     });
-
-    authenticateSession();
   });
 
   afterEach(function() {
@@ -47,13 +45,14 @@ describe('Creating a proposal', function() {
     Ember.tryInvoke(server, 'shutdown');
   });
 
-  it('create the new proposal', function() {
+  it('transition to proposal details', function() {
+    authenticateSession();
     visit('/proposals/new');
     fillIn('.title', 'bar');
     fillIn('#body', 'foo');
     click('button[type="submit"]');
     andThen(function() {
-      expect(currentRouteName()).to.eql('proposals.detail', 'transition to propsal detail page');
+      expect(currentRouteName()).to.eql('proposals.details', 'transition to propsal detail page');
     });
   });
 });
