@@ -47,13 +47,6 @@ describe('Creating a proposal', function() {
     Ember.tryInvoke(server, 'shutdown');
   });
 
-  it('opens the new proposal page ', function() {
-    visit('/proposals/new');
-    andThen(function() {
-      expect(currentRouteName()).to.eql('proposals.new', 'proposal new page is reached');
-    });
-  });
-
   it('create the new proposal', function() {
     visit('/proposals/new');
     fillIn('.title', 'bar');
