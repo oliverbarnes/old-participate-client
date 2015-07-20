@@ -1,3 +1,10 @@
-<button class="ui button js-support-proposal" {{action 'toggleSupport' proposal}}>Support</button>
+{{#if session.isAuthenticated}}
+  <button class="ui button js-support-proposal" {{action 'toggleSupport' proposal}}>Support</button>
+{{else}}
+  <!--
+  disabled button signalling you need to be logged in to support a proposal,
+  perhaps with a tooltip on hover explaining that
+  -->
+{{/if}}
 
 <support-count proposal={{proposal}}>
