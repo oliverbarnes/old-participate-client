@@ -1,6 +1,5 @@
 import ApplicationAdapter from 'ember-jsonapi-resources/adapters/application';
 import config from '../config/environment';
-import fetch from 'fetch';
 
 export default ApplicationAdapter.extend({
   type: 'proposal',
@@ -26,14 +25,5 @@ export default ApplicationAdapter.extend({
       delete options.update;
     }
     return isUpdate;
-  },
-
-  createResource(resource) {
-    let url = this.get('url');
-    const json = this.serializer.serialize(resource);
-    return fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(json)
-    });
   }
 });

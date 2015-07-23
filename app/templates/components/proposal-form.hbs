@@ -1,9 +1,9 @@
 <form class="ui form">
   <div class="field">
-    {{input type="text" name="title" placeholder="Title" value=resource.title class="title"}}
+    {{input type="text" name="title" placeholder="Title" value=proposal.title class="title"}}
   </div>
   <div class="field">
-    {{textarea id="body" name="body" placeholder="Proposal" value=resource.body}}
+    {{textarea id="body" name="body" placeholder="Proposal" value=proposal.body}}
   </div>
   <button class="ui button save_button" type="submit" {{action "save"}}>Save</button>
 </form>
