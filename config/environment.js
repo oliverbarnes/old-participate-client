@@ -21,7 +21,7 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'script-src':  "'self' 'unsafe-eval'",
-      'style-src':   "'self' 'unsafe-inline'",
+      'style-src':   "'self' 'unsafe-inline' *",
       'font-src': "'self' data: fonts.gstatic.com",
     },
 
