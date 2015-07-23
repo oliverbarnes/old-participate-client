@@ -1,8 +1,7 @@
-import ApplicationAdapter from 'ember-jsonapi-resources/adapters/application';
-import AuthorizationMixin from '../mixins/authorization';
+import ApplicationAdapter from './application';
 import config from '../config/environment';
 
-export default ApplicationAdapter.extend(AuthorizationMixin, {
+export default ApplicationAdapter.extend({
   type: 'proposal',
   url: config.APP.API_HOST +  'proposals'
 });
