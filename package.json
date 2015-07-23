@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
+    "ember-buffered-proxy": "^0.5.1",
     "ember-cli": "^1.13.0",
     "ember-cli-app-version": "0.4.0",
     "ember-cli-babel": "^5.0.0",
@@ -34,12 +35,13 @@
     "ember-cli-release": "0.2.3",
     "ember-cli-simple-auth": "0.8.0-beta.2",
     "ember-cli-simple-auth-oauth2": "0.8.0-beta.2",
-    "ember-cli-simple-auth-testing": "0.8.0-beta.2",
+    "ember-cli-simple-auth-testing": "0.8.0",
     "ember-cli-simple-auth-torii": "0.8.0-beta.2",
     "ember-cli-uglify": "^1.0.1",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
-    "ember-jsonapi-resources": "0.4.3",
+    "ember-fetch": "1.2.1",
+    "ember-jsonapi-resources": "0.4.7",
     "semantic-ui-ember": "0.0.1",
     "torii": "^0.4.1"
   }

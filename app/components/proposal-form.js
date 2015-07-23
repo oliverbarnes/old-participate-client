@@ -2,10 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions:{
-    submit() {
-      const proposal = this.get('proposal');
-      this.sendAction('submit', proposal);
+    save() {
+      this.sendAction('on-save', this.get('proposal'));
     }
   }
 });
-
