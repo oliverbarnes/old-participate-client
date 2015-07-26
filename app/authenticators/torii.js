@@ -12,26 +12,3 @@ export default Torii.extend({
   }
 });
 
-// export default Torii.extend({
-//   authenticate: function(credentials) {
-//     return this._super(provider).then((authResponse) => {
-//       return new Ember.RSVP.Promise(function(resolve, reject) {
-//         Ember.$.ajax({
-//           url:  Configuration.serverTokenEndpoint,
-//           type: 'POST',
-//           data: { 'auth_code': authResponse.authorizationCode }
-//         }).then(function(response) {
-//           Ember.run(function() {
-//             // all properties this promise resolves
-//             // with will be available through the session
-//             resolve({ access_token: response.access_token, participant_id: response.participant_id });
-//           });
-//         }, function(xhr, status, error) {
-//           Ember.run(function() {
-//             reject(xhr.responseText);
-//           });
-//         });
-//       });
-//     });
-//   }
-// });
