@@ -77,5 +77,9 @@ module.exports = function(environment) {
 
   }
 
+  ENV['simple-auth'] = {
+    session: 'session:me'
+  }
+
   return ENV;
 };
