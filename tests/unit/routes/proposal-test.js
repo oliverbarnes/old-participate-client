@@ -6,7 +6,7 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'route:proposal',
+  'route:proposals',
   'ProposalRoute',
   {
     // Specify the other units that are required for this test.

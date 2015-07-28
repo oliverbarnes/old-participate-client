@@ -5,6 +5,7 @@ import {
   beforeEach,
   afterEach
 } from 'mocha';
+import Pretender from 'pretender';
 import { expect } from 'chai';
 import Ember from 'ember';
 import startApp from '../helpers/start-app';
