@@ -3,9 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     save(proposal) {
-      this.store.createResource('proposals', proposal).then(() => {
-        this.transitionToRoute('proposals');
-      }.bind(this));
+      this.store.createResource('proposals', proposal).then((resp) => {
+        this.transitionToRoute('proposals.details', resp);
+      });
     }
   }
 });

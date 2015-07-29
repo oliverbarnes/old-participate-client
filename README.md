@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/oliverbarnes/participate.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate) 
+[![Code Climate](https://codeclimate.com/github/oliverbarnes/participate/badges/gpa.svg)](https://codeclimate.com/github/oliverbarnes/participate) [![Build Status](https://travis-ci.org/oliverbarnes/participate.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate) 
 
 A democratic participation platform based on [LiquidFeedback](http://liquidfeedback.org), in early stages of development. It consists of a front-end [Ember](http://emberjs.com) app (this repo), and a backend API app, which you can find on [this separate repo](http://github.com/oliverbarnes/participate-api).
 

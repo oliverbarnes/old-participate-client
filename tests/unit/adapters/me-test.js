@@ -6,16 +6,17 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'route:proposals',
-  'ProposalRoute',
+  'adapter:me',
+  'MeAdapter',
   {
     // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
+    // needs: ['serializer:foo']
   },
   function() {
+    // Replace this with your real tests.
     it('exists', function() {
-      var route = this.subject();
-      expect(route).to.be.ok;
+      var adapter = this.subject();
+      expect(adapter).to.be.ok;
     });
   }
 );

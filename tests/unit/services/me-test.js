@@ -6,16 +6,17 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'route:proposals',
-  'ProposalRoute',
+  'service:me',
+  'MeService',
   {
     // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
+    // needs: ['service:foo']
   },
   function() {
+    // Replace this with your real tests.
     it('exists', function() {
-      var route = this.subject();
-      expect(route).to.be.ok;
+      var service = this.subject();
+      expect(service).to.be.ok;
     });
   }
 );
