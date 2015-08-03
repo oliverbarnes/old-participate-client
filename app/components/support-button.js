@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    toggleSupport: function(){
+    toggleSupport: function(proposal){
       proposal.toggleSupport();
     }
   }

@@ -61,7 +61,7 @@ describe('Acceptance: Supporting a proposal', function() {
     //to be defined how this is going to work
   });
 
-  context('when not logged-in', function(){
+  describe('when not logged-in', function(){
     beforeEach(function() {
       //invalidateSession(); is this a test helper too?
     });
@@ -69,5 +69,5 @@ describe('Acceptance: Supporting a proposal', function() {
     it("Shows a tooltip explaining one needs to login to support a proposal", function() {
       //pending
     });
-  })
+  });
 });
