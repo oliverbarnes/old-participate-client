@@ -1,28 +1,34 @@
 /* jshint expr:true */
+import { expect } from 'chai';
 import {
   describe,
-  describeModel,
   it
 } from 'ember-mocha';
-import { expect } from 'chai';
+import Resource from '../../../models/proposal';
 
-var supports;
+// var subject;
 
-describeModel('proposal', 'Proposal',{
-  // needs: [
-  //   'model:proposals'
-  // ]
-}, function() {
-  // beforeEach(function() {
-  // });
+// describeModule('model:proposal', 'Unit | Model| Proposal',{}, function() {
+describe('proposal', function() {
 
-  describe('#toggleSupport', function() {
-    describe('when proposal is not supported yet', function() {
-      it('adds a support to it', function() {
-        expect(this.subject().get('supports')).to.eql([]);
-        this.subject().toggleSupport;
-        expect(this.subject().get('supports')).to.eql(supports);
-      });
+  // describe('#toggleSupport', function() {
+    before(function() {
+      debugger;
+      Resource.prototype.container = this.container;
+      // Use a non-standard name, i.e. pluralized instead of singular
+      this.__container__.register('model:proposalz', Resource, {});
+      subject = this.__container__.lookupFactory('model:proposalz').create();
     });
-  });
+
+    after(function() {
+      delete Resource.prototype.container;
+    });
+
+    // describe('when proposal is not supported yet', function() {
+      it('adds a support to it', function() {
+        // expect(this.subject().get('supports')).to.eql([]);
+        expect(subject.toggleSupport()).to.be.true;
+      });
+    // });
+  // });
 });

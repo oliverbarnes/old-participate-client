@@ -1,18 +1,14 @@
 /* jshint expr:true */
 import { expect } from 'chai';
 import {
-  describeModel,
-  it
+  describe,
+  describeModule,
+  it,
+  beforeEach,
+  afterEach
 } from 'ember-mocha';
 
-describeModel(
-  'support',
-  'Support',
-  {
-    // Specify the other units that are required for this test.
-    
-  },
-  function() {
+describeModule('model:support', 'Unit | Model| Support',{}, function() {
     // Replace this with your real tests.
     it('exists', function() {
       var model = this.subject();

@@ -41,7 +41,7 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-fetch": "1.2.1",
-    "ember-jsonapi-resources": "https://github.com/oliverbarnes/ember-jsonapi-resources#singleton-resource",
+    "ember-jsonapi-resources": "https://github.com/pixelhandler/ember-jsonapi-resources",
     "semantic-ui-ember": "0.0.1",
     "torii": "^0.4.1"
   }

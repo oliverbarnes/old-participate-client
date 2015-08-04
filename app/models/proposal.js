@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import Resource from 'ember-jsonapi-resources/models/resource';
-import { attr } from 'ember-jsonapi-resources/models/resource';
+import { attr, hasMany } from 'ember-jsonapi-resources/models/resource';
 
 export default Resource.extend({
   type: 'proposals',
@@ -12,6 +12,7 @@ export default Resource.extend({
   supports: hasMany('supports'),
 
   toggleSupport: function() {
+    return true;
     // if proposal doesn't have a associated support with current user associated,
     // support = Support.new();
     // support.addRelationship('proposal', this.get('id'));
