@@ -1,5 +1,6 @@
 <div class="ui container very padded text">
 {{#if session.isAuthenticated}}
+  {{#unless isLoginRoute}}
   <h1 class='ui header' id="title">Participate</h1>
 
   <div class="ui secondary  menu">
@@ -7,13 +8,12 @@
     {{#link-to 'proposals.new' class='item'}}New proposal{{/link-to}}
     <div class="right menu">
       <div class="ui item">
-        {{#if session.isAuthenticated}}
-           <a class="item">Signed in as : {{session.me.name}}</a>
-          <a {{ action 'invalidateSession' }}>Logout</a>
-        {{/if}}
+        <a class="item">Signed in as : {{session.me.name}}</a>
+        <a {{ action 'invalidateSession' }}>Logout</a>
       </div>
     </div>
   </div>
+  {{/unless}}
 {{/if}}
 
 {{outlet}}
