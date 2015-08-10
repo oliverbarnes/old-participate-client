@@ -19,7 +19,7 @@ export default Ember.Component.extend({
   addSupport: function() {
     var support = this.container.lookupFactory('model:supports').create();
     support.addRelationship('proposal', this.get('proposal.id'));
-    support.addRelationship('participant', this.get('participant.id'));
+    support.addRelationship('author', this.get('author.id'));
 
     this.store.createResource('support', support);
     this.set('supported', true);
@@ -41,12 +41,12 @@ export default Ember.Component.extend({
     });
   }.on('didInsertElement'),
 
-  previousSupportQuery: Ember.computed('proposal.id', 'participant.id', function() {
+  previousSupportQuery: Ember.computed('proposal.id', 'author.id', function() {
     return {
       query: {
         filter: {
           proposal_id: this.get('proposal.id'),
-          participant_id: this.get('participant.id')
+          author_id: this.get('author.id')
         }
       }
     };
@@ -60,12 +60,12 @@ export default Ember.Component.extend({
   //   return !Ember.isEmpty(this.get('previousSupport'));
   // }),
   //
-  // previousSupport: Ember.computed('proposal.id', 'participant.id', function() {
+  // previousSupport: Ember.computed('proposal.id', 'author.id', function() {
   //   var query = {
   //     query: {
   //       filter: {
   //         proposal_id: this.get('proposal.id'),
-  //         participant_id: this.get('participant.id')
+  //         participant_id: this.get('author.id')
   //       }
   //     }
   //   };

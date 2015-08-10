@@ -6,17 +6,16 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'serializer:support',
-  'SupportSerializer',
+  'route:proposals/list',
+  'ProposalsListRoute',
   {
     // Specify the other units that are required for this test.
-    // needs: ['serializer:foo']
+    // needs: ['controller:foo']
   },
   function() {
-    // Replace this with your real tests.
     it('exists', function() {
-      var serializer = this.subject();
-      expect(serializer).to.be.ok;
+      var route = this.subject();
+      expect(route).to.be.ok;
     });
   }
 );

@@ -7,5 +7,5 @@ export default Resource.extend({
   service: Ember.inject.service('supports'),
 
   proposal: hasOne('proposal'),
-  participant: hasOne('participant')
+  author: hasOne('author')
 });

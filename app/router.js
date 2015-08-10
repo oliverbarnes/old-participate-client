@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('proposals', function() {
     this.route('new');
     this.route('details', { path: '/:id' });
+    this.route('list');
   });
 });
 
