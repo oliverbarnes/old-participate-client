@@ -1,7 +1,11 @@
 <div class="ui main text container">
   <div class="ui header">{{model.proposal.title}}</div>
   <div class="extra content">
-    {{support-button proposal=model.proposal author=model.me}}
+    {{
+      support-button
+      proposal=model.proposal
+      author=model.me
+    }}
   </div>
   <div class="content">
     <div>{{model.proposal.body}}</div>

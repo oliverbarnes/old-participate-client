@@ -30,6 +30,14 @@ export default Ember.Component.extend({
     this.set('supported', false);
   },
 
+  isOwner: Ember.computed('proposal.author.id', 'author.id', function() {
+    return this.get('author.id') == this.get('proposal.relationships.author.data.id');
+  }),
+
+  disabledAttr: Ember.computed('isOwner', function() {
+    return this.get('isOwner') ? 'disabled' : 'enabled';
+  }),
+
   setSupportedOrNot: function() {
     var self = this;
     this.container.lookup('service:supports').find(this.get('previousSupportQuery')).then(function(resources) {
