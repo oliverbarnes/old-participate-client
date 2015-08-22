@@ -34,7 +34,7 @@ module.exports = function(environment) {
     },
 
     'simple-auth': {
-      authenticationRoute: 'session',
+      authenticationRoute: 'login',
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
       crossOriginWhitelist: ['http://localhost:3000'],
       routeAfterAuthentication: 'dashboard',

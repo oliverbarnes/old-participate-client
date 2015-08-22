@@ -6,11 +6,11 @@ import {
   afterEach
 } from 'mocha';
 import Pretender from 'pretender';
-import { expect } from 'chai';
+// import { expect } from 'chai';
 import Ember from 'ember';
 import startApp from '../helpers/start-app';
 
-var SUPPORT_BUTTON_SELECTOR = '.js-support-proposal';
+// var SUPPORT_BUTTON_SELECTOR = '.js-support-proposal';
 var meData = {
   'id': '21dadfad39ede62155f8a0222222',
   'attributes': {
@@ -55,8 +55,6 @@ var supportData =[
     }
   }
 ];
-var filter_params = "filter[proposal_id]=54d39ede62155f8a0301967z";
-filter_params = filter_params + "&filter[participant_id]=21dadfad39ede62155f8a0222222";
 
 describe('Acceptance: Supporting a proposal', function() {
   var application;
@@ -73,7 +71,7 @@ describe('Acceptance: Supporting a proposal', function() {
         return [200, { 'Content-Type': 'application/vnd.api+json' }, JSON.stringify({ data: meData })];
       });
 
-      this.get('/supports?' + filter_params, function() {
+      this.get('/supports', function() {
         return [200, { 'Content-Type': 'application/vnd.api+json' }, JSON.stringify({ data: [] })];
       });
 

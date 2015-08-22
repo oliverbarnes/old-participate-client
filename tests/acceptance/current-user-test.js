@@ -9,6 +9,7 @@ import Pretender from 'pretender';
 import { expect } from 'chai';
 import Ember from 'ember';
 import startApp from '../helpers/start-app';
+import AuthorizationMixin from 'ember-jsonapi-resources/mixins/authorization';
 
 const participantId = '54d39ede62155f8a0301967b';
 
@@ -34,12 +35,15 @@ describe('Acceptance: CurrentUser', function() {
         return [200, { 'Content-Type': 'application/vnd.api+json' }, response];
       });
     });
+    AuthorizationMixin.reopen({
+      authorizationCredential: 'Bearer access_token'
+    });
 
     let session = currentSession();
     session.set('isAuthenticated', true);
     session.set('secure.access_token', 'access_token');
 
-    visit('/');
+    visit('/dashboard');
   });
 
   afterEach(function() {

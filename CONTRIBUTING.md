@@ -41,6 +41,8 @@ Try to write a test that reproduces the problem you're trying to fix or describe
 
 I also appreciate pull requests that highlight or reproduce a problem, even without a fix.
 
+Use sample data rather than foo/bar values.
+
 #### Write Code
 
 Implement your feature or bug fix. Please be sure to submit clean, well refactored code.

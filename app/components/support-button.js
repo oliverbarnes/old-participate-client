@@ -31,7 +31,7 @@ export default Ember.Component.extend({
   },
 
   isOwner: Ember.computed('proposal.author.id', 'author.id', function() {
-    return this.get('author.id') == this.get('proposal.relationships.author.data.id');
+    return this.get('author.id') === this.get('proposal.relationships.author.data.id');
   }),
 
   disabledAttr: Ember.computed('isOwner', function() {
