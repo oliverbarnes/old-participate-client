@@ -8,26 +8,12 @@ export default Ember.Component.extend({
       var self = this;
       this.container.lookup('service:supports').find(this.get('previousSupportQuery')).then(function(resources) {
         if( Ember.isEmpty(resources) ) {
-          self.addSupport();
+          self._addSupport();
         } else {
-          self.removeSupport(resources);
+          self._removeSupport(resources);
         }
       });
     }
-  },
-
-  addSupport: function() {
-    var support = this.container.lookupFactory('model:supports').create();
-    support.addRelationship('proposal', this.get('proposal.id'));
-    support.addRelationship('author', this.get('author.id'));
-
-    this.store.createResource('support', support);
-    this.set('supported', true);
-  },
-
-  removeSupport: function(resources) {
-    this.store.deleteResource('support', resources.get('firstObject'));
-    this.set('supported', false);
   },
 
   isOwner: Ember.computed('proposal.author.id', 'author.id', function() {
@@ -38,7 +24,7 @@ export default Ember.Component.extend({
     return this.get('isOwner') ? 'disabled' : 'enabled';
   }),
 
-  setSupportedOrNot: function() {
+  _setSupportedOrNot: function() {
     var self = this;
     this.container.lookup('service:supports').find(this.get('previousSupportQuery')).then(function(resources) {
       if( Ember.isEmpty(resources) ) {
@@ -48,6 +34,20 @@ export default Ember.Component.extend({
       }
     });
   }.on('didInsertElement'),
+
+  _addSupport: function() {
+    var support = this.container.lookupFactory('model:supports').create();
+    support.addRelationship('proposal', this.get('proposal.id'));
+    support.addRelationship('author', this.get('author.id'));
+
+    this.store.createResource('support', support);
+    this.set('supported', true);
+  },
+
+  _removeSupport: function(resources) {
+    this.store.deleteResource('support', resources.get('firstObject'));
+    this.set('supported', false);
+  },
 
   previousSupportQuery: Ember.computed('proposal.id', 'author.id', function() {
     return {
@@ -59,28 +59,4 @@ export default Ember.Component.extend({
       }
     };
   })
-
-  // FIXME: wasn't working before setting up multiple models on the route,
-  // might work now. Would clean up the main toggleSupport action and
-  // save a request checking for supports
-  //
-  // alreadySupported: Ember.computed('proposal.id', function() {
-  //   return !Ember.isEmpty(this.get('previousSupport'));
-  // }),
-  //
-  // previousSupport: Ember.computed('proposal.id', 'author.id', function() {
-  //   var query = {
-  //     query: {
-  //       filter: {
-  //         proposal_id: this.get('proposal.id'),
-  //         participant_id: this.get('author.id')
-  //       }
-  //     }
-  //   };
-  //
-  //   var PromiseObject = Ember.ObjectProxy.extend(Ember.PromiseProxyMixin);
-  //   return PromiseObject.create({
-  //     promise: this.container.lookup('service:supports').find(query)
-  //   });
-  // })
 });
