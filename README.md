@@ -1,6 +1,8 @@
-[![Code Climate](https://codeclimate.com/github/oliverbarnes/participate/badges/gpa.svg)](https://codeclimate.com/github/oliverbarnes/participate) [![Build Status](https://travis-ci.org/oliverbarnes/participate.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate) 
+[![Code Climate](https://codeclimate.com/github/oliverbarnes/participate/badges/gpa.svg)](https://codeclimate.com/github/oliverbarnes/participate) [![Build Status](https://travis-ci.org/oliverbarnes/participate.svg?branch=master)](https://travis-ci.org/oliverbarnes/participate)
 
-# Participate
+[We're looking for contributors!](#want-to-get-involved)
+
+# Participate 
 
 An app for democratic proposal-making.
 
@@ -55,10 +57,13 @@ ember server
 
 Visit your app at [http://localhost:4200](http://localhost:4200). 
 
-Contributing:
--------------
+### Want to get involved?
 
-See the complete guide on the [CONTRIBUTING](CONTRIBUTING.md) file.
+We'll pair with you so you can get up to speed quickly, and we pair on features as well. 
+
+[Shoot us an email](mailto:oliverbwork@gmail.com/), we'll add you to our Slack channel to join the discussion and talk about next steps.
+
+See the complete guide to contributing [here](CONTRIBUTING.md).
 
 ---
 
