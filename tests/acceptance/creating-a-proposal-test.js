@@ -14,6 +14,7 @@ import AuthorizationMixin from 'ember-jsonapi-resources/mixins/authorization';
 
 let App;
 let server;
+// TODO: use ../pages/proposal.js instead
 let new_proposal = PO.build({
   visit: PO.visitable('/proposals/new'),
   title: PO.fillable('.title'),
