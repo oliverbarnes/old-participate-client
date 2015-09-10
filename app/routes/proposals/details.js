@@ -1,7 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params) {
+  actions: {
+    delegateSupport: function() {
+      this.flashMessages.success('Delegated support option to Easier Name')
+    }
+  },
+
+  model: function(params) {
     var proposal = this.store.find('proposals', {
       id: params.id,
       query: {

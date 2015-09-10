@@ -13,6 +13,7 @@ import page from '../pages/proposal';
 
 let App;
 let proposal;
+let anotherParticipant;
 
 describe('Delegating support for a proposal to another participant', function() {
   beforeEach(function() {
@@ -28,6 +29,7 @@ describe('Delegating support for a proposal to another participant', function() 
 
     server.create('me');
     proposal = server.create('proposal');
+    anotherParticipant = server.create('participant');
     page.visit({ id: proposal.id });
   });
 
@@ -36,9 +38,15 @@ describe('Delegating support for a proposal to another participant', function() 
     Ember.run(App, 'destroy');
   });
 
-  it('create new proposal', function() {
+  it('selects a another participant', function() {
     andThen(function() {
       expect(currentURL()).to.eql('/proposals/' + proposal.id);
+      page.selectDelegate(anotherParticipant.name);
+      let successMessage = 'Delegated support option to ' + anotherParticipant.name
+
+      andThen(function() {
+        expect(page.successFlashMessage()).to.eql(successMessage)
+      });
     });
   });
 });
