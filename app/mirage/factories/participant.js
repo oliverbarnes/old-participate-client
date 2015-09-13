@@ -1,6 +1,5 @@
 import Mirage, {faker}  from 'ember-cli-mirage';
 
 export default Mirage.Factory.extend({
-  // name: faker.name.findName()
-  name: 'Easier Name'
+  name: faker.name.findName()
 });
