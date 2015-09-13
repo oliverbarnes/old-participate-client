@@ -8,11 +8,7 @@
     }}
   </div>
   <div class="extra content">
-    <select
-    onchange={{action "delegateSupport" value="target.value"}}
-    class="delegate-select">
-      <option>Easier Name</option>
-    </select>
+    {{ support-delegation-dropdown }}
   </div>
   <div class="content">
     <div>{{model.proposal.body}}</div>
