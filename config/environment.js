@@ -38,7 +38,7 @@ module.exports = function(environment) {
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
       crossOriginWhitelist: ['http://localhost:3000'],
       routeAfterAuthentication: 'dashboard',
-      session: 'session:me'
+      routeIfAlreadyAuthenticated: 'dashboard'
     },
 
     'simple-auth-oauth2': {
@@ -57,7 +57,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV['ember-cli-mirage'] = {
-      enabled: true
+      enabled: false
     }
   }
 
