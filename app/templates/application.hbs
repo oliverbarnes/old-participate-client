@@ -9,7 +9,7 @@
     {{#link-to 'proposals.list' class='item'}}Current proposals{{/link-to}}
     <div class="right menu">
       <div class="ui item">
-        <a class="item">Signed in as : {{session.me.name}}</a>
+        <a class="item">Signed in as : {{model.name}}</a>
         <a {{ action 'invalidateSession' }}>Logout</a>
       </div>
     </div>
