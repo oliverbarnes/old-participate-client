@@ -3,7 +3,7 @@
   <div class="item">
     <!-- soon <img class="ui avatar image" src="/images/avatar/small/daniel.jpg"> -->
     <div class="content">
-      <a class="header">{{proposal.title}}</a>
+      {{#link-to 'proposals.details' proposal.id}}{{proposal.title}}{{/link-to}}
       <div class="description">By {{proposal.author.name}}</div>
     </div>
   </div>
