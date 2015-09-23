@@ -6,11 +6,5 @@ export default Resource.extend({
   type: 'participants',
   service: Ember.inject.service('participants'),
 
-  /*
-  title: attr(),
-  date: attr(),
-
-  author: hasOne('author'),
-  comments: hasMany('comments')
-  */
+  name: attr()
 });

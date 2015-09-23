@@ -10,10 +10,10 @@ export default Ember.Component.extend({
     }
   },
 
-  _fetchParticipants: function() {
+  willInsertElement: function() {
     let self = this;
     this.container.lookup('service:participants').find().then(function(resources) {
       self.set('participants', resources);
     });
-  }.on('didInsertElement')
+  }
 });
