@@ -7,12 +7,14 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login', { path: '/' });
-  // this.route('activity');
-  this.route('dashboard');
-  this.route('proposals', function() {
-    this.route('new');
-    this.route('details', { path: '/:id' });
-    this.route('list');
+  this.route('internal', function() {
+    // this.route('activity');
+    this.route('dashboard');
+    this.route('proposals', function() {
+      this.route('new');
+      this.route('details', { path: '/:id' });
+      this.route('list');
+    });
   });
 });
 

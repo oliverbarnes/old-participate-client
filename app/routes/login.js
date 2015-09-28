@@ -8,7 +8,7 @@ export default Ember.Route.extend({
         attemptedTransition.retry();
         this.get('session.attemptedTransition', null);
       } else {
-        this.transitionTo('dashboard');
+        this.transitionTo('internal.dashboard');
       }
     }
   }

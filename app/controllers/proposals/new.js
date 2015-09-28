@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   actions: {
     save(proposal) {
       this.store.createResource('proposals', proposal).then((resource) => {
-        this.transitionToRoute('proposals.details', resource.get('id'));
+        this.transitionToRoute('internal.proposals.details', resource.get('id'));
       });
     }
   }

@@ -4,9 +4,11 @@ export default Ember.Component.extend({
   participants: null,
 
   actions: {
-    delegateSupport: function(participantName) {
+    delegateSupport: function(participantId) {
       const flashMessages = Ember.get(this, 'flashMessages');
-      flashMessages.success('Delegated support option to' + participantName);
+      this.container.lookup('service:participants').find(participantId).then(function(participant) {
+        flashMessages.success('Delegated support option to ' + participant.get('name'));
+      })
     }
   },
 
