@@ -4,22 +4,17 @@ export default Ember.Component.extend({
   participants: null,
 
   actions: {
-    delegateSupport: function(participantId) {
+    delegateSupport: function(selectedDelegateId) {
+      var self = this;
       const flashMessages = Ember.get(this, 'flashMessages');
-      this.container.lookup('service:participants').find(participantId).then(function(participant) {
-        flashMessages.success('Delegated support option to ' + participant.get('name'));
+      this.container.lookup('service:participants').find(selectedDelegateId).then(function(delegate) {
+        self._delegateSupportTo(delegate);
+        flashMessages.success('Delegated support option to ' + delegate.get('name'));
       })
     }
   },
 
-  willInsertElement: function() {
-    let self = this;
-    this.container.lookup('service:participants').find().then(function(resources) {
-      self.set('participants', resources);
-    });
-  },
-
-  _delegateSupport: function() {
+  _delegateSupportTo: function(delegate) {
     var delegation = this.container.lookupFactory('model:delegations').create();
     delegation.addRelationship('proposal', this.get('proposal.id'));
     delegation.addRelationship('delegate', this.get('delegate.id'));
@@ -28,4 +23,11 @@ export default Ember.Component.extend({
     this.store.createResource('delegation', delegation);
     this.set('supported', true);
   },
+
+  willInsertElement: function() {
+    let self = this;
+    this.container.lookup('service:participants').find().then(function(resources) {
+      self.set('participants', resources);
+    });
+  }
 });

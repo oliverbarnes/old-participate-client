@@ -1,13 +1,31 @@
+import Ember from 'ember';
+
 export default function() {
 
-  this.get('/me', function(db, request) {
-    let me = db.mes[0];
+  this.urlPrefix = 'http://localhost:3000';
 
+  this.post('/tokens', function() {
+    return {
+      access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ'
+    };
+  });
+
+  // this.get('/me', function(db) {
+  this.get('/me', function() {
+    // let me = db.mes[0];
+
+    // return {
+    //   data: {
+    //     type: 'me',
+    //     id: me.id,
+    //     attributes: me
+    //   }
+    // };
     return {
       data: {
         type: 'me',
-        id: me.id,
-        attributes: me
+        id: 1,
+        attributes: {name: 'William'}
       }
     };
   });
@@ -24,7 +42,15 @@ export default function() {
     };
   });
 
-  this.get('/participants', function(db, request) {
+  this.get('/proposals', function(db) {
+    return {
+      data: db.proposals.map(attrs => (
+        {type: 'proposals', id: attrs.id, attributes: attrs }
+      ))
+    };
+  });
+
+  this.get('/participants', function(db) {
     return {
       data: db.participants.map(attrs => (
         {type: 'participants', id: attrs.id, attributes: attrs }
@@ -33,7 +59,7 @@ export default function() {
   });
 
   this.get('/supports', function(db, request) {
-    let supports = []
+    let supports = [];
 
     if(Ember.isEmpty(request.queryParams)) {
       supports = db.supports;
