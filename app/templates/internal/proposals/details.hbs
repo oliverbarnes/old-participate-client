@@ -8,7 +8,11 @@
     }}
   </div>
   <div class="extra content">
-    {{ support-delegation-dropdown }}
+    {{
+      support-delegation-dropdown
+      proposal=model.proposal
+      author=model.me
+    }}
   </div>
   <div class="content">
     <div>{{model.proposal.body}}</div>

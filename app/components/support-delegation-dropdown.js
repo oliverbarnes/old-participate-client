@@ -16,12 +16,12 @@ export default Ember.Component.extend({
 
   _delegateSupportTo: function(delegate) {
     var delegation = this.container.lookupFactory('model:delegations').create();
+    debugger;
     delegation.addRelationship('proposal', this.get('proposal.id'));
-    delegation.addRelationship('delegate', this.get('delegate.id'));
+    delegation.addRelationship('delegate', delegate.get('id'));
     delegation.addRelationship('author', this.get('author.id'));
 
     this.store.createResource('delegation', delegation);
-    this.set('supported', true);
   },
 
   willInsertElement: function() {
