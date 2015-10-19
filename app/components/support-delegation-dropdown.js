@@ -16,7 +16,6 @@ export default Ember.Component.extend({
 
   _delegateSupportTo: function(delegate) {
     var delegation = this.container.lookupFactory('model:delegations').create();
-    debugger;
     delegation.addRelationship('proposal', this.get('proposal.id'));
     delegation.addRelationship('delegate', delegate.get('id'));
     delegation.addRelationship('author', this.get('author.id'));
@@ -26,8 +25,18 @@ export default Ember.Component.extend({
 
   willInsertElement: function() {
     let self = this;
-    this.container.lookup('service:participants').find().then(function(resources) {
+    this.container.lookup('service:participants').find(this.get('possibleDelegatesQuery')).then(function(resources) {
       self.set('participants', resources);
     });
-  }
+  },
+
+  possibleDelegatesQuery: Ember.computed('proposal.id', function() {
+    return {
+      query: {
+        filter: {
+          exclude_author_of_proposal: this.get('proposal.id')
+        }
+      }
+    };
+  })
 });
