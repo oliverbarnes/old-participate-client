@@ -40,13 +40,28 @@ export default Ember.Component.extend({
     support.addRelationship('proposal', this.get('proposal.id'));
     support.addRelationship('author', this.get('author.id'));
 
-    this.store.createResource('support', support);
-    this.set('supported', true);
+    var self = this;
+    this.store.createResource('support', support).then(function() {
+
+      const newSupportCount = self.container.lookup('service:proposals').cache.data.content[0].get('support-count');
+
+      self.set('proposal.support-count', newSupportCount);
+      self.set('supported', true);
+    });
   },
 
   _removeSupport: function(resources) {
-    this.store.deleteResource('support', resources.get('firstObject'));
-    this.set('supported', false);
+    var self = this;
+    this.store.deleteResource('support', resources.get('firstObject')).then(function() {
+
+      self.container.lookup('service:proposals').find(self.get('proposal.id')).then(function(updatedProposal) {
+        const newSupportCount = updatedProposal.get('support-count');
+
+        self.set('proposal.support-count', newSupportCount);
+      });
+
+      self.set('supported', false);
+    });
   },
 
   previousSupportQuery: Ember.computed('proposal.id', 'author.id', function() {
