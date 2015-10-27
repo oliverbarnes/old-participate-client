@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
+const { inject } = Ember;
+
 export default Ember.Component.extend({
+
   supported:       null,
 
   actions: {
@@ -25,8 +28,8 @@ export default Ember.Component.extend({
   }),
 
   _setSupportedOrNot: function() {
-    var self = this;
-    this.container.lookup('service:supports').find(this.get('previousSupportQuery')).then(function(resources) {
+    let self = this;
+    this.store.find('supports', this.get('previousSupportQuery')).then(function(resources) {
       if( Ember.isEmpty(resources) ) {
         self.set('supported', false);
       } else {
@@ -36,17 +39,31 @@ export default Ember.Component.extend({
   }.on('didInsertElement'),
 
   _addSupport: function() {
-    var support = this.container.lookupFactory('model:supports').create();
+    let support = this.container.lookupFactory('model:supports').create();
     support.addRelationship('proposal', this.get('proposal.id'));
     support.addRelationship('author', this.get('author.id'));
 
-    this.store.createResource('support', support);
-    this.set('supported', true);
+    const self = this;
+    this.store.createResource('support', support).then(function() {
+      const newSupportCount = self.store.all('proposals').content[0].get('support-count');
+
+      self.set('proposal.support-count', newSupportCount);
+      self.set('supported', true);
+    });
   },
 
   _removeSupport: function(resources) {
-    this.store.deleteResource('support', resources.get('firstObject'));
-    this.set('supported', false);
+    var self = this;
+    this.store.deleteResource('support', resources.get('firstObject')).then(function() {
+
+      self.store.find('proposals', self.get('proposal.id')).then(function(updatedProposal) {
+        const newSupportCount = updatedProposal.get('support-count');
+
+        self.set('proposal.support-count', newSupportCount);
+      });
+
+      self.set('supported', false);
+    });
   },
 
   previousSupportQuery: Ember.computed('proposal.id', 'author.id', function() {

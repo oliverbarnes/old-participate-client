@@ -8,10 +8,9 @@ export default Resource.extend({
 
   title: attr(),
   body:  attr(),
+  'support-count': attr(),
 
   author:      hasOne('author'),
   supports:    hasMany('supports'),
   suggestions: hasMany('suggestions')
-
-  //supportCount: computed property
 });
