@@ -36,25 +36,18 @@ module.exports = function(environment) {
     'simple-auth': {
       authenticationRoute: 'login',
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
-      crossOriginWhitelist: ['http://localhost:3000'],
       routeAfterAuthentication: 'internal.dashboard',
       routeIfAlreadyAuthenticated: 'internal.dashboard'
     },
 
     'simple-auth-oauth2': {
-      serverTokenEndpoint: 'http://localhost:3000/tokens'
+      serverTokenEndpoint: '/tokens'
     }
   };
 
   if (environment === 'development') {
-    ENV.APP.API_HOST = 'http://localhost:3000/'
-    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:3000";
+    ENV.APP.API_HOST = 'http://localhost:4200/'
     ENV.contentSecurityPolicy['default-src'] = "'self'";
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV['ember-cli-mirage'] = {
       enabled: false
@@ -62,7 +55,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:3000";
     ENV.contentSecurityPolicy['default-src'] = "'self'";
     ENV.contentSecurityPolicy['style-src'] = "'self' data:";
     // Testem prefers this...
