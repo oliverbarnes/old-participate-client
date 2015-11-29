@@ -2,7 +2,6 @@ import Ember from 'ember';
 import Resource from './resource';
 import Support from '../models/support';
 import Delegation from '../models/delegation';
-import { attr } from 'ember-jsonapi-resources/models/resource';
 import _ from 'lodash/lodash';
 
 const { attr, hasMany } = Resource;

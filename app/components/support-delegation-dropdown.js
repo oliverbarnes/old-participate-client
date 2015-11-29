@@ -17,8 +17,8 @@ export default Ember.Component.extend({
   },
 
   willInsertElement: () => {
-    this.set('participants', this.get('proposal.possibleDelegates');
-  }
+    this.set('participants', this.get('proposal.possibleDelegates'));
+  },
 
   disabled: computed('proposal.backedByMe', () => {
     return this.get('proposal.backedByMe') ? 'disabled' : 'enabled';

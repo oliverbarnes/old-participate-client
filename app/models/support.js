@@ -25,7 +25,7 @@ Support.reopenClass({
 
   _add: (proposal) => {
     let support = this.create();
-    support.addRelationship('proposal', proposal));
+    support.addRelationship('proposal', proposal);
     support.addRelationship('author', this.me);
 
     this.store.createResource('support', support);

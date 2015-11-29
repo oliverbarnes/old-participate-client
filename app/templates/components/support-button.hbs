@@ -4,7 +4,7 @@
     {{action 'toggleSupport'}}>
   {{#if proposal.backedByMe}}
     Supported
-  {{#if proposal.supportDelegated}}
+  {{else if proposal.supportDelegated}}
     Support delegated
   {{else}}
     Support it
