@@ -1,19 +1,19 @@
 <div class="ui main text container">
-  <div class="ui header">{{model.proposal.title}}</div>
-  <div class="ui">By {{model.proposal.author.name}}:</div>
+  <div class="ui header">{{proposal.title}}</div>
+  <div class="ui">By {{proposal.author.name}}:</div>
   <div class="extra content">
     {{
       support-button
-      proposal=model.proposal
+      proposal=proposal
     }}
   </div>
   <div class="extra content">
     {{
       support-delegation-dropdown
-      proposal=model.proposal
+      proposal=proposal
     }}
   </div>
   <div class="content">
-    <div>{{model.proposal.body}}</div>
+    <div>{{proposal.body}}</div>
   </div>
 </div>

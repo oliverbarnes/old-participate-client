@@ -31,7 +31,7 @@ export default Resource.extend({
   }),
 
   possibleDelegates: computed('_possibleDelegatesQuery', () => {
-    return this.store.find('participants', this.get('possibleDelegatesQuery'));
+    return this.store.find('participants', this.get('_possibleDelegatesQuery'));
   }),
 
   supportDelegated: computed('id', () => {
