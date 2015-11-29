@@ -5,11 +5,13 @@ export default Ember.Route.extend({
     var proposal = this.store.find('proposals', {
       id: params.id,
       query: {
-        include: 'author'
+        include: 'author,supports'
       }
     });
+    //proposal.checkBackingByMe
     var me = this.store.find('me', { singleton: true });
 
+    //anti pattern. 'me' should be in its own service (or session)
     return Ember.RSVP.hash({
       proposal: proposal,
       me: me

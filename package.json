@@ -44,7 +44,8 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-fetch": "1.2.1",
-    "ember-jsonapi-resources": "^0.7.5",
+    "ember-jsonapi-resources": "^0.9.0",
+    "ember-lodash": "0.0.6",
     "semantic-ui-ember": "0.0.1",
     "torii": "^0.4.1"
   }

@@ -1,9 +1,11 @@
 {{#if session.isAuthenticated}}
   <button class="ui {{if supported 'active '}} green button js-support-proposal"
-    {{disabledAttr}}
+    {{disabled}}
     {{action 'toggleSupport'}}>
-  {{#if supported}}
+  {{#if proposal.backedByMe}}
     Supported
+  {{#if proposal.supportDelegated}}
+    Support delegated
   {{else}}
     Support it
   {{/if}}
