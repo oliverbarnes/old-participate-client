@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
-const { inject, computed } = Ember;
+const { inject } = Ember;
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   meService: inject.service('me'),

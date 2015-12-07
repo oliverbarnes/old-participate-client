@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import Delegation from '../models/delegation';
 
 const { inject, get, computed} = Ember;
 
@@ -16,11 +15,11 @@ export default Ember.Component.extend({
     }
   },
 
-  willInsertElement: () => {
+  willInsertElement: function() {
     this.set('participants', this.get('proposal.possibleDelegates'));
   },
 
-  disabled: computed('proposal.backedByMe', () => {
+  disabled: computed('proposal.backedByMe', function() {
     return this.get('proposal.backedByMe') ? 'disabled' : 'enabled';
   })
 });

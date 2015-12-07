@@ -18,7 +18,7 @@ export default Resource.extend({
   supports:    hasMany('supports'),
   suggestions: hasMany('suggestions'),
 
-  backedByMe: computed('supports', 'me.supports', () => {
+  backedByMe: computed('supports', 'me.supports', function() {
     return _.any(this.get('supports'), _.matches(this.get('me.supports')));
   }),
 
@@ -26,19 +26,19 @@ export default Resource.extend({
     return this.get('author.id') === this.get('me.id');
   }),
 
-  cantBeSupported: computed('backedByMe', 'ownedByMe', () => {
+  cantBeSupported: computed('backedByMe', 'ownedByMe', function() {
     return (this.get('ownedByMe') || this.get('backedByMe')) ? true : false;
   }),
 
-  possibleDelegates: computed('_possibleDelegatesQuery', () => {
+  possibleDelegates: computed('_possibleDelegatesQuery', function() {
     return this.store.find('participants', this.get('_possibleDelegatesQuery'));
   }),
 
-  supportDelegated: computed('id', () => {
+  supportDelegated: computed('id', function() {
     return this.me.supportDelegatedFor(this.get('id'));
   }),
 
-  _possibleDelegatesQuery: computed('id', () => {
+  _possibleDelegatesQuery: computed('id', function() {
     return {
       query: {
         filter: {
