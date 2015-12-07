@@ -1,8 +1,8 @@
 import Ember from 'ember';
 import Resource from 'ember-jsonapi-resources/models/resource';
+import { attr, hasOne, hasMany } from 'ember-jsonapi-resources/models/resource';
 import _ from 'lodash/lodash';
 
-const { attr, hasOne, hasMany } = Resource;
 const { inject, computed } = Ember;
 
 export default Resource.extend({
@@ -27,7 +27,7 @@ export default Resource.extend({
   }),
 
   cantBeSupported: computed('backedByMe', 'ownedByMe', () => {
-    return (this.get('ownedByMe') || this.get('backedByMe')) ? true : false
+    return (this.get('ownedByMe') || this.get('backedByMe')) ? true : false;
   }),
 
   possibleDelegates: computed('_possibleDelegatesQuery', () => {

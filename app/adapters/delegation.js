@@ -4,5 +4,5 @@ import config from 'client/config/environment';
 export default ApplicationAdapter.extend({
   type: 'delegation',
 
-  url: config.APP.API_HOST + '/delegations'
+  url: config.APP.API_HOST + 'delegations'
 });

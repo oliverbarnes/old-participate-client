@@ -1,10 +1,12 @@
 import Ember from 'ember';
-import Resource from './resource';
+import Resource from 'ember-jsonapi-resources/models/resource';
 import { attr, hasMany } from 'ember-jsonapi-resources/models/resource';
+
+const { inject } = Ember;
 
 export default Resource.extend({
   type: 'authors',
-  service: Ember.inject.service('authors'),
+  service: inject.service('authors'),
 
   name: attr(),
 

@@ -1,15 +1,17 @@
 import Ember from 'ember';
-import Resource from './resource';
+import Resource from 'ember-jsonapi-resources/models/resource';
+import { attr, hasMany } from 'ember-jsonapi-resources/models/resource';
 import Support from '../models/support';
 import Delegation from '../models/delegation';
 import _ from 'lodash/lodash';
 
-const { attr, hasMany } = Resource;
 const { inject } = Ember;
 
 export default Resource.extend({
   type: 'me',
   service: inject.service('me'),
+
+  cacheDuration: /* minutes */ 7 * /* seconds */ 60 * /* milliseconds */ 1000,
 
   name: attr(),
 
