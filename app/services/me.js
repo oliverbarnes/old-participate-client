@@ -1,6 +1,17 @@
-import Adapter from '../adapters/me';
-import ServiceCache from '../mixins/service-cache';
+import Ember from 'ember';
 
-Adapter.reopenClass({ isServiceFactory: true });
+const { ObjectProxy } = Ember;
 
-export default Adapter.extend(ServiceCache);
+export default ObjectProxy.extend({
+  isServiceFactory: true,
+
+  find: function() {
+    return this.container.lookup('adapter:me').find();
+  },
+
+  hydrate: function() {
+    this.find().then(function(response) {
+      this.set('content', response);
+    }.bind(this));
+  }
+});
