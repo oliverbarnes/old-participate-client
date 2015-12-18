@@ -48,6 +48,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.APP.API_HOST = 'http://localhost:4200/'
     ENV.contentSecurityPolicy['default-src'] = "'self'";
+    ENV.contentSecurityPolicy['connect-src'] = "'self' http://localhost:4200 http://localhost:3000";
 
     ENV['ember-cli-mirage'] = {
       enabled: false
