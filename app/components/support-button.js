@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
   actions: {
     toggleSupport: function() {
-      this.me.toggleSupport(this.get('proposal'));
+      this.get('me.content').toggleSupport(this.get('proposal'));
     }
   },
 

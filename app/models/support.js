@@ -7,15 +7,16 @@ const { inject } = Ember;
 const Support = Resource.extend({
   type: 'supports',
   service: inject.service('supports'),
-  store: inject.service(),
-  me: inject.service(),
 
   proposal: hasOne('proposal'),
   author: hasOne('author')
 });
 
 Support.reopenClass({
-  toggle: (proposal) => {
+  store: inject.service(),
+  me: inject.service(),
+
+  toggle: function(proposal) {
     if(proposal.get('canBeSupported')) {
       this._add(proposal);
     } else {
@@ -23,18 +24,18 @@ Support.reopenClass({
     }
   },
 
-  _add: (proposal) => {
+  _add: function(proposal) {
     let support = this.create();
     support.addRelationship('proposal', proposal);
-    support.addRelationship('author', this.me);
+    support.addRelationship('author', this.get('me'));
 
-    this.store.createResource('support', support);
+    this.get('store').createResource('support', support);
   },
 
-  _remove: (proposal) => {
-    let support = this.me.supportFor(proposal);
+  _remove: function(proposal) {
+    let support = this.get('me.content').supportFor(proposal);
 
-    this.store.deleteResource('support', support);
+    this.get('store').deleteResource('support', support);
   }
 });
 

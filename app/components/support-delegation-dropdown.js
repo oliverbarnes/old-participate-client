@@ -9,7 +9,7 @@ export default Ember.Component.extend({
 
   actions: {
     delegateSupport: (selectedDelegateId) => {
-      this.me.delegateSupport(this.get('proposal'), selectedDelegateId).then((delegation) => {
+      this.get('me.content').delegateSupport(this.get('proposal'), selectedDelegateId).then((delegation) => {
         get(this, 'flashMessages').success('Delegated support option to ' + delegation.get('delegate.name'));
       });
     }

@@ -8,6 +8,7 @@ const { inject, computed } = Ember;
 export default Resource.extend({
   type: 'proposals',
   service: inject.service('proposals'),
+  store: inject.service(),
   me: inject.service(),
 
   title: attr(),
@@ -31,11 +32,11 @@ export default Resource.extend({
   }),
 
   possibleDelegates: computed('_possibleDelegatesQuery', function() {
-    return this.store.find('participants', this.get('_possibleDelegatesQuery'));
+    return this.get('store').find('participants', this.get('_possibleDelegatesQuery'));
   }),
 
   supportDelegated: computed('id', function() {
-    return this.me.supportDelegatedFor(this.get('id'));
+    return this.get('me.content').delegatedSupportForProposal(this.get('id'));
   }),
 
   _possibleDelegatesQuery: computed('id', function() {

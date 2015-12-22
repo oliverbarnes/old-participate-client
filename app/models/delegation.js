@@ -21,9 +21,9 @@ Delegation.reopenClass({
     var delegation = this.create();
     delegation.addRelationship('proposal', proposal);
     delegation.addRelationship('delegate', delegate);
-    delegation.addRelationship('author', this.me);
+    delegation.addRelationship('author', this.get('me'));
 
-    return this.store.createResource('delegation', delegation);
+    return this.get('store').createResource('delegation', delegation);
   }
 });
 

@@ -17,6 +17,8 @@ export default Resource.extend({
 
   supports: hasMany('supports'),
 
+  'delegations-given': hasMany({ resource: 'delegations-given', type: 'delegation' }),
+
   supportFor: function(proposal) {
     return _.first(_.filter(proposal.get('supports'), _.matches(this.get('supports'))));
   },
@@ -29,7 +31,7 @@ export default Resource.extend({
     return Delegation.createFor(proposal, delegateId);
   },
 
-  supportDelegatedFor: function(proposalId) {
-    return _.any(this.get('delegations'), { proposal: { id: proposalId } });
+  delegatedSupportForProposal(proposalId) {
+    return _.any(this.get('delegations-given'), { proposal: { id: proposalId } });
   }
 });
