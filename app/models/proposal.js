@@ -19,24 +19,18 @@ export default Resource.extend({
   supports:    hasMany('supports'),
   suggestions: hasMany('suggestions'),
 
-  backedByMe: computed('supports', 'me.supports', function() {
-    return _.any(this.get('supports'), _.matches(this.get('me.supports')));
-  }),
-
-  ownedByMe: computed('author.id', 'me.id', function() {
-    return this.get('author.id') === this.get('me.id');
-  }),
-
-  cantBeSupported: computed('backedByMe', 'ownedByMe', function() {
-    return (this.get('ownedByMe') || this.get('backedByMe')) ? true : false;
-  }),
-
   possibleDelegates: computed('_possibleDelegatesQuery', function() {
     return this.get('store').find('participants', this.get('_possibleDelegatesQuery'));
   }),
 
-  supportDelegated: computed('id', function() {
-    return this.get('me.content').delegatedSupportForProposal(this.get('id'));
+  authoredByMe: computed('author.id', 'me.id', function() {
+    // not sure why this.get('author.id') won't do it,
+    // seems like it should since author data is included in the request
+    return this.get('relationships.author.data.id') === this.get('me.id');
+  }),
+
+  backedByMe: computed('me', function() {
+    return this.get('me.content').supporting(this);
   }),
 
   _possibleDelegatesQuery: computed('id', function() {

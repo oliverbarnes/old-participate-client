@@ -10,28 +10,38 @@ const { inject } = Ember;
 export default Resource.extend({
   type: 'me',
   service: inject.service('me'),
+  store: inject.service(),
+  supportSwitch: inject.service('support-switch'),
 
   cacheDuration: /* minutes */ 100 * /* seconds */ 60 * /* milliseconds */ 1000,
 
   name: attr(),
 
   supports: hasMany('supports'),
-
   'delegations-given': hasMany({ resource: 'delegations-given', type: 'delegation' }),
 
-  supportFor: function(proposal) {
-    return _.first(_.filter(proposal.get('supports'), _.matches(this.get('supports'))));
-  },
-
-  toggleSupport: function(proposal) {
-    return Support.toggle(proposal);
-  },
-
   delegateSupport: function(proposal, delegateId) {
-    return Delegation.createFor(proposal, delegateId);
+    let delegation = Delegation.create();
+    delegation.addRelationship('proposal', proposal);
+    delegation.addRelationship('delegate', delegateId);
+    delegation.addRelationship('author', this);
+
+    return this.get('store').createResource('delegation', delegation);
   },
 
-  delegatedSupportForProposal(proposalId) {
-    return _.any(this.get('delegations-given'), { proposal: { id: proposalId } });
+  supportFor: function(proposal) {
+    const proposalSupports = proposal.get('relationships.supports.data');
+    const mySupports = this.get('relationships.supports.data');
+
+    return _.first(
+      _.filter(
+        proposalSupports,
+        function(support){ return _.matches(mySupports, _.matches({id: support.id})); }
+      )
+    );
+  },
+
+  supporting: function(proposal) {
+    return this.supportFor(proposal) ? true : false;
   }
 });
