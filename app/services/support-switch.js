@@ -30,6 +30,26 @@ export default Ember.Service.extend({
     // TODO: proposal.support-count and proposal.backedByMe don't update
     // cache doesn't seem to be updated
     // looking at EJR's ApplicationAdapter#createResource
+
+    // stabs:
+
+    //this.container.lookup('adapter:me').cache.data.content[0].relationships.supports.data.pushObject(support)
+    //proposal.get('service').cache.data.content[0].relationships.supports.data.pushObject(support)
+
+    // this.get('me.relationships.supports.data').pushObject(support);
+    // this.container.lookup('adapter:me').cacheUpdate({ data: this.get('me') });
+    // proposal.get('relationships.supports.data').pushObject(support);
+    // proposal.get('service').cacheUpdate({ data: proposal });
+
+
+    // this.get('store').find('proposal', {
+    //       id: proposal.id,
+    //       query: {
+    //         include: 'supports'
+    //       }
+    //     });
+    //
+    // this.get('me').hydrate();
     debugger;
 
     // TODO: if support was previously delegated,

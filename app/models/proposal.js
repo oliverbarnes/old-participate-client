@@ -23,13 +23,11 @@ export default Resource.extend({
     return this.get('store').find('participants', this.get('_possibleDelegatesQuery'));
   }),
 
-  authoredByMe: computed('author.id', 'me.id', function() {
-    // not sure why this.get('author.id') won't do it,
-    // seems like it should since author data is included in the request
+  authoredByMe: computed('relationships.author.data.id', 'me.id', function() {
     return this.get('relationships.author.data.id') === this.get('me.id');
   }),
 
-  backedByMe: computed('me', function() {
+  backedByMe: computed('relationships.supports.data', 'me.relationships.supports.data', function() {
     return this.get('me.content').supporting(this);
   }),
 
