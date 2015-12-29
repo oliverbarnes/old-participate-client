@@ -2,16 +2,7 @@
   <div class="ui header">{{model.title}}</div>
   <div class="ui">By {{model.author.name}}:</div>
   <div class="extra content">
-    {{
-      support-button
-      proposal=model
-    }}
-  </div>
-  <div class="extra content">
-    {{
-      support-delegation-dropdown
-      proposal=model
-    }}
+    {{support-button proposal=model}}
   </div>
   <div class="content">
     <div>{{model.body}}</div>
