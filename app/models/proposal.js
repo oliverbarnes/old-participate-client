@@ -27,7 +27,7 @@ export default Resource.extend({
     return this.get('relationships.author.data.id') === this.get('me.id');
   }),
 
-  backedByMe: computed('relationships.supports.data', 'me.relationships.supports.data', function() {
+  backedByMe: computed('relationships.supports.data.[]', 'me.relationships.supports.data.[]', function() {
     return this.get('me.content').supporting(this);
   }),
 

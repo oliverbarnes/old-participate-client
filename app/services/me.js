@@ -6,7 +6,11 @@ export default ObjectProxy.extend({
   isServiceFactory: true,
 
   find: function() {
-    return this.container.lookup('adapter:me').find();
+    return this.container.lookup('adapter:me').find({
+      query: {
+        include: 'supports'
+      }
+    });
   },
 
   hydrate: function() {

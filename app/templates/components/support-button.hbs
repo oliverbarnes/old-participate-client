@@ -1,14 +1,9 @@
 {{#if session.isAuthenticated}}
-  <button class="ui {{if supported 'active '}} green button js-support-proposal"
+  <button
+    class="ui {{if supported 'active '}} green button js-support-proposal"
     {{disabled}}
     {{action 'toggleSupport'}}>
-  {{#if proposal.backedByMe}}
-    Supported
-  {{else if proposal.supportDelegated}}
-    Support delegated
-  {{else}}
-    Support it
-  {{/if}}
+    {{text}}
   </button>
 {{else}}
   <button class="ui disabled green button js-support-proposal">Support it</button>
