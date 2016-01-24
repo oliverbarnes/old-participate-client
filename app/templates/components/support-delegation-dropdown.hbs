@@ -1,8 +1,0 @@
-<select
-onchange={{action "delegateSupport" value="target.value"}}
-class="delegate-select" {{disabled}}>
-  <option>Or select a delegate</option>
-  {{#each participants as |participant|}}
-    <option value='{{participant.id}}'>{{participant.name}}</option>
-  {{/each}}
-</select>

@@ -1,15 +1,8 @@
 {
   "predef": [
-    "server",
     "document",
     "window",
-    "-Promise",
-    "describe",
-    "beforeEach",
-    "Pretender",
-    "afterEach",
-    "it",
-    "expect"
+    "-Promise"
   ],
   "browser": true,
   "boss": true,
