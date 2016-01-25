@@ -16,6 +16,23 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      // 'img-src': "'self' data: https://i.scdn.co",
+      // 'media-src': "'self' https://p.scdn.co",
+      'style-src': "'self' 'unsafe-inline'",
+      'connect-src': 'http://localhost:4200 '
+      // 'connect-src': 'http://localhost:4200 ' + ENV.apiHost
+    }
+  };
+
+  ENV.torii = {
+    providers: {
+      'facebook-oauth2': {
+        apiKey: '1583083701926004',
+        redirectUri: 'http://localhost:4200/'
+      }
     }
   };
 
