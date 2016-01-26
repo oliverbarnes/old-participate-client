@@ -1,5 +1,5 @@
 Proposal list
 
 {{#each proposals as |proposal|}}
-  <p>{{proposal.title}}</p>
+  <p>{{#link-to 'proposal-details' proposal}}{{proposal.title}}{{/link-to}}</p>
 {{/each}}
