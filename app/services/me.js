@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 
-const { inject: { service }, computed } = Ember;
+const { inject: { service }, computed, isEmpty } = Ember;
 
 export default Ember.Service.extend({
   sessionAccount: service('session-account'),
@@ -18,15 +19,20 @@ export default Ember.Service.extend({
   }),
 
   supportFor: function(proposal) {
-    const proposalSupports = proposal.get('supports');
-    const mySupports = this.get('supports');
+    proposal.get('supports').then((proposalSupports) => {
+      if(isEmpty(proposalSupports)) { return; }
 
-    return _.first(
-      _.filter(
-        proposalSupports,
-        function(support){ return _.matches(mySupports, _.matches({id: support.id})); }
-      )
-    );
+      this.get('supports').then((mySupports) => {
+        if(isEmpty(mySupports)) { return; }
+        
+        return _.first(
+          _.filter(
+            proposalSupports,
+            function(support){ return _.matches(mySupports, _.matches({id: support.id})); }
+          )
+        );
+      });
+    });
   },
 
   supporting: function(proposal) {

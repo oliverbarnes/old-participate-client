@@ -1,17 +1,18 @@
 import Ember from 'ember';
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-import { hasMany } from 'ember-data/relationships';
-import _ from 'lodash/lodash';
+import { hasMany, belongsTo } from 'ember-data/relationships';
 
 const { inject: { service }, computed } = Ember;
 
 export default Model.extend({
+  me:      service(),
+  
   title: attr(),
   body:  attr(),
   'support-count': attr(),
 
-  author:   hasOne(),
+  author:   belongsTo(),
   supports: hasMany(),
 
   authoredByMe: computed('author.id', 'me.id', function() {

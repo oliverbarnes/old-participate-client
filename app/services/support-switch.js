@@ -24,6 +24,7 @@ export default Ember.Service.extend({
   // remove delegation
   _add(proposal) {
     let author = this.get('me');
+    debugger;
     let support = this.get('store').createRecord('support', {
       proposal: proposal,
       author: author
