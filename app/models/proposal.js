@@ -4,13 +4,12 @@ import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 import _ from 'lodash/lodash';
 
-const { computed } = Ember;
-const { service } = Ember.inject;
+const { inject: { service }, computed } = Ember;
 
 export default Model.extend({
-  title: attr('string'),
-  body:  attr('string'),
-  'support-count': attr('string'),
+  title: attr(),
+  body:  attr(),
+  'support-count': attr(),
 
   author:   hasOne(),
   supports: hasMany(),

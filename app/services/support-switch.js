@@ -2,11 +2,11 @@ import Ember from 'ember';
 import Support from '../models/support';
 import _ from 'lodash/lodash';
 
-const { inject } = Ember;
+const { inject: { service }, computed } = Ember;
 
 export default Ember.Service.extend({
-  store: inject.service(),
-  me: inject.service(),
+  store: service(),
+  me:    service(),
 
   toggleSupport(proposal) {
     if(this._canSupport(proposal)) {

@@ -1,8 +1,8 @@
 <nav>
   {{#if session.isAuthenticated}}
     <a {{action 'logout'}}>Logout</a>
-    {{#if sessionAccount.account}}
-      <p>Signed in as {{sessionAccount.account.name}}</p>
+    {{#if me.name}}
+      <p>Signed in as {{me.name}}</p>
     {{/if}}
   {{else}}
     <a {{action 'login'}}>Login</a>
