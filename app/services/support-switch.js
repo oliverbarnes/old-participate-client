@@ -20,45 +20,25 @@ export default Ember.Service.extend({
     return proposal.get('authoredByMe');
   },
 
+  // TODO: if support was previously delegated,
+  // remove delegation
   _add(proposal) {
-    let support = this.container.lookupFactory('model:support').create();
-    support.addRelationship('proposal', proposal.id);
-    support.addRelationship('author', this.get('me.id'));
+    let author = this.get('me');
+    let support = this.get('store').createRecord('support', {
+      proposal: proposal,
+      author: author
+    });
 
-    this.get('store').createResource('support', support);
-
-    this._incrementCache(proposal, support);
-
-    // TODO: if support was previously delegated,
-    // remove delegation
+    support.save();
   },
 
   _remove(proposal) {
-    let support = this.get('me.content').supportFor(proposal);
+    let support = this.get('me').supportFor(proposal);
 
-    this.get('store').deleteResource('support', support.id);
-
-    this._decrementCache(proposal, support);
+    support.destroyRecord();
   },
 
   _canSupport(proposal) {
     return proposal.get('backedByMe') || proposal.get('authoredByMe') ? false : true;
-  },
-
-  _supportDelegated(proposal) {
-    return _.any(this.get('me.delegations-given'), { proposal: { id: proposal.get('id') } });
-  },
-
-  // TODO: figure out why EJR's caching isn't handling this automatically
-  _incrementCache(proposal, support) {
-    this.get('me.relationships.supports.data').pushObject(support);
-    proposal.get('relationships.supports.data').pushObject(support);
-    proposal.set('support-count', proposal.get('support-count') + 1);
-  },
-
-  _decrementCache(proposal, support) {
-    this.get('me.relationships.supports.data').removeObject(support);
-    proposal.get('relationships.supports.data').removeObject(support);
-    proposal.set('support-count', proposal.get('support-count') - 1);
   }
 });
