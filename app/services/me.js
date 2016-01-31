@@ -1,30 +1,35 @@
 import Ember from 'ember';
 import _ from 'lodash/lodash';
 
-const { inject: { service }, computed, isEmpty } = Ember;
+const { inject: { service }, computed, isEmpty, RSVP } = Ember;
 
-export default Ember.Service.extend({
-  sessionAccount: service('session-account'),
+export default Ember.ObjectProxy.extend({
+  isServiceFactory: true,
 
-  id: computed('sessionAccount.account.id', function(){
-    return this.get('sessionAccount.account.id');
-  }),
+  session: service(),
+  store: service(),
 
-  name: computed('sessionAccount.account.name', function(){
-    return this.get('sessionAccount.account.name');
-  }),
+  loadMe() {
+    return new RSVP.Promise((resolve, reject) => {
+      const accessToken = this.get('session.data.authenticated.access_token');
+      if (!Ember.isEmpty(accessToken)) {
+        return this.get('store').queryRecord('me', {}).then((me) => {
+          this.set('content', me);
+          resolve();
+        }, reject);
+      } else {
+        resolve();
+      }
+    });
+  },
 
-  supports: computed('sessionAccount.account.supports.[]', function(){
-    return this.get('sessionAccount.account.supports');
-  }),
-
-  supportFor: function(proposal) {
+  supportFor(proposal) {
     proposal.get('supports').then((proposalSupports) => {
       if(isEmpty(proposalSupports)) { return; }
 
       this.get('supports').then((mySupports) => {
         if(isEmpty(mySupports)) { return; }
-        
+
         return _.first(
           _.filter(
             proposalSupports,
