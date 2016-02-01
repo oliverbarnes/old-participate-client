@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { service } = Ember.inject;
+const { inject: { service }, computed } = Ember;
 
 export default Ember.Component.extend({
   session:        service(),
@@ -11,5 +11,9 @@ export default Ember.Component.extend({
     toggleSupport() {
       this.get('supportSwitch').toggleSupport(this.get('proposal'));
     }
-  }
+  },
+
+  disabled: computed('supportSwitch', 'proposal', function() {
+    return this.get('supportSwitch').disabled(this.get('proposal')) ? 'disabled' : '';
+  }),
 });

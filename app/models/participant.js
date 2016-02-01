@@ -5,7 +5,9 @@ import { hasMany } from 'ember-data/relationships';
 export default Model.extend({
   name: attr(),
 
-  proposals:   hasMany(),
+  proposals:   hasMany({
+    inverse: 'author'
+  }),
   supports:    hasMany({
     inverse: 'author'
   })

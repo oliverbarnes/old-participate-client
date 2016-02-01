@@ -1,3 +1,3 @@
-import Model from 'ember-data/model';
+import Participant from './participant';
 
-export default Model.extend();
+export default Participant.extend();

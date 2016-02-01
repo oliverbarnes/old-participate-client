@@ -1,8 +1,6 @@
 import Ember from 'ember';
-import Support from '../models/support';
-import _ from 'lodash/lodash';
 
-const { inject: { service }, computed } = Ember;
+const { inject: { service } } = Ember;
 
 export default Ember.Service.extend({
   store: service(),
