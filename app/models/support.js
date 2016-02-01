@@ -5,5 +5,5 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
   proposal: belongsTo(),
-  author: belongsTo()
+  author: belongsTo('participant')
 });

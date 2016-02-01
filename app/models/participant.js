@@ -6,5 +6,7 @@ export default Model.extend({
   name: attr(),
 
   proposals:   hasMany(),
-  supports:    hasMany()
+  supports:    hasMany({
+    inverse: 'author'
+  })
 });

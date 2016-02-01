@@ -14,8 +14,10 @@ export default Ember.ObjectProxy.extend({
       const accessToken = this.get('session.data.authenticated.access_token');
       if (!Ember.isEmpty(accessToken)) {
         return this.get('store').queryRecord('me', {}).then((me) => {
-          this.set('content', me);
-          resolve();
+          return this.get('store').findRecord('participant', me.get('id')).then((participant) => {
+            this.set('content', participant);
+            resolve();
+          }, reject);
         }, reject);
       } else {
         resolve();

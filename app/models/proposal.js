@@ -7,12 +7,12 @@ const { inject: { service }, computed } = Ember;
 
 export default Model.extend({
   me:      service(),
-  
+
   title: attr(),
   body:  attr(),
   'support-count': attr(),
 
-  author:   belongsTo(),
+  author:   belongsTo('participant'),
   supports: hasMany(),
 
   authoredByMe: computed('author.id', 'me.id', function() {
