@@ -3,8 +3,6 @@ import Ember from 'ember';
 const { inject: { service }, computed } = Ember;
 
 export default Ember.Component.extend({
-  session:        service(),
-  me:             service(),
   supportSwitch:  service('support-switch'),
 
   actions: {

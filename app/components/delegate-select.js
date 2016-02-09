@@ -1,40 +1,30 @@
 import Ember from 'ember';
 
-const { inject, get, computed} = Ember;
+const { inject: { service }, get } = Ember;
 
 export default Ember.Component.extend({
-  store: inject.service(),
-  me: inject.service(),
-  supportSwitch: inject.service('support-switch'),
-  participants: null,
+  supportDelegator: service('support-delegator'),
+  delegates: null,
+  currentDelegate: null,
 
   actions: {
-    delegateSupport: (selectedDelegateId) => {
-      // TODO: also remove support from proposal if existing
-      this.get('me.content').delegateSupport(this.get('proposal'), selectedDelegateId).then((delegation) => {
+    delegateSupport(selectedDelegateId) { 
+      this.get('supportDelegator').delegateSupport(this.get('proposal'), selectedDelegateId).then((delegation) => {
         get(this, 'flashMessages').success('Delegated support option to ' + delegation.get('delegate.name'));
       });
     }
   },
 
-  willInsertElement: function() {
+  willInsertElement() {
     let _this = this;
-    return this.get('store').find('participants', this.get('_possibleDelegatesQuery')).then(function(participants) {
-      return _this.set('participants', participants);
-    })
-  },
+    let proposal = this.get('proposal');
 
-  disabled: computed('proposal.backedByMe', function() {
-    return this.get('supportSwitch').disabled(this.get('proposal')) ? 'disabled' : '';
-  }),
+    return this.get('supportDelegator').fetchPossibleDelegates(proposal).then(function(delegates) {
+      _this.set('delegates', delegates);
 
-  _possibleDelegatesQuery: computed('proposal.id', function() {
-    return {
-      query: {
-        filter: {
-          exclude_author_of_proposal: this.get('proposal.id')
-        }
-      }
-    };
-  })
+      return _this.get('supportDelegator').fetchCurrentDelegateIfExisting(proposal).then(function(currentDelegate) {
+        _this.set('currentDelegate', currentDelegate);
+      });
+    });
+  }
 });
