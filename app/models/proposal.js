@@ -12,8 +12,9 @@ export default Model.extend({
   body:  attr(),
   'support-count': attr(),
 
-  author:   belongsTo('participant'),
-  supports: hasMany(),
+  author:    belongsTo('participant'),
+  supports:  hasMany(),
+  delegates: hasMany('participant'),
 
   authoredByMe: computed('author.id', 'me.id', function() {
     return this.get('author.id') === this.get('me.id');

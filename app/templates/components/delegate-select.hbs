@@ -2,7 +2,7 @@
 onchange={{action "delegateSupport" value="target.value"}}
 class="delegate-select" {{disabled}}>
   <option>Or select a delegate</option>
-  {{#each delegates as |delegate|}}
+  {{#each possibleDelegates as |delegate|}}
     <option value='{{delegate.id}}' selected={{eq currentDelegate delegate}}>{{delegate.name}}</option>
   {{/each}}
 </select>

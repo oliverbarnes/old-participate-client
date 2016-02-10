@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { inject: { service } } = Ember;
+const { inject: { service }, computed } = Ember;
 
 export default Ember.Service.extend({
   store: service(),
@@ -23,23 +23,10 @@ export default Ember.Service.extend({
   },
 
   fetchPossibleDelegates(proposal) {
-    //query('person', { filter: { name: 'Peter' } })
     return this.get('store').query('participant', {
       filter: {
         exclude_author_of_proposal: proposal.id
       }
-    });
-  },
-
-  fetchCurrentDelegateIfExisting(proposal) {
-    let author = this.get('me.content');
-    return this.get('store').queryRecord('delegation', {
-      filter: {
-        author: author,
-        proposal: proposal
-      }
-    }).then(function(delegation) { 
-      return delegation.get('delegate'); 
     });
   }
 
