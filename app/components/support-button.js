@@ -11,6 +11,24 @@ export default Ember.Component.extend({
     }
   },
 
+  disabled: computed('supportSwitch', 'proposal', function() {
+    return this.get('supportSwitch').disabled(this.get('proposal')) ? 'disabled' : '';
+  }),
+
+  text: computed('proposal.backedByMe', 'proposal.supportDelegated', function() {
+    let text;
+
+    if(this.get('proposal.backedByMe')) {
+      text = 'Backing';
+    } else if(this.get('proposal.supportDelegated')) {
+      text = 'Support delegated to';
+    } else {
+      text = 'Add your support';
+    }
+
+    return text;
+  })
+
   // TODO: figure out who to handle button text changes.
   // clicks between mouseEnter and mouseLeave complicate things
   // 
@@ -25,12 +43,4 @@ export default Ember.Component.extend({
   //     this.set('text', this.get('originalText'));
   //   }
   // },
-
-  disabled: computed('supportSwitch', 'proposal', function() {
-    return this.get('supportSwitch').disabled(this.get('proposal')) ? 'disabled' : '';
-  }),
-
-  text: computed('proposal.backedByMe', function() {
-    return this.get('proposal.backedByMe') ? 'Backing' : 'Add your support';
-  })
 });

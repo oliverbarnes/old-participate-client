@@ -2,8 +2,9 @@ import Ember from 'ember';
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany, belongsTo } from 'ember-data/relationships';
+import _ from 'lodash/lodash';
 
-const { inject: { service }, computed } = Ember;
+const { inject: { service }, computed, isEmpty } = Ember;
 
 export default Model.extend({
   me:      service(),
@@ -22,5 +23,23 @@ export default Model.extend({
 
   backedByMe: computed('supports.[]', 'me.supports.[]', function() {
     return this.get('me').supporting(this);
+  }),
+
+  supportDelegated: computed('currentDelegate', function() {
+    return this.get('currentDelegate') ? true : false;
+  }),
+
+  currentDelegate: computed('delegates.[]', 'me.delegates.[]', function() {
+    const proposalDelegates = this.get('delegates').toArray();
+    const myDelegates = this.get('delegates').toArray();
+
+    if(isEmpty(proposalDelegates) || isEmpty(myDelegates)) { return; }
+
+    return _.first(
+      _.filter(
+        proposalDelegates,
+        function(delegate){ return _.matches(myDelegates, _.matches({id: delegate.id})); }
+      )
+    );
   })
 });
