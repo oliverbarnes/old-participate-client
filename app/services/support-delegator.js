@@ -5,20 +5,26 @@ const { inject: { service }, computed } = Ember;
 export default Ember.Service.extend({
   store: service(),
   me:    service(),
+  supportSwitch: service('support-switch'),
 
   // TODO:  remove support from proposal if existing
   delegateSupport: function(proposal, delegateId) {
     let author = this.get('me.content');
     let delegation;
     return this.get('store').find('participant', delegateId).then((delegate)=> {
-      // _removeCurrentSupportIfExisting(proposal);
       delegation = this.get('store').createRecord('delegation', {
         proposal: proposal,
         author: author,
         delegate: delegate
       });
 
-      return delegation.save();
+      if(this.get('me').supporting(proposal)) {
+        return delegation.save().then(()=> {
+          return this.get('supportSwitch').removeSupport(proposal);
+        });
+      } else {
+        return delegation.save();
+      }
     });
   },
 
@@ -29,6 +35,4 @@ export default Ember.Service.extend({
       }
     });
   }
-
-  //_removeCurrentSupportIfExisting(proposal){}
 });

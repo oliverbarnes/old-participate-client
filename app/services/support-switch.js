@@ -1,5 +1,4 @@
 import Ember from 'ember';
-
 const { inject: { service } } = Ember;
 
 export default Ember.Service.extend({
@@ -8,9 +7,9 @@ export default Ember.Service.extend({
 
   toggleSupport(proposal) {
     if(this._canSupport(proposal)) {
-      this._add(proposal);
+      this._giveSupport(proposal);
     } else {
-      this._remove(proposal);
+      this.removeSupport(proposal);
     }
   },
 
@@ -18,22 +17,22 @@ export default Ember.Service.extend({
     return proposal.get('authoredByMe');
   },
 
+  removeSupport(proposal) {
+    let support = this.get('me').supportFor(proposal);
+
+    return support.destroyRecord();
+  },
+
   // TODO: if support was previously delegated,
   // remove delegation
-  _add(proposal) {
+  _giveSupport(proposal) {
     let author = this.get('me.content');
     let support = this.get('store').createRecord('support', {
       proposal: proposal,
       author: author
     });
 
-    support.save();
-  },
-
-  _remove(proposal) {
-    let support = this.get('me').supportFor(proposal);
-
-    support.destroyRecord();
+    return support.save();
   },
 
   _canSupport(proposal) {
