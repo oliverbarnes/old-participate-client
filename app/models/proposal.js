@@ -16,6 +16,7 @@ export default Model.extend({
   author:    belongsTo('participant'),
   supports:  hasMany(),
   delegates: hasMany('participant'),
+  delegations: hasMany(),
 
   authoredByMe: computed('author.id', 'me.id', function() {
     return this.get('author.id') === this.get('me.id');

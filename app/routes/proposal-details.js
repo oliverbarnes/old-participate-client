@@ -5,7 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model(params) {
     return this.store.queryRecord('proposal', {
       id: params.proposal_id,
-      include: 'author,supports'
+      include: 'author,supports,delegations'
     });
   }
 });

@@ -4,6 +4,7 @@ const { inject: { service } } = Ember;
 export default Ember.Service.extend({
   store: service(),
   me:    service(),
+  supportDelegator: service('support-delegator'),
 
   toggleSupport(proposal) {
     if(this._canSupport(proposal)) {
@@ -32,7 +33,14 @@ export default Ember.Service.extend({
       author: author
     });
 
-    return support.save();
+    if(this.get('me').delegatingSupportFor(proposal)) {
+      return support.save().then((support)=> {
+        this.get('supportDelegator').removeDelegation(proposal);
+        return support;
+      });
+    } else {
+      return support.save();
+    }
   },
 
   _canSupport(proposal) {

@@ -10,5 +10,8 @@ export default Model.extend({
   }),
   supports:    hasMany({
     inverse: 'author'
+  }),
+  delegationsGiven: hasMany('delegation', {
+    inverse: 'delegate'
   })
 });
