@@ -32,7 +32,9 @@ export default Model.extend({
 
   currentDelegate: computed('delegates.[]', 'me.delegates.[]', function() {
     const proposalDelegates = this.get('delegates').toArray();
-    const myDelegates = this.get('delegates').toArray();
+    const myDelegates = this.get('me.delegates').toArray();
+
+    debugger;
 
     if(isEmpty(proposalDelegates) || isEmpty(myDelegates)) { return; }
 
