@@ -7,7 +7,6 @@ export default Ember.Service.extend({
   me:    service(),
   supportSwitch: service('support-switch'),
 
-  // TODO:  remove support from proposal if existing
   delegateSupport(proposal, delegateId) {
     let author = this.get('me.content');
     let delegation;
@@ -21,6 +20,8 @@ export default Ember.Service.extend({
       if(this.get('me').supporting(proposal)) {
         return delegation.save().then((delegation)=> {
           this.get('supportSwitch').removeSupport(proposal);
+          author.get('delegates').pushObject(delegate);
+          proposal.get('delegates').pushObject(delegate);
           return delegation;
         });
       } else {
@@ -31,10 +32,12 @@ export default Ember.Service.extend({
 
   removeDelegation(proposal) {
     let delegation = this.get('me').delegationOfSupportFor(proposal);
+    let delegateId = delegation.get('delegate.id');
+    let delegate = this.get('store').peekRecord('participant', delegateId);
     
-    return delegation.destroyRecord().then((delegation)=> {
-      this.get('me.delegationsGiven').removeObject(delegation);
-      proposal.get('delegations').removeObject(delegation);
+    return delegation.destroyRecord().then(()=> {
+      this.get('me.delegates').removeObject(delegate);
+      proposal.get('delegates').removeObject(delegate);
     }); 
   },
 

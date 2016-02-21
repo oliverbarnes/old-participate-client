@@ -34,8 +34,6 @@ export default Model.extend({
     const proposalDelegates = this.get('delegates').toArray();
     const myDelegates = this.get('me.delegates').toArray();
 
-    debugger;
-
     if(isEmpty(proposalDelegates) || isEmpty(myDelegates)) { return; }
 
     return _.first(

@@ -12,7 +12,7 @@ export default Model.extend({
     inverse: 'author'
   }),
   delegationsGiven: hasMany('delegation', {
-    inverse: 'delegate'
+    inverse: 'author'
   }),
   delegates: hasMany('participant')
 });

@@ -3,8 +3,8 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
   proposal: belongsTo(),
-  author: belongsTo('participant'),
-  delegate: belongsTo('participant', {
+  author: belongsTo('participant', {
     inverse: 'delegationsGiven'
-  })
+  }),
+  delegate: belongsTo('participant')
 });

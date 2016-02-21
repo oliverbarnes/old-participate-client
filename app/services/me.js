@@ -18,7 +18,7 @@ export default Ember.ObjectProxy.extend({
         return this.get('store').queryRecord('me', {}).then((me) => {
           return this.get('store').queryRecord('participant', { 
             id: me.get('id'),
-            include: 'delegations-given'
+            include: 'delegations-given,delegates'
           }).then((participant) => {
             this.set('content', participant);
             resolve();
@@ -34,7 +34,7 @@ export default Ember.ObjectProxy.extend({
   delegationOfSupportFor(proposal) {
     const proposalDelegations = proposal.get('delegations').toArray();
     const myDelegations = this.get('delegationsGiven').toArray();
-debugger;
+
     if(isEmpty(proposalDelegations) || isEmpty(myDelegations)) { return; }
 
     return _.first(

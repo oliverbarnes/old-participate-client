@@ -24,8 +24,6 @@ export default Ember.Service.extend({
     return support.destroyRecord();
   },
 
-  // TODO: if support was previously delegated,
-  // remove delegation
   _giveSupport(proposal) {
     let author = this.get('me.content');
     let support = this.get('store').createRecord('support', {
