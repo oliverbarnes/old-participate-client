@@ -2,9 +2,11 @@
 
 <p>{{proposal.title}} (supports: {{proposal.support-count}})</p>
 
+{{#if (not proposal.authoredByMe)}}
 <p>{{support-button proposal=proposal}}</p>
 
 <p>{{delegate-select proposal=proposal}}</p>
+{{/if}}
 
 <p>{{proposal.body}}</p>
 
