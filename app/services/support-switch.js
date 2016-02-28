@@ -24,6 +24,12 @@ export default Ember.Service.extend({
     return support.destroyRecord();
   },
 
+  removeSupportIfPresent(proposal) {
+    if(this.get('me').supporting(proposal)) {
+      return this.removeSupport(proposal);
+    }
+  },
+
   _giveSupport(proposal) {
     let author = this.get('me.content');
     let support = this.get('store').createRecord('support', {

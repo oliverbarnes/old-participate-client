@@ -17,16 +17,12 @@ export default Ember.Service.extend({
         delegate: delegate
       });
 
-      if(this.get('me').supporting(proposal)) {
-        return delegation.save().then((delegation)=> {
-          this.get('supportSwitch').removeSupport(proposal);
-          author.get('delegates').pushObject(delegate);
-          proposal.get('delegates').pushObject(delegate);
-          return delegation;
-        });
-      } else {
-        return delegation.save()
-      }
+      return delegation.save().then((delegation)=> {
+        this.get('supportSwitch').removeSupportIfPresent(proposal);
+        author.get('delegates').pushObject(delegate);
+        proposal.get('delegates').pushObject(delegate);
+        return delegation;
+      });
     });
   },
 
