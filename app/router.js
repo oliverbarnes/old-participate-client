@@ -7,7 +7,6 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('proposal-list');
   this.route('proposal-details', { path: '/proposal/:proposal_id' });
   this.route('new-proposal')
 });

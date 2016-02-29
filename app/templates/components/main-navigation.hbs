@@ -1,8 +1,9 @@
 <nav>
   {{#if session.isAuthenticated}}
-    <a {{action 'logout'}}>Logout</a>
-    {{#if me.name}}
-      <p>Signed in as {{me.name}}</p>
+    <p>{{#if me.name}}Signed in as {{me.name}}{{/if}} (<a {{action 'logout'}}>Logout</a>)</p>
+    
+    {{#if (not-eq currentRouteName 'index')}}
+      <p><b>{{#link-to 'index'}}Home{{/link-to}}</b></p>
     {{/if}}
   {{else}}
     <a {{action 'login'}}>Login</a>
