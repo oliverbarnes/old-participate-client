@@ -17,6 +17,8 @@ export default Model.extend({
   supports:  hasMany(),
   delegates: hasMany('participant'),
   delegations: hasMany(),
+  counterProposals: hasMany('proposal', { inverse: 'previousProposal' }),
+  previousProposal: belongsTo('proposal', { inverse: 'counterProposals' }),
 
   authoredByMe: computed('author.id', 'me.id', function() {
     return this.get('author.id') === this.get('me.id');

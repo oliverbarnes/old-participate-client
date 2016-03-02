@@ -1,0 +1,11 @@
+<p>Counter-proposal to {{link-to proposal.title 'proposal-details' proposal}}</p>
+
+<form onsubmit={{action (action 'createCounterProposal' proposal)}}>
+
+  <p><label>Title</label></p>
+  <p><input type="text" onblur={{action (action 'titleChanged')}} /></p>
+  <p><label>Body</label></p>
+  <p><textarea rows="15" onblur={{action (action 'bodyChanged')}}></textarea></p>
+
+  <p><button type="submit">Save Proposal</button></p>
+</form>

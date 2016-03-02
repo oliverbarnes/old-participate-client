@@ -2,10 +2,27 @@
 
 <p>{{proposal.title}} (supports: {{proposal.support-count}})</p>
 
+{{#if proposal.previousProposal }}
+<p>Counter-proposal to {{link-to proposal.previousProposal.title 'proposal-details' proposal.previousProposal}}</p>
+{{/if}}
+
+{{#if proposal.counterProposals }}
+<p>Counter-proposals:</p>
+<ul>
+{{#each proposal.counterProposals as |counterProposal| }}
+<li>{{link-to counterProposal.title 'proposal-details' counterProposal}}</li>
+{{/each}}
+</ul>
+{{/if}}
+
 {{#if (not proposal.authoredByMe)}}
 <p>{{support-button proposal=proposal}}</p>
 
 <p>{{delegate-select proposal=proposal}}</p>
+{{/if}}
+
+{{#if (and (not proposal.backedByMe) (not proposal.supportDelegated))}}
+<p>{{#link-to 'counter-proposal' proposal}}Make a counter proposal{{/link-to}}</p>
 {{/if}}
 
 <p>{{proposal.body}}</p>

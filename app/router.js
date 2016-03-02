@@ -8,7 +8,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('proposal-details', { path: '/proposal/:proposal_id' });
-  this.route('new-proposal')
+  this.route('new-proposal');
+  this.route('counter-proposal', { path: '/counter-proposal/:proposal_id' });
 });
 
 export default Router;
