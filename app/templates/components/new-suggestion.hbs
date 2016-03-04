@@ -1,0 +1,9 @@
+<p>New suggestion</p>
+
+<form onsubmit={{action (action 'createSuggestion' proposal)}}>
+
+  <p><label>Body</label></p>
+  <p><textarea rows="15" onblur={{action (action 'bodyChanged')}}></textarea></p>
+
+  <p><button type="submit">Save Proposal</button></p>
+</form>

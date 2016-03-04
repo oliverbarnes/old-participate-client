@@ -27,3 +27,6 @@
 
 <p>{{proposal.body}}</p>
 
+{{#if proposal.backedByMe}}
+<p>{{#link-to 'proposal-details.new-suggestion' proposal}}Suggest a change{{/link-to}}</p>
+{{/if}}
