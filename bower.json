@@ -10,7 +10,10 @@
     "loader.js": "^3.5.0",
     "mocha": "~2.2.4",
     "chai": "~2.3.0",
-    "ember-mocha-adapter": "~0.3.1"
+    "ember-mocha-adapter": "~0.3.1",
+    "pretender": "~0.10.1",
+    "lodash": "~3.7.0",
+    "Faker": "~3.0.0"
   },
   "resolutions": {
     "ember": "2.2.0"
