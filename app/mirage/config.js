@@ -1,82 +1,68 @@
+import Ember from 'ember';
+
 export default function() {
 
-  // These comments are here to help you get started. Feel free to delete them.
+  this.urlPrefix = 'http://localhost:3000';
 
-  /*
-    Config (with defaults).
+  this.post('/tokens', function() {
+    return {
+      access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ'
+    };
+  });
 
-    Note: these only affect routes defined *after* them!
-  */
-  // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
-  // this.namespace = '';    // make this `api`, for example, if your API is namespaced
-  // this.timing = 400;      // delay for each request, automatically set to 0 during testing
+  this.get('/me', function() {
+    return {
+      data: {
+        type: 'participants',
+        id: 1
+      }
+    };
+  });
 
-  /*
-    Route shorthand cheatsheet
-  */
-  /*
-    GET shorthands
+  // this.get('/proposals/:id', function(db, request) {
+  //   let id = request.params.id;
 
-    // Collections
-    this.get('/contacts');
-    this.get('/contacts', 'users');
-    this.get('/contacts', ['contacts', 'addresses']);
+  //   return {
+  //     data: {
+  //       type: 'proposals',
+  //       id: id,
+  //       attributes: db.proposals.find(id)
+  //     }
+  //   };
+  // });
 
-    // Single objects
-    this.get('/contacts/:id');
-    this.get('/contacts/:id', 'user');
-    this.get('/contacts/:id', ['contact', 'addresses']);
-  */
+  // this.get('/proposals', function(db) {
+  //   return {
+  //     data: db.proposals.map(attrs => (
+  //       {type: 'proposals', id: attrs.id, attributes: attrs }
+  //     ))
+  //   };
+  // });
 
-  /*
-    POST shorthands
+  // this.get('/participants', function(db) {
+  //   return {
+  //     data: db.participants.map(attrs => (
+  //       {type: 'participants', id: attrs.id, attributes: attrs }
+  //     ))
+  //   };
+  // });
 
-    this.post('/contacts');
-    this.post('/contacts', 'user'); // specify the type of resource to be created
-  */
+  // this.get('/supports', function(db, request) {
+  //   let supports = [];
 
-  /*
-    PUT shorthands
+  //   if(Ember.isEmpty(request.queryParams)) {
+  //     supports = db.supports;
+  //   } else {
+  //     let proposalId = request.queryParams['filter[proposal_id]'];
+  //     let authorId = request.queryParams['filter[author_id]'];
 
-    this.put('/contacts/:id');
-    this.put('/contacts/:id', 'user'); // specify the type of resource to be updated
-  */
+  //     supports = db.supports.where({proposalId: proposalId, authorId: authorId});
+  //   }
 
-  /*
-    DELETE shorthands
-
-    this.del('/contacts/:id');
-    this.del('/contacts/:id', 'user'); // specify the type of resource to be deleted
-
-    // Single object + related resources. Make sure parent resource is first.
-    this.del('/contacts/:id', ['contact', 'addresses']);
-  */
-
-  /*
-    Function fallback. Manipulate data in the db via
-
-      - db.{collection}
-      - db.{collection}.find(id)
-      - db.{collection}.where(query)
-      - db.{collection}.update(target, attrs)
-      - db.{collection}.remove(target)
-
-    // Example: return a single object with related models
-    this.get('/contacts/:id', function(db, request) {
-      var contactId = +request.params.id;
-
-      return {
-        contact: db.contacts.find(contactId),
-        addresses: db.addresses.where({contact_id: contactId})
-      };
-    });
-
-  */
+  //   return {
+  //     data: supports.map(attrs => (
+  //       {type: 'supports', id: attrs.id, attributes: attrs }
+  //     ))
+  //   };
+  // });
 }
-
-/*
-You can optionally export a config that is only loaded during tests
-export function testConfig() {
-
-}
-*/
