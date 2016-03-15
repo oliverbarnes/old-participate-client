@@ -7,16 +7,24 @@ import {
 } from 'mocha';
 import { expect } from 'chai';
 import Ember from 'ember';
-import startApp from 'tagged/tests/helpers/start-app';
+import startApp from '../helpers/start-app';
+import page from '../pages/proposal';
+
+let application;
+let proposal;
 
 describe('Acceptance: proposal support', function() {
 
   beforeEach(function() {
     application = startApp();
-    //create participant from factory
-    //create proposal from factory
-    //login with facebook
-    //visit proposal details 
+    server.create('participant', { id: 1 }),
+    proposal = server.create('proposal');
+    visit('/');
+    return click('.js-login-btn').then(function() {
+      return click('.js-facebook-login-btn').then(function() {
+        return page.visit(proposal.id);
+      });
+    });
   });
 
   afterEach(function() {
@@ -29,6 +37,9 @@ describe('Acceptance: proposal support', function() {
 
     describe('from clean slate', function(){
       it('changes support button state to "Backing"', function(){
+        return andThen(() => {
+          expect(currentPath()).to.equal('proposal-details');
+        });
       });
     });
 
