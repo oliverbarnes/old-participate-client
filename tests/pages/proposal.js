@@ -1,7 +1,9 @@
 import PO from '../page-object';
 
-export default PO.create({
-  visit: PO.visitable('/proposals/:id'),
-  selectDelegate: PO.selectable('.delegate-select'),
-  successFlashMessage: PO.text('.alert.alert-success')
+const { create, visitable, selectable, text } = PO;
+
+export default create({
+  visit: visitable('/proposals/:id'),
+  selectDelegate: selectable('.delegate-select'),
+  successFlashMessage: text('.alert.alert-success')
 });

@@ -1,5 +1,3 @@
-import Ember from 'ember';
-
 export default function() {
 
   this.urlPrefix = 'http://localhost:3000';
