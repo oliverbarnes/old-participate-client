@@ -6,6 +6,7 @@ import startApp from '../helpers/start-app';
 import MockFacebookOauth2 from '../helpers/mock-facebook-oauth2';
 import page from '../pages/proposal';
 import loginPage from '../pages/login';
+import { invalidateSession } from 'client/tests/helpers/ember-simple-auth';
 
 let application;
 let proposal;
@@ -21,6 +22,7 @@ describe('Acceptance: proposal support', function() {
   });
 
   afterEach(function() {
+    invalidateSession(application);
     Ember.run(application, 'destroy');
   });
 
@@ -30,7 +32,7 @@ describe('Acceptance: proposal support', function() {
 
     // describe('from clean slate', function(){
       it('changes support button state to "Backing"', function(){
-        page.visit();
+        page.visit({ id: proposal.id });
 
         andThen(() => {
           expect(currentPath()).to.equal('proposal-details');
