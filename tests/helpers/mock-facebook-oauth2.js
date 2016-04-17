@@ -1,7 +1,7 @@
 import { faker } from 'ember-cli-mirage';
 import Ember from 'ember';
 
-function generateCode() {
+export function generateCode() {
   return faker.internet.password(323, false, /[a-zA-Z0-9_-]/);
 }
 
