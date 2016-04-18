@@ -14,10 +14,7 @@ describe('Acceptance: proposal support', function() {
 
   beforeEach(function() {
     application = startApp();
-    server.create('participant', { id: 1 }),
-    proposal = server.create('proposal');
     authenticateSession(application, {});
-
   });
 
   afterEach(function() {
