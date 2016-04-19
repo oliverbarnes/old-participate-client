@@ -4,7 +4,6 @@ import { describe, it, beforeEach, afterEach } from 'mocha';
 import { expect } from 'chai';
 import startApp from '../helpers/start-app';
 import page from '../pages/proposal';
-import loginPage from '../pages/login';
 import { authenticateSession, invalidateSession } from 'client/tests/helpers/ember-simple-auth';
 
 let application;
@@ -14,6 +13,8 @@ describe('Acceptance: proposal support', function() {
 
   beforeEach(function() {
     application = startApp();
+    server.create('participant');
+    proposal = server.create('proposal');
     authenticateSession(application, {});
   });
 

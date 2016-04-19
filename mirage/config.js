@@ -1,40 +1,26 @@
 export default function() {
+  // this.post('/tokens', () => {
+  //   return {
+  //     access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ'
+  //   };
+  // });
 
-  this.urlPrefix = 'http://localhost:3000';
-
-  this.post('/tokens', function() {
-    return {
-      access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ'
-    };
-  });
-
-  this.get('/me', function() {
-    return {
-      data: {
-        type: 'participants',
-        id: 1
-      }
-    };
-  });
-
-  // this.get('/proposals/:id', function(db, request) {
-  //   let id = request.params.id;
-
+  // this.get('/me', () => {
   //   return {
   //     data: {
-  //       type: 'proposals',
-  //       id: id,
-  //       attributes: db.proposals.find(id)
+  //       type: 'participants',
+  //       id: 1
   //     }
   //   };
   // });
 
-  // this.get('/proposals', function(db) {
-  //   return {
-  //     data: db.proposals.map(attrs => (
-  //       {type: 'proposals', id: attrs.id, attributes: attrs }
-  //     ))
-  //   };
+  this.get('/proposals/:id', (schema, request) => {
+    var params = JSON.parse(request.requestBody);
+    return schema.proposal.find(params.id);
+  });
+
+  // this.get('/proposals', ({ proposal }) => {
+  //   return proposal.all();
   // });
 
   // this.get('/participants', function(db) {
