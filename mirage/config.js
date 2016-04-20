@@ -5,31 +5,31 @@ export default function() {
   //   };
   // });
 
-  // this.get('/me', () => {
-  //   return {
-  //     data: {
-  //       type: 'participants',
-  //       id: 1
-  //     }
-  //   };
+  this.get('/me', ({ participant }) => {
+    return participant.first();
+  });  
+
+  this.get('/participants/:id', ({ participant }, request) => {
+    return participant.find(request.params.id);
+  });
+
+  this.get('/participants', ({ participant }) => {
+    return participant.all();
+  });
+
+  // this.get('/participants/:id/delegates', ({ participant }, request) => {
+  //   return [];
   // });
 
-  this.get('/proposals/:id', (schema, request) => {
-    var params = JSON.parse(request.requestBody);
-    return schema.proposal.find(params.id);
+  this.get('/proposals/:id', ({ proposal }, request) => {
+    return proposal.find(request.params.id);
   });
 
   // this.get('/proposals', ({ proposal }) => {
   //   return proposal.all();
   // });
 
-  // this.get('/participants', function(db) {
-  //   return {
-  //     data: db.participants.map(attrs => (
-  //       {type: 'participants', id: attrs.id, attributes: attrs }
-  //     ))
-  //   };
-  // });
+
 
   // this.get('/supports', function(db, request) {
   //   let supports = [];

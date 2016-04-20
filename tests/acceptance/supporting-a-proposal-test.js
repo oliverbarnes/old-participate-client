@@ -15,7 +15,7 @@ describe('Acceptance: proposal support', function() {
     application = startApp();
     server.create('participant');
     proposal = server.create('proposal');
-    authenticateSession(application, {});
+    authenticateSession(application, {access_token: 'token'});
   });
 
   afterEach(function() {
@@ -32,7 +32,7 @@ describe('Acceptance: proposal support', function() {
         page.visit({ id: proposal.id });
 
         andThen(() => {
-          expect(currentPath()).to.equal('proposal-details');
+          expect(currentPath()).to.equal('proposal-details.index');
         });
       });
     // });
