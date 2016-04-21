@@ -23,19 +23,26 @@ describe('Acceptance: proposal support', function() {
     Ember.run(application, 'destroy');
   });
 
-  describe('giving', function(){
-    // beforeEach(function(){
-    // });
+  describe('giving support', function(){
+    beforeEach(function(){
+      page.visit({ id: proposal.id });
+    });
 
-    // describe('from clean slate', function(){
-      it('changes support button state to "Backing"', function(){
-        page.visit({ id: proposal.id });
+    describe('from clean slate', function(){
+      // it('transitions to proposal details"', function(){
+      //   expect(currentPath()).to.equal('proposal-details.index');
+      // });
 
-        andThen(() => {
-          expect(currentPath()).to.equal('proposal-details.index');
+      describe('clicking "Add your support"', function(){
+        it('changes support button state to "Backing"', function(){
+          //page not defined??
+          page.addSupport();
+          andThen(function() {
+            expect(page.supportButtonText).to.equal('Backing');
+          });
         });
       });
-    // });
+    });
 
     // describe('after delegation of support', function(){
     //   it('changes delegate select back to unselected', function(){
