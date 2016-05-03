@@ -53,17 +53,19 @@ export default Ember.ObjectProxy.extend({
   // then no need to filter proposalSupports
   // (...or would that mean another request to get support relationships?)
   supportFor(proposal) {
-    const proposalSupports = proposal.get('supports').toArray();
-    const mySupports = this.get('supports').toArray();
+    const proposalSupportIds = proposal.get('supports').getEach('id');
+    const mySupportIds = this.get('supports').getEach('id');
 
-    if(isEmpty(proposalSupports) || isEmpty(mySupports)) { return; }
+    if(isEmpty(proposalSupportIds) || isEmpty(mySupportIds)) { return; }
 
-    return _.first(
+    const matchingSupportId = _.first(
       _.filter(
-        proposalSupports,
-        function(support){ return _.matches(mySupports, _.matches({id: support.id})); }
+        proposalSupportIds,
+        function(id){ return _.includes(mySupportIds, id); }
       )
     );
+
+    return proposal.get('supports').findBy('id', matchingSupportId);
   },
 
   supporting(proposal) {

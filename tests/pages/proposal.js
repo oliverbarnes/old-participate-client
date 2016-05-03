@@ -7,5 +7,5 @@ export default create({
   selectDelegate: selectable('.delegate-select'),
   successFlashMessage: text('.alert.alert-success'),
   supportButtonText: text('.js.support-button'),
-  addSupport: clickable('button')
+  addSupport: clickable('button.js.support-button')
 });

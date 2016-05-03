@@ -28,6 +28,13 @@ export default function() {
   // this.get('/proposals', ({ proposal }) => {
   //   return proposal.all();
   // });
+  // 
+  
+  this.post('/supports', ({ support }, request) => {
+    const attrs = JSON.parse(request.requestBody).support;
+
+    return support.create(attrs);
+  });
 
 
 

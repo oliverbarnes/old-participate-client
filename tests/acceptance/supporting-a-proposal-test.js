@@ -19,7 +19,6 @@ describe('Acceptance: proposal support', function() {
   });
 
   afterEach(function() {
-    invalidateSession(application);
     Ember.run(application, 'destroy');
   });
 
@@ -28,15 +27,15 @@ describe('Acceptance: proposal support', function() {
       page.visit({ id: proposal.id });
     });
 
-    describe('from clean slate', function(){
-      // it('transitions to proposal details"', function(){
-      //   expect(currentPath()).to.equal('proposal-details.index');
-      // });
+    it('transitions to proposal details"', function(){
+      expect(currentPath()).to.equal('proposal-details.index');
+    });
 
+    describe('from clean slate', function(){
       describe('clicking "Add your support"', function(){
         it('changes support button state to "Backing"', function(){
-          //page not defined??
           page.addSupport();
+
           andThen(function() {
             expect(page.supportButtonText).to.equal('Backing');
           });
@@ -44,13 +43,23 @@ describe('Acceptance: proposal support', function() {
       });
     });
 
-    // describe('after delegation of support', function(){
-    //   it('changes delegate select back to unselected', function(){
-    //   });
-    // });
+    describe('after delegation of support', function(){
+      beforeEach(function(){
+        server.create('participant', { name: 'Edward Snowden'});
+        page.visit({ id: proposal.id });
+      });
+      
+      it('changes support button text', function(){
+        page.selectDelegate('Edward Snowden');
+  
+        andThen(function() {
+          expect(page.supportButtonText).to.equal('Support delegated to');
+        });
+      });
+    });
   });
 
-  // describe('removing', function(){
+  // describe('when support was previously given', function(){
   //   beforeEach(function(){
   //   });
 
