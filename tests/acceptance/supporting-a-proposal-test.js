@@ -4,7 +4,7 @@ import { describe, it, beforeEach, afterEach } from 'mocha';
 import { expect } from 'chai';
 import startApp from '../helpers/start-app';
 import page from '../pages/proposal';
-import { authenticateSession, invalidateSession } from 'client/tests/helpers/ember-simple-auth';
+import { authenticateSession } from 'client/tests/helpers/ember-simple-auth';
 
 let application;
 let proposal;
@@ -43,20 +43,20 @@ describe('Acceptance: proposal support', function() {
       });
     });
 
-    describe('after delegation of support', function(){
-      beforeEach(function(){
-        server.create('participant', { name: 'Edward Snowden'});
-        page.visit({ id: proposal.id });
-      });
-      
-      it('changes support button text', function(){
-        page.selectDelegate('Edward Snowden');
+    // describe('after delegation of support', function(){
+    //   beforeEach(function(){
+    //     server.create('participant', { name: 'Edward Snowden'});
+    //     page.visit({ id: proposal.id });
+    //   });
+
+    //   it('changes support button text', function(){
+    //     page.selectDelegate('Edward Snowden');
   
-        andThen(function() {
-          expect(page.supportButtonText).to.equal('Support delegated to');
-        });
-      });
-    });
+    //     andThen(function() {
+    //       expect(page.supportButtonText).to.equal('Support delegated to');
+    //     });
+    //   });
+    // });
   });
 
   // describe('when support was previously given', function(){
