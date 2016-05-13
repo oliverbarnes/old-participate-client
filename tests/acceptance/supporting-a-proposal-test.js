@@ -16,6 +16,7 @@ describe('Acceptance: proposal support', function() {
     server.create('participant');
     proposal = server.create('proposal');
     authenticateSession(application, {access_token: 'token'});
+    page.visit({ id: proposal.id });
   });
 
   afterEach(function() {
@@ -23,10 +24,6 @@ describe('Acceptance: proposal support', function() {
   });
 
   describe('giving support', function(){
-    beforeEach(function(){
-      page.visit({ id: proposal.id });
-    });
-
     it('transitions to proposal details"', function(){
       expect(currentPath()).to.equal('proposal-details.index');
     });
@@ -43,9 +40,12 @@ describe('Acceptance: proposal support', function() {
       });
     });
 
+    // TODO: not working, seems like the onchange event doesn't work correctly
+    // under the test, though it works manually.
+    // (target.value is empty on the delegate-select component
     // describe('after delegation of support', function(){
     //   beforeEach(function(){
-    //     server.create('participant', { name: 'Edward Snowden'});
+    //     server.create('participant', { id: '56b915f7000591279a000000', name: 'Edward Snowden'});
     //     page.visit({ id: proposal.id });
     //   });
 
@@ -59,11 +59,17 @@ describe('Acceptance: proposal support', function() {
     // });
   });
 
-  // describe('when support was previously given', function(){
-  //   beforeEach(function(){
-  //   });
+  describe('when support was previously given', function(){
+    beforeEach(function(){
+      page.addSupport();
+    });
 
-  //   it('changes support button state to "Add support"', function(){
-  //   });
-  // });
+    it('changes support button state to "Add your support"', function(){
+      page.addSupport();
+
+      andThen(function() {
+        expect(page.supportButtonText).to.equal('Add your support');
+      });
+    });
+  });
 });

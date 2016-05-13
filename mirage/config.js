@@ -17,18 +17,9 @@ export default function() {
     return participant.all();
   });
 
-  // this.get('/participants/:id/delegates', ({ participant }, request) => {
-  //   return [];
-  // });
-
   this.get('/proposals/:id', ({ proposal }, request) => {
     return proposal.find(request.params.id);
   });
-
-  // this.get('/proposals', ({ proposal }) => {
-  //   return proposal.all();
-  // });
-  // 
   
   this.post('/supports', ({ support }, request) => {
     const attrs = JSON.parse(request.requestBody).support;
@@ -36,24 +27,8 @@ export default function() {
     return support.create(attrs);
   });
 
-
-
-  // this.get('/supports', function(db, request) {
-  //   let supports = [];
-
-  //   if(Ember.isEmpty(request.queryParams)) {
-  //     supports = db.supports;
-  //   } else {
-  //     let proposalId = request.queryParams['filter[proposal_id]'];
-  //     let authorId = request.queryParams['filter[author_id]'];
-
-  //     supports = db.supports.where({proposalId: proposalId, authorId: authorId});
-  //   }
-
-  //   return {
-  //     data: supports.map(attrs => (
-  //       {type: 'supports', id: attrs.id, attributes: attrs }
-  //     ))
-  //   };
-  // });
+  this.del('/supports/:id', ({ support }, request) => {
+    const supportInstance = support.find(request.params.id);
+    return supportInstance.destroy();
+  });
 }
